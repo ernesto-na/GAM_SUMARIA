@@ -32,11 +32,12 @@ public  class XxGamReadExcel {
         static   String auxPromptB="--";
         static   String auxPromptC="--";
         
-        static String periodo_inicial="ENE-17";
-        static String periodo_final="ENE-17";
+        static String periodo_inicial="--";
+        static String periodo_final="--";
         
        static   String auxPromptD="--";
        static String yearAux="--";
+    static String anioAux="";
         
         
         
@@ -918,7 +919,7 @@ public  class XxGamReadExcel {
         
     Workbook archivoExcel = Workbook.getWorkbook(pInputStream); 
 
-    System.out.println("Número de Hojas\t" + archivoExcel.getNumberOfSheets()); 
+    System.out.println("Numero de Hojas\t" + archivoExcel.getNumberOfSheets()); 
     //for (int sheetNo = 0; sheetNo < archivoExcel.getNumberOfSheets(); sheetNo++) /* Recorre cada hoja */                                                                                                                                  
     //{ 
      //   Sheet hoja = archivoExcel.getSheet(sheetNo); 
@@ -1365,93 +1366,99 @@ public  class XxGamReadExcel {
      * Obtiene los periodos para saf_flujo_efectivo
      */
      public String getPeriodoFinal (String p_final) {
-             String anioAux="";
-             int enero = p_final.indexOf("Ene");
-                     if(enero != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="ENE-"+anioAux;
-                         return p_final;
-                     }
-             int febrero = p_final.indexOf("Feb");
-                     if(febrero != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="FEB-"+anioAux;
-                         return p_final;
-                     }
-             int marzo = p_final.indexOf("Mar");
-                     if(marzo != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="MAR-"+anioAux;
-                         return p_final;
-                     }
-             int abril = p_final.indexOf("Abr");
-                     if(abril != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="ABR-"+anioAux;
-                         return p_final;
-                     }
-             int mayo = p_final.indexOf("May");
-                     if(mayo != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="MAY-"+anioAux;
-                         return p_final;
-                     }
-             int junio = p_final.indexOf("Jun");
-                     if(junio != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="JUN-"+anioAux;
-                         return p_final;
-                     }
-             int julio = p_final.indexOf("Jul");
-                     if(julio != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="JUL-"+anioAux;
-                         return p_final;
-                     }
-             int agosto = p_final.indexOf("Ago");
-                     if(agosto != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="AGO-"+anioAux;
-                         return p_final;
-                     }
-             int septiembre = p_final.indexOf("Sep");
-                     if(septiembre != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="SEP-"+anioAux;
-                         return p_final;
-                     }
-             int octubre = p_final.indexOf("Oct");
-                     if(octubre != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="OCT-"+anioAux;
-                         return p_final;
-                     }
-             int noviembre = p_final.indexOf("Nov");
-                     if(noviembre != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="NOV-"+anioAux;
-                         return p_final;
-                     }
-             int diciembre = p_final.indexOf("Dic");
-                     if(diciembre != -1) 
-                     {
-                         anioAux=p_final.substring(p_final.length()-2,p_final.length());
-                         p_final="DIC-"+anioAux;
-                         return p_final;
-                     }
-             return p_final;
-         }
+                  p_final =p_final.toUpperCase();
+                  
+                  int enero = p_final.indexOf("ENE");
+                  int january = p_final.indexOf("JAN");
+                          if(enero != -1 ||january!=-1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="ENE-"+anioAux;
+                              return p_final;
+                          }
+                        
+                  int febrero = p_final.indexOf("FEB");
+                          if(febrero != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="FEB-"+anioAux;
+                              return p_final;
+                          }
+                  int marzo = p_final.indexOf("MAR");
+                          if(marzo != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="MAR-"+anioAux;
+                              return p_final;
+                          }
+                  int abril = p_final.indexOf("ABR");
+                  int april = p_final.indexOf("APR");
+                          if(abril != -1||april != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="ABR-"+anioAux;
+                              return p_final;
+                          }
+                  int mayo = p_final.indexOf("MAY");
+                          if(mayo != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="MAY-"+anioAux;
+                              return p_final;
+                          }
+                  int junio = p_final.indexOf("JUN");
+                          if(junio != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="JUN-"+anioAux;
+                              return p_final;
+                          }
+                  int julio = p_final.indexOf("JUL");
+                          if(julio != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="JUL-"+anioAux;
+                              return p_final;
+                          }
+                  int agosto = p_final.indexOf("AGO");
+                  int august = p_final.indexOf("AUG");
+                          if(agosto != -1 || august!=-1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="AGO-"+anioAux;
+                              return p_final;
+                          }
+                  int septiembre = p_final.indexOf("SEP");
+                          if(septiembre != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="SEP-"+anioAux;
+                              return p_final;
+                          }
+                  int octubre = p_final.indexOf("OCT");
+                          if(octubre != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="OCT-"+anioAux;
+                              return p_final;
+                          }
+                  int noviembre = p_final.indexOf("NOV");
+                          if(noviembre != -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="NOV-"+anioAux;
+                              return p_final;
+                          }
+                  int diciembre = p_final.indexOf("DIC");
+                  int december = p_final.indexOf("DEC");
+                          if(diciembre != -1||december!= -1) 
+                          {
+                              anioAux=p_final.substring(p_final.length()-2,p_final.length());
+                              p_final="DIC-"+anioAux;
+                              return p_final;
+                          }
+                  return p_final;
+              }
     
     
     
@@ -1466,6 +1473,17 @@ public  class XxGamReadExcel {
     Workbook archivoExcel = Workbook.getWorkbook(archivoDestino); 
 
     System.out.println("Número de Hojas\t" + archivoExcel.getNumberOfSheets()); 
+    /*Identificar periodo final y periodo inicial*/
+     Sheet hoja1 = archivoExcel.getSheet(0); 
+              Cell cellAux1 = hoja1.getCell(0, 2);
+              System.out.println("|----->"+cellAux1.getContents().trim()+"<----|");
+              periodo_final = cellAux1.getContents().trim();
+              
+            
+             periodo_final=getPeriodoFinal(periodo_final);
+            periodo_inicial = "ENE-"+anioAux;
+             System.out.println("periodo_inicial: "+periodo_inicial+" periodo_final: "+periodo_final);
+    
     
         for (int sheetNo = 0; sheetNo < archivoExcel.getNumberOfSheets(); sheetNo++) /* Recorre cada hoja */                                                                                                                                  
         { 
@@ -2417,8 +2435,8 @@ public  class XxGamReadExcel {
     } 
     
     public static String[] prepareR1(){
-        String arreglo[] = {FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE)};
-        System.out.println("Dentro de prepareR1..."+arreglo[0]+" "+arreglo[1]);
+        String arreglo[] = {periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
+        /*System.out.println("Dentro de prepareR1..."+arreglo[0]+" "+arreglo[1]+" "+arreglo[2]);*/
         String vartest=RT_COST_INITIAL_BALANCE ;
      return  arreglo;  
     }

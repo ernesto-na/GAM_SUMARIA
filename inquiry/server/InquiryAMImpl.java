@@ -75,7 +75,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
          
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
-             System.out.println("<><>"+column1[0]+"<><>"+column1[1]);  
+             System.out.println("<><>"+column1[0]+"<><>"+column1[1]+"<><>"+column1[2]);  
              
              
               /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();
