@@ -339,6 +339,11 @@ public  class XxGamReadExcel {
 
     public XxGamReadExcel() {
     }
+    /**
+     * le quita las comas a los numeros
+     * @param text
+     * @return
+     */
     public static String FormateNumeros(String text)
         {
              text = text.replace(",", "");
@@ -2411,10 +2416,11 @@ public  class XxGamReadExcel {
 
     } 
     
-    public static String prepareR1(){
-        System.out.println("Dentro de prepareR1...");
+    public static String[] prepareR1(){
+        String arreglo[] = {FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE),FormateNumeros(R1_COST_INITIAL_BALANCE)};
+        System.out.println("Dentro de prepareR1..."+arreglo[0]+" "+arreglo[1]);
         String vartest=RT_COST_INITIAL_BALANCE ;
-     return  vartest;  
+     return  arreglo;  
     }
 
 

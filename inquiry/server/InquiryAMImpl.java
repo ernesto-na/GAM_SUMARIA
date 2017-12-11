@@ -71,11 +71,11 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     /**
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
      */
-     public void exec_insert(String column1) {
+     public void exec_insert(String[] column1) {
          
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
-             System.out.println("<><>"+column1);  
+             System.out.println("<><>"+column1[0]+"<><>"+column1[1]);  
              
              
               /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();

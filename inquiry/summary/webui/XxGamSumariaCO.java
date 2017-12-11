@@ -378,8 +378,8 @@ public class XxGamSumariaCO extends OAControllerImpl
            
          leer.readExcel(file);
            String myAux = leer.prepareXML();
-           String test=leer.prepareR1();
-            System.out.println("<><><>"+test);
+           String test[]=leer.prepareR1();
+            System.out.println("<><><>"+test[0]+"<><><>"+test[1]);
            /*Actualizar tabla sumaria*/
             System.out.println("Actualizando tabla sumaria_________");
             OAApplicationModule am = pageContext.getApplicationModule(webBean);
