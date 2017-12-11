@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="XxGamSubcuentaVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxgam.oracle.apps.fa.sumaria.setup.lov.server.XxGamSubcuentaVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.setup.lov.server.XxGamSubcuentaVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT  B.FLEX_VALUE SUBCUENTA,
+             T.DESCRIPTION DESCRIPCION        
+FROM FND_FLEX_VALUES_TL T, FND_FLEX_VALUES B, FND_FLEX_VALUE_SETS FVS 
+WHERE 1=1
+                AND B.FLEX_VALUE_ID = T.FLEX_VALUE_ID 
+                AND T.LANGUAGE=USERENV('LANG')
+                AND B.FLEX_VALUE_SET_ID = FVS.FLEX_VALUE_SET_ID
+                AND FVS.FLEX_VALUE_SET_NAME = 'GAM_GL_SUBCUENTA'
+ORDER BY FLEX_VALUE
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Subcuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="150"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SUBCUENTA"
+      Expression="SUBCUENTA"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Descripcion"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="DESCRIPCION"
+      Expression="DESCRIPCION"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

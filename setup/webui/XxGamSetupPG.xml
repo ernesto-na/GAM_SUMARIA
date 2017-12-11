@@ -1,0 +1,83 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_3_GENERIC_160317" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="pageLayoutRN" amDefName="xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupAM" controllerClass="xxgam.oracle.apps.fa.sumaria.setup.webui.XxGamSetupCO" windowTitle="Pantalla de Configuración Sumaria Activo Fijo" title="Pantalla de Configuración Sumaria Activo Fijo">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:table id="XxGamSetupVO1" blockSize="200">
+               <ui:contents>
+                  <oa:messageTextInput id="IdSetup" dataType="NUMBER" prompt="IdSetup" viewName="XxGamSetupVO1" viewAttr="IdSetup" maximumLength="10" disabled="false" rendered="false"/>
+                  <oa:messageLovInput id="Cuenta" dataType="VARCHAR2" prompt="CUENTA" viewName="XxGamSetupVO1" viewAttr="Cuenta" maximumLength="100" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled}" required="yes" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/setup/lov/webui/XxGamCuentaRN">
+                     <lovMappings>
+                        <lovMap id="lovMap1" lovItem="Cuenta" resultTo="Cuenta" criteriaFrom="Cuenta"/>
+                        <lovMap id="lovMap2" lovItem="Descripcion" resultTo="CuentaDescFV"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="DescripcionCuenta" dataType="VARCHAR2" prompt="DESCRIPCION CUENTA" viewName="XxGamSetupVO1" viewAttr="DescripcionCuenta" maximumLength="200" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled2}"/>
+                  <oa:messageLovInput id="Subcuenta" dataType="VARCHAR2" prompt="SUBCUENTA" viewName="XxGamSetupVO1" viewAttr="Subcuenta" maximumLength="100" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled}" required="yes" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/setup/lov/webui/XxGamSubcuentaRN">
+                     <lovMappings>
+                        <lovMap id="lovMap3" lovItem="Subcuenta" resultTo="Subcuenta" criteriaFrom="Subcuenta"/>
+                        <lovMap id="lovMap4" lovItem="Descripcion" resultTo="SubcuentaDescFV"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="DescripcionSubcuenta" dataType="VARCHAR2" prompt="DESCRIPCION CUENTA" viewName="XxGamSetupVO1" viewAttr="DescripcionSubcuenta" maximumLength="200" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled2}"/>
+                  <oa:messageTextInput id="Rubro" dataType="VARCHAR2" prompt="RUBRO" viewName="XxGamSetupVO1" viewAttr="Rubro" maximumLength="100" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled2}"/>
+                  <oa:messageLovInput id="IdRubro" dataType="VARCHAR2" prompt="RUBRO ID" viewName="XxGamSetupVO1" viewAttr="IdRubro" maximumLength="200" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled}" required="yes" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/setup/lov/webui/XxGamRubroRN">
+                     <lovMappings>
+                        <lovMap id="lovMap5" lovItem="Id" resultTo="IdRubro" criteriaFrom="IdRubro"/>
+                        <lovMap id="lovMap6" lovItem="Rubro" resultTo="RubroDescFV"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageTextInput id="CreatedBy" dataType="NUMBER" prompt="CreatedBy" viewName="XxGamSetupVO1" viewAttr="CreatedBy" maximumLength="15" rendered="false"/>
+                  <oa:messageTextInput id="CreationDate" dataType="DATE" prompt="CreationDate" viewName="XxGamSetupVO1" viewAttr="CreationDate" rendered="false"/>
+                  <oa:messageTextInput id="LastUpdatedBy" dataType="NUMBER" prompt="LastUpdatedBy" viewName="XxGamSetupVO1" viewAttr="LastUpdatedBy" maximumLength="15" rendered="false"/>
+                  <oa:messageTextInput id="LastUpdateDate" dataType="DATE" prompt="LastUpdateDate" viewName="XxGamSetupVO1" viewAttr="LastUpdateDate" rendered="false"/>
+                  <oa:messageTextInput id="LastUpdateLogin" dataType="NUMBER" prompt="LastUpdateLogin" viewName="XxGamSetupVO1" viewAttr="LastUpdateLogin" rendered="false"/>
+                  <oa:messageTextInput id="RequestId" dataType="NUMBER" prompt="RequestId" viewName="XxGamSetupVO1" viewAttr="RequestId" maximumLength="15" rendered="false"/>
+                  <oa:messageTextInput id="ProgramApplicationId" dataType="NUMBER" prompt="ProgramApplicationId" viewName="XxGamSetupVO1" viewAttr="ProgramApplicationId" maximumLength="15" rendered="false"/>
+                  <oa:messageTextInput id="ProgramId" dataType="NUMBER" prompt="ProgramId" viewName="XxGamSetupVO1" viewAttr="ProgramId" maximumLength="15" rendered="false"/>
+                  <oa:messageTextInput id="ProgramUpdateDate" dataType="DATE" prompt="ProgramUpdateDate" viewName="XxGamSetupVO1" viewAttr="ProgramUpdateDate" rendered="false"/>
+                  <oa:messageChoice id="Agrupado" dataType="VARCHAR2" prompt="AGRUPADO" viewName="XxGamSetupVO1" viewAttr="Agrupado" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled}" pickListViewDef="xxgam.oracle.apps.fa.sumaria.setup.server.XxGamAgrupadoVO" pickListDispAttr="Agrupado" pickListValAttr="Agrupado" required="yes"/>
+                  <oa:messageTextInput id="ExceptionRubro" dataType="VARCHAR2" prompt="EXCEPCION RUBRO" viewName="XxGamSetupVO1" viewAttr="ExceptionRubro" maximumLength="100" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled2}"/>
+                  <oa:messageLovInput id="ExceptionIdRubro" dataType="VARCHAR2" prompt="EXCEPCION ID RUBRO" viewName="XxGamSetupVO1" viewAttr="ExceptionIdRubro" maximumLength="100" readOnly="${oa.XxGamSetupVO1.IsRecordEnabled}" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/setup/lov/webui/XxGamRubroRN">
+                     <lovMappings>
+                        <lovMap id="lovMap7" lovItem="Id" resultTo="ExceptionIdRubro" criteriaFrom="ExceptionIdRubro"/>
+                        <lovMap id="lovMap8" lovItem="Rubro" resultTo="ExcepcionRubroDescFV"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:image id="UpdateAction" source="updateicon_enabled.gif" prompt="ACTUALIZAR" shortDesc="Actualizar registro" imageHeight="24" imageWidth="24">
+                     <ui:primaryClientAction>
+                        <ui:fireAction event="updateEvent">
+                           <ui:parameters>
+                              <ui:parameter key="pIdSetup" value="${oa.XxGamSetupVO1.IdSetup}"/>
+                           </ui:parameters>
+                        </ui:fireAction>
+                     </ui:primaryClientAction>
+                  </oa:image>
+                  <oa:image id="DeleteAction" source="deleteicon_enabled.gif" prompt="ELIMINAR" shortDesc="Eliminar registro" imageHeight="24" imageWidth="24">
+                     <ui:primaryClientAction>
+                        <ui:fireAction event="deleteEvent">
+                           <ui:parameters>
+                              <ui:parameter key="pIdSetup" value="${oa.XxGamSetupVO1.IdSetup}"/>
+                           </ui:parameters>
+                        </ui:fireAction>
+                     </ui:primaryClientAction>
+                  </oa:image>
+                  <oa:formValue id="CuentaDescFV" viewName="XxGamSetupVO1" viewAttr="DescripcionCuenta"/>
+                  <oa:formValue id="SubcuentaDescFV" viewName="XxGamSetupVO1" viewAttr="DescripcionSubcuenta"/>
+                  <oa:formValue id="RubroDescFV" viewName="XxGamSetupVO1" viewAttr="Rubro"/>
+                  <oa:formValue id="ExcepcionRubroDescFV" viewName="XxGamSetupVO1" viewAttr="ExceptionRubro"/>
+               </ui:contents>
+            </oa:table>
+            <oa:pageButtonBar id="pageButtonBarRN">
+               <ui:contents>
+                  <oa:submitButton id="CreateBtn" text="Crear" prompt="Crear" shortDesc="Crear nuevo registro"/>
+                  <oa:submitButton id="SaveBtn" text="Guardar" prompt="Guardar" shortDesc="Guardar cambios"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="XxGamSetupAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>Sumaria1</jbo.project>
+         <AppModuleJndiName>xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

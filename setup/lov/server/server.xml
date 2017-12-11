@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxgam.oracle.apps.fa.sumaria.setup.lov.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+   </DesignTime>
+   <Containee
+      Name="XxGamCuentaVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.setup.lov.server.XxGamCuentaVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="XxGamRubroVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.setup.lov.server.XxGamRubroVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="XxGamSubcuentaVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.setup.lov.server.XxGamSubcuentaVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

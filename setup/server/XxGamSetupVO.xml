@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="XxGamSetupVO"
+   SelectList="XxGamSetupEO.ID_SETUP, 
+       XxGamSetupEO.CUENTA, 
+       XxGamSetupEO.DESCRIPCION_CUENTA, 
+       XxGamSetupEO.SUBCUENTA, 
+       XxGamSetupEO.DESCRIPCION_SUBCUENTA, 
+       XxGamSetupEO.RUBRO, 
+       XxGamSetupEO.ID_RUBRO, 
+       XxGamSetupEO.CREATED_BY, 
+       XxGamSetupEO.CREATION_DATE, 
+       XxGamSetupEO.LAST_UPDATED_BY, 
+       XxGamSetupEO.LAST_UPDATE_DATE, 
+       XxGamSetupEO.LAST_UPDATE_LOGIN, 
+       XxGamSetupEO.REQUEST_ID, 
+       XxGamSetupEO.PROGRAM_APPLICATION_ID, 
+       XxGamSetupEO.PROGRAM_ID, 
+       XxGamSetupEO.PROGRAM_UPDATE_DATE, 
+       XxGamSetupEO.AGRUPADO, 
+       XxGamSetupEO.EXCEPTION_RUBRO, 
+       XxGamSetupEO.EXCEPTION_ID_RUBRO, 
+       XxGamSetupEO.ROWID"
+   FromList="XXGAM_SAF_SETUP XxGamSetupEO"
+   OrderBy="ID_SETUP DESC"
+   BindingStyle="OracleName"
+   CustomQuery="false"
+   RowClass="xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupVOImpl"
+   UseGlueCode="false" >
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_version" Value="10.1.3.43.6" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="XxGamSetupEO"
+      Entity="xxgam.oracle.apps.fa.sumaria.setup.schema.server.XxGamSetupEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="true" />
+         <Attr Name="_queryOrderBy" Value="ID_SETUP DESC" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="IdSetup"
+      IsNotNull="true"
+      EntityAttrName="IdSetup"
+      EntityUsage="XxGamSetupEO"
+      AliasName="ID_SETUP" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Cuenta"
+      EntityAttrName="Cuenta"
+      EntityUsage="XxGamSetupEO"
+      AliasName="CUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DescripcionCuenta"
+      EntityAttrName="DescripcionCuenta"
+      EntityUsage="XxGamSetupEO"
+      AliasName="DESCRIPCION_CUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subcuenta"
+      EntityAttrName="Subcuenta"
+      EntityUsage="XxGamSetupEO"
+      AliasName="SUBCUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DescripcionSubcuenta"
+      EntityAttrName="DescripcionSubcuenta"
+      EntityUsage="XxGamSetupEO"
+      AliasName="DESCRIPCION_SUBCUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Rubro"
+      EntityAttrName="Rubro"
+      EntityUsage="XxGamSetupEO"
+      AliasName="RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IdRubro"
+      EntityAttrName="IdRubro"
+      EntityUsage="XxGamSetupEO"
+      AliasName="ID_RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      IsNotNull="true"
+      EntityAttrName="CreatedBy"
+      EntityUsage="XxGamSetupEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      IsNotNull="true"
+      EntityAttrName="CreationDate"
+      EntityUsage="XxGamSetupEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      IsNotNull="true"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="XxGamSetupEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      IsNotNull="true"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="XxGamSetupEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="XxGamSetupEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RequestId"
+      EntityAttrName="RequestId"
+      EntityUsage="XxGamSetupEO"
+      AliasName="REQUEST_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ProgramApplicationId"
+      EntityAttrName="ProgramApplicationId"
+      EntityUsage="XxGamSetupEO"
+      AliasName="PROGRAM_APPLICATION_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ProgramId"
+      EntityAttrName="ProgramId"
+      EntityUsage="XxGamSetupEO"
+      AliasName="PROGRAM_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ProgramUpdateDate"
+      EntityAttrName="ProgramUpdateDate"
+      EntityUsage="XxGamSetupEO"
+      AliasName="PROGRAM_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Agrupado"
+      EntityAttrName="Agrupado"
+      EntityUsage="XxGamSetupEO"
+      AliasName="AGRUPADO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ExceptionRubro"
+      EntityAttrName="ExceptionRubro"
+      EntityUsage="XxGamSetupEO"
+      AliasName="EXCEPTION_RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="ExceptionIdRubro"
+      EntityAttrName="ExceptionIdRubro"
+      EntityUsage="XxGamSetupEO"
+      AliasName="EXCEPTION_ID_RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="RowID"
+      IsUpdateable="false"
+      EntityAttrName="RowID"
+      EntityUsage="XxGamSetupEO"
+      AliasName="ROWID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IsRecordEnabled"
+      IsSelected="false"
+      IsPersistent="false"
+      DefaultValue="True"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IsRecordEnabled2"
+      IsSelected="false"
+      IsPersistent="false"
+      DefaultValue="True"
+      Type="java.lang.Boolean"
+      ColumnType="NUMBER"
+      AliasName="VIEW_ATTR"
+      SQLType="BIT" >
+   </ViewAttribute>
+</ViewObject>

@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="XxGamUploadFileAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <jbo.project>XXGAM_SAF_SUMARIA</jbo.project>
+         <AppModuleJndiName>xxgam.oracle.apps.fa.sumaria.upload.server.XxGamUploadFileAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxgam.oracle.apps.fa.sumaria.upload.server.XxGamUploadFileAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
