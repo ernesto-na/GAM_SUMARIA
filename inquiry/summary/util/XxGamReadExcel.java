@@ -38,6 +38,7 @@ public  class XxGamReadExcel {
        static   String auxPromptD="--";
        static String yearAux="--";
     static String anioAux="";
+    static String operating_unit ="";
         
         
         
@@ -1493,8 +1494,9 @@ public  class XxGamReadExcel {
                 String data; 
                 System.out.println("Nombre de la Hojas\t"+ archivoExcel.getSheet(sheetNo).getName()); 
                 
-            Cell cellAuxUP = hoja.getCell(0,0);    
+                        Cell cellAuxUP = hoja.getCell(0,0);    
                         auxUnidadOp=cellAuxUP.getContents().trim();
+                        operating_unit=auxUnidadOp.substring(0,2);
                         cellAuxUP = hoja.getCell(0,1);
                         auxPromptA=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,2);
@@ -2435,7 +2437,8 @@ public  class XxGamReadExcel {
     } 
     
     public static String[] prepareR1(){
-        String arreglo[] = {periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
+    String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero",tipo_saldo="COST_SALDO_INICIAL";
+        String arreglo[] = {operating_unit,id_r,rubro,tipo_saldo,periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
         /*System.out.println("Dentro de prepareR1..."+arreglo[0]+" "+arreglo[1]+" "+arreglo[2]);*/
         String vartest=RT_COST_INITIAL_BALANCE ;
      return  arreglo;  
