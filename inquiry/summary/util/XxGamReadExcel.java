@@ -2402,6 +2402,7 @@ public  class XxGamReadExcel {
       //  System.out.println(myAux);
     
        SetTotals();
+        System.out.println("Entrando en prepareR1....");
         prepareR1();
     
     
@@ -2411,6 +2412,7 @@ public  class XxGamReadExcel {
     } 
     
     public static String prepareR1(){
+        System.out.println("Dentro de prepareR1...");
         String vartest=RT_COST_INITIAL_BALANCE ;
      return  vartest;  
     }

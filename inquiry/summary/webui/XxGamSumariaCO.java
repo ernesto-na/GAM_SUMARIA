@@ -310,7 +310,7 @@ public class XxGamSumariaCO extends OAControllerImpl
       input = uploadedByteStream.getInputStream();/*obtener informacion*/
       leer.readExcelInputStream(input); 
       String myAux = leer.prepareXML();
-      System.out.println(myAux);
+      //System.out.println(myAux);
          
             
      }
@@ -379,7 +379,7 @@ public class XxGamSumariaCO extends OAControllerImpl
          leer.readExcel(file);
            String myAux = leer.prepareXML();
            String test=leer.prepareR1();
-               //System.out.println(myAux);
+            System.out.println("<><><>"+test);
            /*Actualizar tabla sumaria*/
             System.out.println("Actualizando tabla sumaria_________");
             OAApplicationModule am = pageContext.getApplicationModule(webBean);
@@ -387,7 +387,9 @@ public class XxGamSumariaCO extends OAControllerImpl
            Serializable[] param = {strPsumariaId,myAux};
            Serializable[] param2 = {test};
            am.invokeMethod("updateRecord", param);
-           am.invokeMethod("exec_insert");
+           System.out.println("Entrando en exec_insert...");
+           am.invokeMethod("exec_insert",param2);
+           System.out.println("Saliendo de.. exec_insert...");
            
                
        }

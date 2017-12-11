@@ -39,7 +39,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     public void updateRecord(String IdSetup,String myAux) {
         
             System.out.println("Actualizando Registro..."+IdSetup);
-            System.out.println(myAux);
+            //System.out.println(myAux);
              
              /* Java Programming */
              /* Obtener el Controlador (Driver) para conectarse a la base de datos */
@@ -75,7 +75,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
          
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
-             System.out.println(column1);  
+             System.out.println("<><>"+column1);  
              
              
               /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();
