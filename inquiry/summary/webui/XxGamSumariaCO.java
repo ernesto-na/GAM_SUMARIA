@@ -394,7 +394,7 @@ public class XxGamSumariaCO extends OAControllerImpl
             }
             try{
                 OAApplicationModule am = pageContext.getApplicationModule(webBean);
-                Serializable[] param2 = {test[0]};
+                Serializable[] param2 = {test[0],test[1],test[2],test[3],test[4],test[5],test[6]};
                 System.out.println("Entrando en exec_insert...");
                 am.invokeMethod("exec_insert",param2);
                 System.out.println("Saliendo de.. exec_insert...");
