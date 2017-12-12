@@ -381,6 +381,8 @@ public class XxGamSumariaCO extends OAControllerImpl
            String myAux = leer.prepareXML();
            //String test[]=leer.prepareR1();
            Rubro testRubro = leer.prepareR1DprnInitBal();
+           Rubro rubro2=leer.prepareR2();
+           Rubro rubro3=leer.prepareR3();
             System.out.println("<>"+testRubro.getRubro());
             
            /*Actualizar tabla sumaria*/
@@ -403,7 +405,25 @@ public class XxGamSumariaCO extends OAControllerImpl
                 System.out.println("Saliendo de.. exec_insert...");
             }catch(Exception e){
                 System.out.println(e.getMessage()); 
-            }      
+            }
+           try{
+               OAApplicationModule am = pageContext.getApplicationModule(webBean);
+               Serializable[] param2 = {rubro2.getUnOper(),rubro2.getId_rubro(),rubro2.getRubro(),rubro2.getP_inicial(),rubro2.getP_final(),rubro2.getCOST_SALDO_INICIAL(),rubro2.getDPRN_INITIAL_BALANCE(),rubro2.getCOST_ADDITIONS(),rubro2.getCOST_BAJAS(),rubro2.getCOST_TRANSFERS_SALE(),rubro2.getDPN_DEPRECIACION(),rubro2.getDPN_BAJAS(),rubro2.getDPN_VAR_TIP_CAMBIO(),rubro2.getCOST_VAR_TIP_CAMBIO(),rubro2.getCOST_SALDO_FINAL(),rubro2.getDPN_SALDO_FINAL()};
+               System.out.println("Entrando en exec_insert...");
+               am.invokeMethod("exec_insert",param2);
+               System.out.println("Saliendo de.. exec_insert...");
+           }catch(Exception e){
+               System.out.println(e.getMessage()); 
+           }
+           try{
+               OAApplicationModule am = pageContext.getApplicationModule(webBean);
+               Serializable[] param2 = {rubro3.getUnOper(),rubro3.getId_rubro(),rubro3.getRubro(),rubro3.getP_inicial(),rubro3.getP_final(),rubro3.getCOST_SALDO_INICIAL(),rubro3.getDPRN_INITIAL_BALANCE(),rubro3.getCOST_ADDITIONS(),rubro3.getCOST_BAJAS(),rubro3.getCOST_TRANSFERS_SALE(),rubro3.getDPN_DEPRECIACION(),rubro3.getDPN_BAJAS(),rubro3.getDPN_VAR_TIP_CAMBIO(),rubro3.getCOST_VAR_TIP_CAMBIO(),rubro3.getCOST_SALDO_FINAL(),rubro3.getDPN_SALDO_FINAL()};
+               System.out.println("Entrando en exec_insert...");
+               am.invokeMethod("exec_insert",param2);
+               System.out.println("Saliendo de.. exec_insert...");
+           }catch(Exception e){
+               System.out.println(e.getMessage()); 
+           }
        }
       }
       catch(NullPointerException npe){

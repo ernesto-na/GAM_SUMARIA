@@ -2461,12 +2461,80 @@ public  class XxGamReadExcel {
                                 FormateNumeros(R1_MF_BALANCE),
                                 FormateNumeros(R1_COST_BALANCE),
                                 FormateNumeros(R1_DPN_INI_BAL));
-        
-    
-    
      return  rubro1;  
     }
-
+    /**
+     * Se prepara R2 para saf_flujo_efectivo
+     * @return Obj Rubro2
+     */
+    public static Rubro prepareR2(){
+        String id_r="2",rubro="Mantenimiento Mayor";
+        Rubro rubro2= new Rubro(operating_unit,
+                                id_r,
+                                rubro,
+                                periodo_inicial,
+                                periodo_final,
+                                FormateNumeros(R2_COST_INITIAL_BALANCE),
+                                FormateNumeros(R2_DPRN_INITIAL_BALANCE),
+                                FormateNumeros(R2_COST_ADDITIONS),
+                                FormateNumeros(R2_COST_DISPOSALS),
+                                FormateNumeros(R2_COST_TRX_SALE),
+                                FormateNumeros(R2_DPN_FOR_YEAR),
+                                FormateNumeros(R2_DPN_DISPOSALS),
+                                FormateNumeros(R2_MF_RES),
+                                FormateNumeros(R2_MF_BALANCE),
+                                FormateNumeros(R2_COST_BALANCE),
+                                FormateNumeros(R2_DPN_INI_BAL));
+     return  rubro2;  
+    }
+/**
+     * Se prepara R2 para saf_flujo_efectivo
+     * @return obj Rubro3
+     */
+    public static Rubro prepareR3(){
+           String id_r="3",rubro="Rotables repuestos y accesorios";
+           Rubro rubro3= new Rubro(operating_unit,
+                                   id_r,
+                                   rubro,
+                                   periodo_inicial,
+                                   periodo_final,
+                                   FormateNumeros(R3_COST_INITIAL_BALANCE),
+                                   FormateNumeros(R3_DPRN_INITIAL_BALANCE),
+                                   FormateNumeros(R3_COST_ADDITIONS),
+                                   FormateNumeros(R3_COST_DISPOSALS),
+                                   FormateNumeros(R3_COST_TRX_SALE),
+                                   FormateNumeros(R3_DPN_FOR_YEAR),
+                                   FormateNumeros(R3_DPN_DISPOSALS),
+                                   FormateNumeros(R3_MF_RES),
+                                   FormateNumeros(R3_MF_BALANCE),
+                                   FormateNumeros(R3_COST_BALANCE),
+                                   FormateNumeros(R3_DPN_INI_BAL));
+        return  rubro3;  
+       }
+    /**
+         * Se prepara R4 para saf_flujo_efectivo
+         * @return obj Rubro4
+         */
+        public static Rubro prepareR3(){
+               String id_r="4",rubro="Mejoras de equipo de vuelo";
+               Rubro rubro4= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R4_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R4_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R4_COST_ADDITIONS),
+                                       FormateNumeros(R4_COST_DISPOSALS),
+                                       FormateNumeros(R4_COST_TRX_SALE),
+                                       FormateNumeros(R4_DPN_FOR_YEAR),
+                                       FormateNumeros(R4_DPN_DISPOSALS),
+                                       FormateNumeros(R4_MF_RES),
+                                       FormateNumeros(R4_MF_BALANCE),
+                                       FormateNumeros(R4_COST_BALANCE),
+                                       FormateNumeros(R4_DPN_INI_BAL));
+            return  rubro4;  
+           }
 
 
     public void leerPorHojaCelda(String archivoDestino,int numHoja,int fila, String columna) { 
