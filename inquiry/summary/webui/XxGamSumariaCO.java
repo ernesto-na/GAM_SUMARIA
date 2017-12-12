@@ -388,7 +388,7 @@ public class XxGamSumariaCO extends OAControllerImpl
            Serializable[] param2 = {test};
            am.invokeMethod("updateRecord", param);
            System.out.println("Entrando en exec_insert...");
-           am.invokeMethod("exec_insert",param2);
+          // am.invokeMethod("exec_insert",param2);
            System.out.println("Saliendo de.. exec_insert...");
            
                
