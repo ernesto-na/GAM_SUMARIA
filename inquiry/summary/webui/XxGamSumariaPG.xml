@@ -6,7 +6,7 @@
             <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
          </ui:corporateBranding>
          <ui:contents>
-            <oa:table id="XxGamSafSumariaTblVO1">
+            <oa:table id="XxGamSafSumariaTblVO1" text="Repositorio Sumaria">
                <ui:contents>
                   <oa:messageStyledText id="OperatingUnit" dataType="VARCHAR2" prompt="OperatingUnit" viewName="XxGamSafSumariaTblVO1" viewAttr="OperatingUnit" maximumLength="100"/>
                   <oa:messageStyledText id="Period" dataType="VARCHAR2" prompt="Period" viewName="XxGamSafSumariaTblVO1" viewAttr="Period" maximumLength="100"/>

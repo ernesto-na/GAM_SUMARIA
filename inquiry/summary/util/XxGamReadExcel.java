@@ -1622,8 +1622,8 @@ public  class XxGamReadExcel {
                         auxJ=++auxJ;
                         cellAux = hoja.getCell(auxJ, auxI);
                         RI1_COST_ADDITIONS=cellAux.getContents().trim();
-                        System.out.print(" j:"+auxJ +" i: "+ auxI);
-                        System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                        /*System.out.print(" j:"+auxJ +" i: "+ auxI);*/
+                        /*System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                         
                     }
                     /*if("Additions".equals(hoja.getCell(columna, fila).getContents().trim())&& (fila==8))
@@ -1786,8 +1786,8 @@ public  class XxGamReadExcel {
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
                             RI1_COST_DISPOSALS=cellAux.getContents().trim();
-                            System.out.print(" j:"+auxJ +" i: "+ auxI);
-                            System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                            /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                            System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                         }
                         
                         
@@ -1842,8 +1842,8 @@ public  class XxGamReadExcel {
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_COST_TRX_SALE=cellAux.getContents().trim();
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
                         
                         
@@ -1900,8 +1900,8 @@ public  class XxGamReadExcel {
                                                   cellAux = hoja.getCell(auxJ, auxI);
                                                   RI1_MF_BALANCE=cellAux.getContents().trim();
                                                    
-                                                  System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                                  System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                                  /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                                  System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                                               }   
                         
                         
@@ -1968,8 +1968,8 @@ public  class XxGamReadExcel {
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_AJUSTE=cellAux.getContents().trim();
                                 
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }    
                             
                             
@@ -2024,8 +2024,8 @@ public  class XxGamReadExcel {
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_COST_BALANCE= cellAux.getContents().trim();
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             } 
                    /* if("Balance December 31, 2016".equals(hoja.getCell(columna, fila).getContents().trim()))
                             {
@@ -2142,8 +2142,8 @@ public  class XxGamReadExcel {
                     auxJ=++auxJ;
                     cellAux = hoja.getCell(auxJ, auxI);
                     RI1_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    System.out.print(" j:"+auxJ +" i: "+ auxI);
-                    System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                 }         
                     if("Disposals".equals(hoja.getCell(columna, fila).getContents().trim())&& fila ==22)
                             {
@@ -2196,8 +2196,8 @@ public  class XxGamReadExcel {
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_DPN_DISPOSALS=cellAux.getContents().trim();
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
                     if("Effect of movements in exchange rates".equals(hoja.getCell(columna, fila).getContents().trim())&& fila==23)
                             {
@@ -2251,8 +2251,8 @@ public  class XxGamReadExcel {
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_MF_RES = cellAux.getContents().trim();
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
                     if(columna==0&&fila==25)/*Balance at dprn init bal*/
                             {
@@ -2306,8 +2306,8 @@ public  class XxGamReadExcel {
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_DPN_INI_BAL = cellAux.getContents().trim();
                                 
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
                     if(columna==0&&fila ==29 )
                             {
@@ -2361,8 +2361,8 @@ public  class XxGamReadExcel {
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
                                 RI1_TOTAL_I_BLN = cellAux.getContents().trim();
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
                     if(columna==0&&fila ==30 )
                             {
@@ -2429,6 +2429,7 @@ public  class XxGamReadExcel {
        SetTotals();
         System.out.println("Entrando en prepareR1....");
         prepareR1();
+        prepareR1DprnInitBal();
     
     
     } catch (Exception ioe) { 
@@ -2439,8 +2440,11 @@ public  class XxGamReadExcel {
     public static String[] prepareR1(){
     String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero",tipo_saldo="COST_SALDO_INICIAL";
         String arreglo[] = {operating_unit,id_r,rubro,tipo_saldo,periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
-        /*System.out.println("Dentro de prepareR1..."+arreglo[0]+" "+arreglo[1]+" "+arreglo[2]);*/
-        String vartest=RT_COST_INITIAL_BALANCE ;
+     return  arreglo;  
+    }
+    public static String[] prepareR1DprnInitBal(){
+    String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero",tipo_saldo="DPRN_INITIAL_BALANCE";
+        String arreglo[] = {operating_unit,id_r,rubro,tipo_saldo,periodo_inicial,periodo_final,FormateNumeros(R1_DPRN_INITIAL_BALANCE)};
      return  arreglo;  
     }
 

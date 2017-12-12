@@ -387,8 +387,9 @@ public class XxGamSumariaCO extends OAControllerImpl
                 OAApplicationModule am = pageContext.getApplicationModule(webBean);
                 String strPsumariaId = pageContext.getParameter("pSumariaId");
                 Serializable[] param = {strPsumariaId,myAux};
-               
+                System.out.println("Empieza a actualizar");
                 am.invokeMethod("updateRecord", param);
+                System.out.println("Termina de actualizar");
             }catch(Exception e) {
                 System.out.println(e.getMessage());
             }
