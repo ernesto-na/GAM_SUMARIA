@@ -2437,12 +2437,12 @@ public  class XxGamReadExcel {
 
     } 
     
-    public static String[] prepareR1(){
+   /* public static String[] prepareR1(){
     
     String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero",tipo_saldo="COST_SALDO_INICIAL";
         String arreglo[] = {operating_unit,id_r,rubro,tipo_saldo,periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
      return  arreglo;  
-    }
+    }*/
     public static Rubro prepareR1DprnInitBal(){
         String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero";
         Rubro rubro1= new Rubro(operating_unit,
@@ -2450,7 +2450,7 @@ public  class XxGamReadExcel {
                                 rubro,
                                 periodo_inicial,
                                 periodo_final,
-                                FormateNumeros(R1_DPRN_INITIAL_BALANCE),
+                                FormateNumeros(R1_COST_INITIAL_BALANCE),
                                 "2",
                                 "3",
                                 "4",
@@ -2463,7 +2463,7 @@ public  class XxGamReadExcel {
                                 "11");
         
     
-        String arreglo[] = {operating_unit,id_r,rubro,periodo_inicial,periodo_final,FormateNumeros(R1_DPRN_INITIAL_BALANCE)};
+    
      return  rubro1;  
     }
 

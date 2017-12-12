@@ -379,7 +379,7 @@ public class XxGamSumariaCO extends OAControllerImpl
            
          leer.readExcel(file);
            String myAux = leer.prepareXML();
-           String test[]=leer.prepareR1();
+           //String test[]=leer.prepareR1();
            Rubro testRubro = leer.prepareR1DprnInitBal();
             System.out.println("<>"+testRubro.getRubro());
             
