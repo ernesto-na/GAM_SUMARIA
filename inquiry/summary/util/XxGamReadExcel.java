@@ -2428,7 +2428,7 @@ public  class XxGamReadExcel {
     
        SetTotals();
         System.out.println("Entrando en prepareR1....");
-        //prepareR1();
+        prepareR1();
     
     
     } catch (Exception ioe) { 

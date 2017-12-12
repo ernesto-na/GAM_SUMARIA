@@ -380,16 +380,28 @@ public class XxGamSumariaCO extends OAControllerImpl
            String myAux = leer.prepareXML();
            String test[]=leer.prepareR1();
             System.out.println("<><><>"+test[0]+"<><><>"+test[1]+"<><><>"+test[2]);
+            
            /*Actualizar tabla sumaria*/
             System.out.println("Actualizando tabla sumaria_________");
-            OAApplicationModule am = pageContext.getApplicationModule(webBean);
-            String strPsumariaId = pageContext.getParameter("pSumariaId");
-           Serializable[] param = {strPsumariaId,myAux};
-           Serializable[] param2 = {test};
-           am.invokeMethod("updateRecord", param);
-           System.out.println("Entrando en exec_insert...");
-          // am.invokeMethod("exec_insert",param2);
-           System.out.println("Saliendo de.. exec_insert...");
+            try{
+                OAApplicationModule am = pageContext.getApplicationModule(webBean);
+                String strPsumariaId = pageContext.getParameter("pSumariaId");
+                Serializable[] param = {strPsumariaId,myAux};
+               
+                am.invokeMethod("updateRecord", param);
+            }catch(Exception e) {
+                System.out.println(e.getMessage());
+            }
+            try{
+                OAApplicationModule am = pageContext.getApplicationModule(webBean);
+                Serializable[] param2 = {test[0]};
+                System.out.println("Entrando en exec_insert...");
+                am.invokeMethod("exec_insert",param2);
+                System.out.println("Saliendo de.. exec_insert...");
+            }catch(Exception e){
+                System.out.println(e.getMessage()); 
+            }
+          
            
                
        }
