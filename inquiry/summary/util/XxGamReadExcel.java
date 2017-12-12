@@ -2451,7 +2451,7 @@ public  class XxGamReadExcel {
                                 periodo_inicial,
                                 periodo_final,
                                 FormateNumeros(R1_COST_INITIAL_BALANCE),
-                                "2",
+                                FormateNumeros(R1_DPRN_INITIAL_BALANCE),
                                 "3",
                                 "4",
                                 "5",
