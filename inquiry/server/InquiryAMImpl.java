@@ -12,6 +12,7 @@ import oracle.apps.fnd.framework.server.OADBTransaction;
 
 import oracle.jbo.RowSetIterator;
 
+import xxgam.oracle.apps.fa.sumaria.inquiry.summary.util.Rubro;
 import xxgam.oracle.apps.fa.sumaria.setup.server.XxGamSetupVORowImpl;
 
 // ---------------------------------------------------------------------
@@ -66,16 +67,18 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                 throw new OAException("No se actualizo el registro:",OAException.ERROR);
              }
         }       
-        
+    
+     
         
     /**
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
      */
-     public void exec_insert(String uOp,String id_r,String rubro,String tipo_saldo,String periodo_inicial,String periodo_final,String R1_COST_INITIAL_BALANCE) {
+     public void exec_insert(String uOp,String id_r,String rubro,String periodo_inicial,String periodo_final,String COST_SALDO_INICIAL,String DPRN_INITIAL_BALANCE,String COST_ADDITIONS,String COST_BAJAS,String COST_TRANSFERS_SALE,String DPN_DEPRECIACION,String DPN_BAJAS,String DPN_VAR_TIP_CAMBIO,String COST_VAR_TIP_CAMBIO,String COST_SALDO_FINAL,String DPN_SALDO_FINAL ) {
          
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
-             System.out.println("u_op: "+uOp+" id_r: "+id_r+" rubro: "+rubro+" tipo_saldo: "+tipo_saldo+" periodo_inicial: "+periodo_inicial+" periodo_final: "+periodo_final+" R1_COST_INITIAL_BALANCE: "+R1_COST_INITIAL_BALANCE);  
+             System.out.println("u_op: "+uOp+" id_r: "+id_r+" rubro: "+rubro+" periodo_inicial: "+periodo_inicial+" periodo_final: "+periodo_final+" R1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" DPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " COST_ADDITIONS "+COST_ADDITIONS+" COST_BAJAS "+COST_BAJAS+ " COST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" DPN_DEPRECIACION "+DPN_DEPRECIACION
+             +"  DPN_BAJAS"+DPN_BAJAS+" DPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" COST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" COST_SALDO_FINAL "+COST_SALDO_FINAL+" DPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
              
              
               /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();

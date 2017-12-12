@@ -49,6 +49,7 @@ import xxgam.oracle.apps.fa.sumaria.inquiry.server.XxGamSafSumariaTblVOImpl;
 import xxgam.oracle.apps.fa.sumaria.inquiry.server.XxGamSafSumariaTblVORowImpl;
 import xxgam.oracle.apps.fa.sumaria.inquiry.server.XxGamSafYtdeTblVOImpl;
 import xxgam.oracle.apps.fa.sumaria.inquiry.server.XxGamSafYtdeTblVORowImpl;
+import xxgam.oracle.apps.fa.sumaria.inquiry.summary.util.Rubro;
 import xxgam.oracle.apps.fa.sumaria.inquiry.summary.util.XxGamReadExcel;
 
 
@@ -379,7 +380,8 @@ public class XxGamSumariaCO extends OAControllerImpl
          leer.readExcel(file);
            String myAux = leer.prepareXML();
            String test[]=leer.prepareR1();
-            System.out.println("<><><>"+test[0]+"<><><>"+test[1]+"<><><>"+test[2]);
+           Rubro testRubro = leer.prepareR1DprnInitBal();
+            System.out.println("<>"+testRubro.getRubro());
             
            /*Actualizar tabla sumaria*/
             System.out.println("Actualizando tabla sumaria_________");
@@ -395,16 +397,13 @@ public class XxGamSumariaCO extends OAControllerImpl
             }
             try{
                 OAApplicationModule am = pageContext.getApplicationModule(webBean);
-                Serializable[] param2 = {test[0],test[1],test[2],test[3],test[4],test[5],test[6]};
+                Serializable[] param2 = {testRubro.getUnOper(),testRubro.getId_rubro(),testRubro.getRubro(),testRubro.getP_inicial(),testRubro.getP_final(),testRubro.getCOST_SALDO_INICIAL(),testRubro.getDPRN_INITIAL_BALANCE(),testRubro.getCOST_ADDITIONS(),testRubro.getCOST_BAJAS(),testRubro.getCOST_TRANSFERS_SALE(),testRubro.getDPN_DEPRECIACION(),testRubro.getDPN_BAJAS(),testRubro.getDPN_VAR_TIP_CAMBIO(),testRubro.getCOST_VAR_TIP_CAMBIO(),testRubro.getCOST_SALDO_FINAL(),testRubro.getDPN_SALDO_FINAL()};
                 System.out.println("Entrando en exec_insert...");
                 am.invokeMethod("exec_insert",param2);
                 System.out.println("Saliendo de.. exec_insert...");
             }catch(Exception e){
                 System.out.println(e.getMessage()); 
-            }
-          
-           
-               
+            }      
        }
       }
       catch(NullPointerException npe){
