@@ -2452,20 +2452,21 @@ public  class XxGamReadExcel {
                                 periodo_final,
                                 FormateNumeros(R1_COST_INITIAL_BALANCE),
                                 FormateNumeros(R1_DPRN_INITIAL_BALANCE),
-                                "3",
-                                "4",
-                                "5",
-                                "6",
-                                "7",
-                                "8",
-                                "9",
-                                "10",
-                                "11");
+                                FormateNumeros(R1_COST_ADDITIONS),
+                                FormateNumeros(R1_COST_DISPOSALS),
+                                FormateNumeros(R1_COST_TRX_SALE),
+                                FormateNumeros(R1_DPN_FOR_YEAR),
+                                FormateNumeros(R1_DPN_DISPOSALS),
+                                FormateNumeros(R1_MF_RES),
+                                FormateNumeros(R1_MF_BALANCE),
+                                FormateNumeros(R1_COST_BALANCE),
+                                FormateNumeros(R1_DPN_INI_BAL));
         
     
     
      return  rubro1;  
     }
+
 
 
     public void leerPorHojaCelda(String archivoDestino,int numHoja,int fila, String columna) { 
