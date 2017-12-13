@@ -124,7 +124,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                  prepStmt.setString(5, periodo_final);
                  prepStmt.setString(6, COST_SALDO_INICIAL);
                  //prepStmt.execute();
-                 System.out.println(rubroInitBal);
+                 //System.out.println(rubroInitBal);
                  //oaDBTransaction.commit();
                  if(prepStmt!=null){
                      prepStmt.close();
