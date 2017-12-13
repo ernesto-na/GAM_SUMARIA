@@ -74,69 +74,109 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
      */
      public void exec_insert(String uOp,String id_r,String rubro,String periodo_inicial,String periodo_final,String COST_SALDO_INICIAL,String DPRN_INITIAL_BALANCE,String COST_ADDITIONS,String COST_BAJAS,String COST_TRANSFERS_SALE,String DPN_DEPRECIACION,String DPN_BAJAS,String DPN_VAR_TIP_CAMBIO,String COST_VAR_TIP_CAMBIO,String COST_SALDO_FINAL,String DPN_SALDO_FINAL ) {
-         
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
              System.out.print("u_op: "+uOp+" \nid_r: "+id_r+" \nrubro: "+rubro+" \nperiodo_inicial: "+periodo_inicial+" \nperiodo_final: "+periodo_final+" \nR1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" \nDPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " \nCOST_ADDITIONS "+COST_ADDITIONS+" \nCOST_BAJAS "+COST_BAJAS+ " \nCOST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" \nDPN_DEPRECIACION "+DPN_DEPRECIACION
              +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
-             
-             
                OADBTransaction oaDBTransaction =  this.getOADBTransaction();
                Connection connection = oaDBTransaction.getJdbcConnection();
                
              String rubroInitBal = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
-                                                                        "RUBRO,PERIODO_INICIAL," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
                                                                         "PERIODO_FINAL," +
                                                                         "TIPO_SALDO," +
                                                                         "MONTO," +
                                                                         "CREATED_BY," +
                                                                         "CREATION_DATE," +
                                                                         "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
                                                                         "PROGRAM_UPDATE_DATE)" +
-                                    "VALUES (XX_INSERT_DEMO_S.NEXTVAL," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "COST_SALDO_INICIAL," +
-                                    "?," +
-                                    "user," +
-                                    "sysdate," +
-                                    "sysdate," +
-                                    "9999," +
-                                    "999," +
-                                    "999)";
-             
-             PreparedStatement prepStmt;
-
-            try {
-                 prepStmt = connection.prepareStatement(rubroInitBal);
-                 prepStmt.setString(1, uOp);
-                 prepStmt.setString(2, id_r);
-                 prepStmt.setString(3, rubro);
-                 prepStmt.setString(4, periodo_inicial);
-                 prepStmt.setString(5, periodo_final);
-                 prepStmt.setString(6, COST_SALDO_INICIAL);
-                 //prepStmt.execute();
-                 //System.out.println(rubroInitBal);
-                 //oaDBTransaction.commit();
-                 if(prepStmt!=null){
-                     prepStmt.close();
-                 }
-                // throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
-             } catch (SQLException e) {
-                 System.out.println("Falla al insertar: "+ e.getMessage());
-                  //throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
-             }
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_SALDO_INICIAL',"+
+                                                                        COST_SALDO_INICIAL+","+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroDPRN_INITIAL_BALANCE = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_SALDO_INICIAL',"+
+                                                                        DPRN_INITIAL_BALANCE+","+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+                                                                        
+             insert_saf_flujo_efec(rubroInitBal); 
+             insert_saf_flujo_efec(rubroDPRN_INITIAL_BALANCE);
+           
          }
 
-         
+                   public void insert_saf_flujo_efec(String strPrepStmt ) {
+                             /* Java Programming */
+                             /* Obtener el Controlador (Driver) para conectarse a la base de datos */
+                           System.out.println("__"+strPrepStmt);
+                             OADBTransaction oaDBTransaction =  this.getOADBTransaction();
+                             Connection connection = oaDBTransaction.getJdbcConnection();
+                           PreparedStatement prepStmt;
+                          try {
+                               prepStmt = connection.prepareStatement(strPrepStmt);
+                               //prepStmt.execute();
+                               //System.out.println(rubroInitBal);
+                               //oaDBTransaction.commit();
+                               if(prepStmt!=null){
+                                   prepStmt.close();
+                               }
+                              // throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
+                           } catch (SQLException e) {
+                               System.out.println("Falla al insertar: "+ e.getMessage());
+                                //throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
+                           }
+                       }
+  
          
          
     /**Container's getter for XxGamSafOmTblVO1
