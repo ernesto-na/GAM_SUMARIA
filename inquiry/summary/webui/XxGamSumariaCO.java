@@ -71,6 +71,8 @@ public class XxGamSumariaCO extends OAControllerImpl
   {
     super.processRequest(pageContext, webBean);
     
+    
+    
       InquiryAMImpl InquiryAM = (InquiryAMImpl)pageContext.getApplicationModule(webBean); 
       
       XxGamSafSumariaTblVOImpl SumariaTblVO = null; 
@@ -158,6 +160,17 @@ public class XxGamSumariaCO extends OAControllerImpl
              upLoadFile(auxParam,pageContext,webBean); 
              
             //upLoadFile("N3:MessageFileUpload:0",pageContext,webBean); 
+            System.out.println("Se refresca la pagina...");
+             /*Se refresca la pag*/
+             pageContext.setForwardURL("OA.jsp?page=/xxgam/oracle/apps/fa/sumaria/inquiry/summary/webui/XxGamSumariaPG",
+             null,
+             OAWebBeanConstants.KEEP_MENU_CONTEXT,
+             null,
+             null,
+             true,//Retain AM
+             OAWebBeanConstants.ADD_BREAD_CRUMB_NO, // Show breadcrumbs
+             OAWebBeanConstants.IGNORE_MESSAGES);  
+            System.out.println("....pagina refrescada");
         }
         
          
@@ -211,6 +224,7 @@ public class XxGamSumariaCO extends OAControllerImpl
               response.setContentType("text/html");
               throw new OAException("Excepcion:"+e.getMessage(),OAException.ERROR);  
           }
+           
     }
 
     }
