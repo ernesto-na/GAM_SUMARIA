@@ -631,7 +631,7 @@ public  class XxGamReadExcel {
                           "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R14_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
                           "<AJUSTE>"+FormateNumeros(R14_AJUSTE)+"</AJUSTE>\n"+
                           "</RUBRO14>\n" +
-                        "<RUBROT>\n" +
+                        "<TOTAL>\n" +
                          "<COST_INITIAL_BALANCE>"+FormateNumeros(RT_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RT_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
                          "<COST_ADDITIONS>"+FormateNumeros(RT_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
@@ -646,7 +646,7 @@ public  class XxGamReadExcel {
                         "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(RT_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
                         "<TOTAL_FINAL_BALANCE>"+FormateNumeros(RT_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
                         "<AJUSTE>"+FormateNumeros(RT_AJUSTE)+"</AJUSTE>\n"+
-                         "</RUBROT>\n" +
+                         "</TOTAL>\n" +
                           "<RUBROI1>\n" +
                           "<COST_INITIAL_BALANCE>"+FormateNumeros(RI1_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
                           "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RI1_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
