@@ -81,28 +81,59 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
              +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
              
              
-              /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();
+               OADBTransaction oaDBTransaction =  this.getOADBTransaction();
                Connection connection = oaDBTransaction.getJdbcConnection();
                
-             String strPrepStmt = " INSERT INTO XX_INSERT_DEMO VALUES (XX_INSERT_DEMO_S.NEXTVAL,?,?,?,sysdate,99,sysdate,99,99)";
+             String rubroInitBal = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO,PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                    "VALUES (XX_INSERT_DEMO_S.NEXTVAL," +
+                                    "?," +
+                                    "?," +
+                                    "?," +
+                                    "?," +
+                                    "?," +
+                                    "COST_SALDO_INICIAL," +
+                                    "?," +
+                                    "user," +
+                                    "sysdate," +
+                                    "sysdate," +
+                                    "9999," +
+                                    "999," +
+                                    "999)";
              
              PreparedStatement prepStmt;
 
-             try {
-                 prepStmt = connection.prepareStatement(strPrepStmt);
-                 prepStmt.setString(1, column1);
-                 prepStmt.setString(2, column2);
-                 prepStmt.setString(3, column3);
-                 prepStmt.execute();
-                 System.out.println(strPrepStmt);
-                 oaDBTransaction.commit();
+            try {
+                 prepStmt = connection.prepareStatement(rubroInitBal);
+                 prepStmt.setString(1, uOp);
+                 prepStmt.setString(2, id_r);
+                 prepStmt.setString(3, rubro);
+                 prepStmt.setString(4, periodo_inicial);
+                 prepStmt.setString(5, periodo_final);
+                 prepStmt.setString(6, COST_SALDO_INICIAL);
+                 //prepStmt.execute();
+                 System.out.println(rubroInitBal);
+                 //oaDBTransaction.commit();
                  if(prepStmt!=null){
                      prepStmt.close();
                  }
-                 throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
+                // throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
              } catch (SQLException e) {
-                  throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
-             }*/
+                 System.out.println("Falla al insertar: "+ e.getMessage());
+                  //throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
+             }
          }
 
          
