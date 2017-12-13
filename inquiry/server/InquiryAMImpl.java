@@ -77,8 +77,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
          
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
-             System.out.println("u_op: "+uOp+" id_r: "+id_r+" rubro: "+rubro+" periodo_inicial: "+periodo_inicial+" periodo_final: "+periodo_final+" R1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" DPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " COST_ADDITIONS "+COST_ADDITIONS+" COST_BAJAS "+COST_BAJAS+ " COST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" DPN_DEPRECIACION "+DPN_DEPRECIACION
-             +"  DPN_BAJAS"+DPN_BAJAS+" DPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" COST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" COST_SALDO_FINAL "+COST_SALDO_FINAL+" DPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
+             System.out.print("u_op: "+uOp+" \nid_r: "+id_r+" \nrubro: "+rubro+" \nperiodo_inicial: "+periodo_inicial+" \nperiodo_final: "+periodo_final+" \nR1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" \nDPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " \nCOST_ADDITIONS "+COST_ADDITIONS+" \nCOST_BAJAS "+COST_BAJAS+ " \nCOST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" \nDPN_DEPRECIACION "+DPN_DEPRECIACION
+             +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
              
              
               /* OADBTransaction oaDBTransaction =  this.getOADBTransaction();

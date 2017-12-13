@@ -1897,6 +1897,7 @@ public  class XxGamReadExcel {
                                                   cellAux = hoja.getCell(auxJ, auxI);
                                                   R14_MF_BALANCE=cellAux.getContents().trim();
                                                   auxJ=++auxJ;
+                                                  auxJ=++auxJ;
                                                   cellAux = hoja.getCell(auxJ, auxI);
                                                   RI1_MF_BALANCE=cellAux.getContents().trim();
                                                    
@@ -2515,7 +2516,7 @@ public  class XxGamReadExcel {
          * Se prepara R4 para saf_flujo_efectivo
          * @return obj Rubro4
          */
-        public static Rubro prepareR3(){
+        public static Rubro prepareR4(){
                String id_r="4",rubro="Mejoras de equipo de vuelo";
                Rubro rubro4= new Rubro(operating_unit,
                                        id_r,
@@ -2535,7 +2536,280 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R4_DPN_INI_BAL));
             return  rubro4;  
            }
-
+    /**
+         * Se prepara R5 para saf_flujo_efectivo
+         * @return obj Rubro5
+         */
+        public static Rubro prepareR5(){
+               String id_r="5",rubro="Maquinaria y Equipo";
+               Rubro rubro5= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R5_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R5_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R5_COST_ADDITIONS),
+                                       FormateNumeros(R5_COST_DISPOSALS),
+                                       FormateNumeros(R5_COST_TRX_SALE),
+                                       FormateNumeros(R5_DPN_FOR_YEAR),
+                                       FormateNumeros(R5_DPN_DISPOSALS),
+                                       FormateNumeros(R5_MF_RES),
+                                       FormateNumeros(R5_MF_BALANCE),
+                                       FormateNumeros(R5_COST_BALANCE),
+                                       FormateNumeros(R5_DPN_INI_BAL));
+            return  rubro5;  
+           }
+           
+    /**
+         * Se prepara R6 para saf_flujo_efectivo
+         * @return obj Rubro6
+         */
+        public static Rubro prepareR6(){
+               String id_r="6",rubro="Mejoras en propiedades arrendadas";
+               Rubro rubro6= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R6_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R6_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R6_COST_ADDITIONS),
+                                       FormateNumeros(R6_COST_DISPOSALS),
+                                       FormateNumeros(R6_COST_TRX_SALE),
+                                       FormateNumeros(R6_DPN_FOR_YEAR),
+                                       FormateNumeros(R6_DPN_DISPOSALS),
+                                       FormateNumeros(R6_MF_RES),
+                                       FormateNumeros(R6_MF_BALANCE),
+                                       FormateNumeros(R6_COST_BALANCE),
+                                       FormateNumeros(R6_DPN_INI_BAL));
+            return  rubro6;  
+           }
+           
+    /**
+         * Se prepara R7 para saf_flujo_efectivo
+         * @return obj Rubro7
+         */
+        public static Rubro prepareR7(){
+               String id_r="7",rubro="Mobiliario y equipo de computo";
+               Rubro rubro7= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R7_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R7_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R7_COST_ADDITIONS),
+                                       FormateNumeros(R7_COST_DISPOSALS),
+                                       FormateNumeros(R7_COST_TRX_SALE),
+                                       FormateNumeros(R7_DPN_FOR_YEAR),
+                                       FormateNumeros(R7_DPN_DISPOSALS),
+                                       FormateNumeros(R7_MF_RES),
+                                       FormateNumeros(R7_MF_BALANCE),
+                                       FormateNumeros(R7_COST_BALANCE),
+                                       FormateNumeros(R7_DPN_INI_BAL));
+            return  rubro7;  
+           }
+    /**
+         * Se prepara R8 para saf_flujo_efectivo
+         * @return obj Rubro8
+         */
+        public static Rubro prepareR8(){
+               String id_r="8",rubro="Equipo de vuelo Capitalizable";
+               Rubro rubro8= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R8_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R8_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R8_COST_ADDITIONS),
+                                       FormateNumeros(R8_COST_DISPOSALS),
+                                       FormateNumeros(R8_COST_TRX_SALE),
+                                       FormateNumeros(R8_DPN_FOR_YEAR),
+                                       FormateNumeros(R8_DPN_DISPOSALS),
+                                       FormateNumeros(R8_MF_RES),
+                                       FormateNumeros(R8_MF_BALANCE),
+                                       FormateNumeros(R8_COST_BALANCE),
+                                       FormateNumeros(R8_DPN_INI_BAL));
+            return  rubro8;  
+           }
+           
+    /**
+         * Se prepara R9 para saf_flujo_efectivo
+         * @return obj Rubro9
+         */
+        public static Rubro prepareR9(){
+               String id_r="9",rubro="Construccion";
+               Rubro rubro9= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R9_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R9_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R9_COST_ADDITIONS),
+                                       FormateNumeros(R9_COST_DISPOSALS),
+                                       FormateNumeros(R9_COST_TRX_SALE),
+                                       FormateNumeros(R9_DPN_FOR_YEAR),
+                                       FormateNumeros(R9_DPN_DISPOSALS),
+                                       FormateNumeros(R9_MF_RES),
+                                       FormateNumeros(R9_MF_BALANCE),
+                                       FormateNumeros(R9_COST_BALANCE),
+                                       FormateNumeros(R9_DPN_INI_BAL));
+            return  rubro9;  
+           }
+           
+    /**
+         * Se prepara R10 para saf_flujo_efectivo
+         * @return obj Rubro10
+         */
+        public static Rubro prepareR10(){
+               String id_r="10",rubro="Equipo de tierra";
+               Rubro rubro10= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R10_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R10_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R10_COST_ADDITIONS),
+                                       FormateNumeros(R10_COST_DISPOSALS),
+                                       FormateNumeros(R10_COST_TRX_SALE),
+                                       FormateNumeros(R10_DPN_FOR_YEAR),
+                                       FormateNumeros(R10_DPN_DISPOSALS),
+                                       FormateNumeros(R10_MF_RES),
+                                       FormateNumeros(R10_MF_BALANCE),
+                                       FormateNumeros(R10_COST_BALANCE),
+                                       FormateNumeros(R10_DPN_INI_BAL));
+            return  rubro10;  
+           }
+           
+    /**
+         * Se prepara R11 para saf_flujo_efectivo
+         * @return obj Rubro11
+         */
+        public static Rubro prepareR11(){
+               String id_r="11",rubro="Equipo de transporte";
+               Rubro rubro11= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R11_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R11_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R11_COST_ADDITIONS),
+                                       FormateNumeros(R11_COST_DISPOSALS),
+                                       FormateNumeros(R11_COST_TRX_SALE),
+                                       FormateNumeros(R11_DPN_FOR_YEAR),
+                                       FormateNumeros(R11_DPN_DISPOSALS),
+                                       FormateNumeros(R11_MF_RES),
+                                       FormateNumeros(R11_MF_BALANCE),
+                                       FormateNumeros(R11_COST_BALANCE),
+                                       FormateNumeros(R11_DPN_INI_BAL));
+            return  rubro11;  
+           }
+           
+    /**
+         * Se prepara R12 para saf_flujo_efectivo
+         * @return obj Rubro12
+         */
+        public static Rubro prepareR12(){
+               String id_r="12",rubro="Otros Equipos";
+               Rubro rubro12= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R12_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R12_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R12_COST_ADDITIONS),
+                                       FormateNumeros(R12_COST_DISPOSALS),
+                                       FormateNumeros(R12_COST_TRX_SALE),
+                                       FormateNumeros(R12_DPN_FOR_YEAR),
+                                       FormateNumeros(R12_DPN_DISPOSALS),
+                                       FormateNumeros(R12_MF_RES),
+                                       FormateNumeros(R12_MF_BALANCE),
+                                       FormateNumeros(R12_COST_BALANCE),
+                                       FormateNumeros(R12_DPN_INI_BAL));
+            return  rubro12;  
+           }
+           
+    /**
+         * Se prepara R13 para saf_flujo_efectivo
+         * @return obj Rubro13
+         */
+        public static Rubro prepareR13(){
+               String id_r="13",rubro="Trabajos en proceso";
+               Rubro rubro13= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R13_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R13_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R13_COST_ADDITIONS),
+                                       FormateNumeros(R13_COST_DISPOSALS),
+                                       FormateNumeros(R13_COST_TRX_SALE),
+                                       FormateNumeros(R13_DPN_FOR_YEAR),
+                                       FormateNumeros(R13_DPN_DISPOSALS),
+                                       FormateNumeros(R13_MF_RES),
+                                       FormateNumeros(R13_MF_BALANCE),
+                                       FormateNumeros(R13_COST_BALANCE),
+                                       FormateNumeros(R13_DPN_INI_BAL));
+            return  rubro13;  
+           }
+           
+    /**
+         * Se prepara R14 para saf_flujo_efectivo
+         * @return obj Rubro14
+         */
+        public static Rubro prepareR14(){
+               String id_r="14",rubro="Terrenos";
+               Rubro rubro14= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(R14_COST_INITIAL_BALANCE),
+                                       FormateNumeros(R14_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(R14_COST_ADDITIONS),
+                                       FormateNumeros(R14_COST_DISPOSALS),
+                                       FormateNumeros(R14_COST_TRX_SALE),
+                                       FormateNumeros(R14_DPN_FOR_YEAR),
+                                       FormateNumeros(R14_DPN_DISPOSALS),
+                                       FormateNumeros(R14_MF_RES),
+                                       FormateNumeros(R14_MF_BALANCE),
+                                       FormateNumeros(R14_COST_BALANCE),
+                                       FormateNumeros(R14_DPN_INI_BAL));
+            return  rubro14;  
+           }
+           
+    /**
+         * Se prepara RI1 para saf_flujo_efectivo
+         * @return obj RubroI1
+         */
+        public static Rubro prepareRI1(){
+               String id_r="I1",rubro="Software";
+               Rubro rubroI1= new Rubro(operating_unit,
+                                       id_r,
+                                       rubro,
+                                       periodo_inicial,
+                                       periodo_final,
+                                       FormateNumeros(RI1_COST_INITIAL_BALANCE),
+                                       FormateNumeros(RI1_DPRN_INITIAL_BALANCE),
+                                       FormateNumeros(RI1_COST_ADDITIONS),
+                                       FormateNumeros(RI1_COST_DISPOSALS),
+                                       FormateNumeros(RI1_COST_TRX_SALE),
+                                       FormateNumeros(RI1_DPN_FOR_YEAR),
+                                       FormateNumeros(RI1_DPN_DISPOSALS),
+                                       FormateNumeros(RI1_MF_RES),
+                                       FormateNumeros(RI1_MF_BALANCE),
+                                       FormateNumeros(RI1_COST_BALANCE),
+                                       FormateNumeros(RI1_DPN_INI_BAL));
+            return  rubroI1;  
+           }
+           
 
     public void leerPorHojaCelda(String archivoDestino,int numHoja,int fila, String columna) { 
 
