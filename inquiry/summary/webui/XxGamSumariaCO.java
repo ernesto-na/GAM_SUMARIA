@@ -325,7 +325,7 @@ public class XxGamSumariaCO extends OAControllerImpl
       input = uploadedByteStream.getInputStream();/*obtener informacion*/
       leer.readExcelInputStream(input); 
       String myAux = leer.prepareXML();
-      //System.out.println(myAux);
+      System.out.println(myAux);
          
             
      }
