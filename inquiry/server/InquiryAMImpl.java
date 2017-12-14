@@ -170,7 +170,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'DPRN_INITIAL_BALANCE',"+
+                                                                        "'DPN_SALDO_INICIAL',"+
                                                                         "nvl("+formatNumbers(DPRN_INITIAL_BALANCE)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
