@@ -34,6 +34,16 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     }
     
     /**
+     * Metodo que borra la tabla SAF_FLUJO_EFECTIVO
+     */
+     public void deleteFlujoEfectivo(String uOper,String p_final) {
+System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ="+p_final +" and  and empresa ="+uOper);
+         
+     }
+    
+    
+    
+    /**
      * Metodo que actualiza la tabla de la operacion sumaria
      */
     

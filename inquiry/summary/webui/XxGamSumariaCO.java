@@ -237,7 +237,7 @@ public class XxGamSumariaCO extends OAControllerImpl
    */
    
    public void upLoadFile(OAPageContext pageContext,OAWebBean webBean)
-   { /*String filePath = "D:\\Julian\\test";*/
+   { 
      XxGamReadExcel leer = new XxGamReadExcel();  
        OracleConnection conn;
     /*System.out.println("Default File Path---->"+filePath);*/
@@ -410,6 +410,18 @@ public class XxGamSumariaCO extends OAControllerImpl
            Rubro rubro13=leer.prepareR13();
            Rubro rubro14=leer.prepareR14();
            Rubro rubroI1=leer.prepareRI1();
+            
+            /*En este punto debemos borrar la tabla SAF_FLUJO_EFECTIVO*/
+             System.out.println("Borrando Saf_Flujo_efectivo_________");
+             try{
+                 OAApplicationModule am = pageContext.getApplicationModule(webBean);
+                 Serializable[] param = {testRubro.getUnOper(),testRubro.getP_final()};
+                 System.out.println("Empiezo a borrar");
+                 am.invokeMethod("deleteFlujoEfectivo", param);
+                 System.out.println("Termina de borrar");
+             }catch(Exception e) {
+                 System.out.println(e.getMessage());
+             }
             
             
            /*Actualizar tabla sumaria*/
