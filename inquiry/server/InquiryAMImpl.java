@@ -37,7 +37,24 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
      * Metodo que borra la tabla SAF_FLUJO_EFECTIVO
      */
      public void deleteFlujoEfectivo(String uOper,String p_final) {
-System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ="+p_final +" and  and empresa ="+uOper);
+         OADBTransaction oaDBTransaction =  this.getOADBTransaction();
+         Connection connection = oaDBTransaction.getJdbcConnection();
+            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'");
+            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'";
+         PreparedStatement prepStmt;
+         
+         try {
+           prepStmt = connection.prepareStatement(strPrepStmt);
+           prepStmt.execute();
+           System.out.println(strPrepStmt);
+           oaDBTransaction.commit();
+           if(prepStmt!=null){
+               prepStmt.close();
+           }
+             System.out.println("Tabla borrada exitosamente..");
+         } catch (SQLException e) {
+             System.out.println("No se ha podido borrar los registros");
+         }
          
      }
     
@@ -78,7 +95,12 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
              }
         }       
     
-     
+     public String formatNumbers(String mNumber){
+         if("".equals(mNumber)){
+             mNumber="0";
+         }
+         return mNumber;
+     }
         
     /**
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
@@ -115,7 +137,7 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
                                                                         "'COST_SALDO_INICIAL',"+
-                                                                        COST_SALDO_INICIAL+","+
+                                                                        "nvl("+formatNumbers(COST_SALDO_INICIAL)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -148,8 +170,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        DPRN_INITIAL_BALANCE+","+
+                                                                        "'DPRN_INITIAL_BALANCE',"+
+                                                                        "nvl("+formatNumbers(DPRN_INITIAL_BALANCE)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -183,8 +205,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        COST_ADDITIONS+","+
+                                                                        "'COST_ADDITIONS',"+
+                                                                        "nvl("+formatNumbers(COST_ADDITIONS)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -217,8 +239,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        COST_BAJAS+","+
+                                                                        "'COST_BAJAS',"+
+                                                                        "nvl("+formatNumbers(COST_BAJAS)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -251,8 +273,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        COST_TRANSFERS_SALE+","+
+                                                                        "'COST_TRANSFERS_SALE',"+
+                                                                        "nvl("+formatNumbers(COST_TRANSFERS_SALE)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -286,8 +308,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        DPN_DEPRECIACION+","+
+                                                                        "'DPN_DEPRECIACION',"+
+                                                                        "nvl("+formatNumbers(DPN_DEPRECIACION)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -320,8 +342,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        DPN_BAJAS+","+
+                                                                        "'DPN_BAJAS',"+
+                                                                        "nvl("+formatNumbers(DPN_BAJAS)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -354,8 +376,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        DPN_VAR_TIP_CAMBIO+","+
+                                                                        "'DPN_VAR_TIP_CAMBIO',"+
+                                                                        "nvl("+formatNumbers(DPN_VAR_TIP_CAMBIO)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -388,8 +410,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        COST_VAR_TIP_CAMBIO+","+
+                                                                        "'COST_VAR_TIP_CAMBIO',"+
+                                                                        "nvl("+formatNumbers(COST_VAR_TIP_CAMBIO)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -422,8 +444,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        COST_SALDO_FINAL+","+
+                                                                        "'COST_SALDO_FINAL',"+
+                                                                        "nvl("+formatNumbers(COST_SALDO_FINAL)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -456,8 +478,8 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_SALDO_INICIAL',"+
-                                                                        DPN_SALDO_FINAL+","+
+                                                                        "'DPN_SALDO_FINAL',"+
+                                                                        "nvl("+formatNumbers(DPN_SALDO_FINAL)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
@@ -495,9 +517,9 @@ System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_
                            PreparedStatement prepStmt;
                           try {
                                prepStmt = connection.prepareStatement(strPrepStmt);
-                               //prepStmt.execute();
+                               prepStmt.execute();
                                //System.out.println(rubroInitBal);
-                               //oaDBTransaction.commit();
+                               oaDBTransaction.commit();
                                if(prepStmt!=null){
                                    prepStmt.close();
                                }

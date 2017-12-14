@@ -224,13 +224,13 @@ public  class XxGamReadExcel {
          static String R9_TOTAL_F_BLN ="0";
          static String R9_AJUSTE="0";
 
-    static String R10_COST_INITIAL_BALANCE="";
-    static String R10_DPRN_INITIAL_BALANCE="";
-    static String R10_COST_ADDITIONS      ="";
-    static String R10_COST_DISPOSALS      ="";
-    static String R10_COST_TRX_SALE       ="";
-    static String R10_DPN_FOR_YEAR        ="";
-    static String R10_DPN_DISPOSALS       ="";
+    static String R10_COST_INITIAL_BALANCE="0";
+    static String R10_DPRN_INITIAL_BALANCE="0";
+    static String R10_COST_ADDITIONS      ="0";
+    static String R10_COST_DISPOSALS      ="0";
+    static String R10_COST_TRX_SALE       ="0";
+    static String R10_DPN_FOR_YEAR        ="0";
+    static String R10_DPN_DISPOSALS       ="0";
     /*Added*/
          static String R10_MF_RES ="0";
          static String R10_MF_BALANCE ="0";
@@ -240,13 +240,13 @@ public  class XxGamReadExcel {
          static String R10_TOTAL_F_BLN ="0";
          static String R10_AJUSTE="0";
                             
-    static String R11_COST_INITIAL_BALANCE="";
-    static String R11_DPRN_INITIAL_BALANCE="";
-    static String R11_COST_ADDITIONS      ="";
-    static String R11_COST_DISPOSALS      ="";
-    static String R11_COST_TRX_SALE       ="";
-    static String R11_DPN_FOR_YEAR        ="";
-    static String R11_DPN_DISPOSALS       ="";
+    static String R11_COST_INITIAL_BALANCE="0";
+    static String R11_DPRN_INITIAL_BALANCE="0";
+    static String R11_COST_ADDITIONS      ="0";
+    static String R11_COST_DISPOSALS      ="0";
+    static String R11_COST_TRX_SALE       ="0";
+    static String R11_DPN_FOR_YEAR        ="0";
+    static String R11_DPN_DISPOSALS       ="0";
     /*Added*/
          static String R11_MF_RES ="0";
          static String R11_MF_BALANCE ="0";
@@ -256,13 +256,13 @@ public  class XxGamReadExcel {
          static String R11_TOTAL_F_BLN ="0";
          static String R11_AJUSTE="0";
                                 
-    static String R12_COST_INITIAL_BALANCE="";
-    static String R12_DPRN_INITIAL_BALANCE="";
-    static String R12_COST_ADDITIONS      ="";
-    static String R12_COST_DISPOSALS      ="";
-    static String R12_COST_TRX_SALE       ="";
-    static String R12_DPN_FOR_YEAR        ="";
-    static String R12_DPN_DISPOSALS       ="";
+    static String R12_COST_INITIAL_BALANCE="0";
+    static String R12_DPRN_INITIAL_BALANCE="0";
+    static String R12_COST_ADDITIONS      ="0";
+    static String R12_COST_DISPOSALS      ="0";
+    static String R12_COST_TRX_SALE       ="0";
+    static String R12_DPN_FOR_YEAR        ="0";
+    static String R12_DPN_DISPOSALS       ="0";
     /*Added*/
          static String R12_MF_RES ="0";
          static String R12_MF_BALANCE ="0";
@@ -272,13 +272,13 @@ public  class XxGamReadExcel {
          static String R12_TOTAL_F_BLN ="0";
          static String R12_AJUSTE="0";
                                  
-    static String R13_COST_INITIAL_BALANCE="";
-    static String R13_DPRN_INITIAL_BALANCE="";
-    static String R13_COST_ADDITIONS      ="";
-    static String R13_COST_DISPOSALS      ="";
-    static String R13_COST_TRX_SALE       ="";
-    static String R13_DPN_FOR_YEAR        ="";
-    static String R13_DPN_DISPOSALS="";
+    static String R13_COST_INITIAL_BALANCE="0";
+    static String R13_DPRN_INITIAL_BALANCE="0";
+    static String R13_COST_ADDITIONS      ="0";
+    static String R13_COST_DISPOSALS      ="0";
+    static String R13_COST_TRX_SALE       ="0";
+    static String R13_DPN_FOR_YEAR        ="0";
+    static String R13_DPN_DISPOSALS="0";
     /*Added*/
         static String R13_MF_RES ="0";
         static String R13_MF_BALANCE ="0";
@@ -289,13 +289,13 @@ public  class XxGamReadExcel {
         static String R13_AJUSTE="0";
     
                                 
-    static String R14_COST_INITIAL_BALANCE="";
-    static String R14_DPRN_INITIAL_BALANCE="";
-    static String R14_COST_ADDITIONS      ="";
-    static String R14_COST_DISPOSALS      ="";
-    static String R14_COST_TRX_SALE       ="";
-    static String R14_DPN_FOR_YEAR        ="";
-    static String R14_DPN_DISPOSALS       ="";
+    static String R14_COST_INITIAL_BALANCE="0";
+    static String R14_DPRN_INITIAL_BALANCE="0";
+    static String R14_COST_ADDITIONS      ="0";
+    static String R14_COST_DISPOSALS      ="0";
+    static String R14_COST_TRX_SALE       ="0";
+    static String R14_DPN_FOR_YEAR        ="0";
+    static String R14_DPN_DISPOSALS       ="0";
     /*ADDED*/
          static String R14_MF_RES ="0";
          static String R14_MF_BALANCE ="0";
@@ -305,13 +305,13 @@ public  class XxGamReadExcel {
          static String R14_TOTAL_F_BLN ="0";
          static String R14_AJUSTE="0";
                                  
-    static String RI1_COST_INITIAL_BALANCE="";
-    static String RI1_DPRN_INITIAL_BALANCE="";
-    static String RI1_COST_ADDITIONS      ="";
-    static String RI1_COST_DISPOSALS      ="";
-    static String RI1_COST_TRX_SALE       ="";
-    static String RI1_DPN_FOR_YEAR        ="";
-    static String RI1_DPN_DISPOSALS       ="";
+    static String RI1_COST_INITIAL_BALANCE="0";
+    static String RI1_DPRN_INITIAL_BALANCE="0";
+    static String RI1_COST_ADDITIONS      ="0";
+    static String RI1_COST_DISPOSALS      ="0";
+    static String RI1_COST_TRX_SALE       ="0";
+    static String RI1_DPN_FOR_YEAR        ="0";
+    static String RI1_DPN_DISPOSALS       ="0";
     static String RI1_MF_BALANCE ="0";
     /*added*/
         static String RI1_MF_RES ="0";
