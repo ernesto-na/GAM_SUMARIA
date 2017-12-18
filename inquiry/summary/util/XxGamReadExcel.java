@@ -348,7 +348,7 @@ public  class XxGamReadExcel {
      */
     public static String FormateNumeros(String text)
         {
-             text = text.replace(",", "");
+             text = text.replace(",", "").trim();
                return text;
         }
     public static Double FormatForDouble(String ntext)
@@ -408,260 +408,260 @@ public  class XxGamReadExcel {
                           "<PROMPT_D>"+auxPromptD+"</PROMPT_D>\n" +
                           "<PROMPT_INI_BAL>"+PROMPT_INI_BAL+"</PROMPT_INI_BAL>\n" +
                           "<RUBRO1>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R1_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R1_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R1_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R1_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R1_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R1_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R1_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R1_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R1_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R1_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R1_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R1_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R1_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R1_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R1_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R1_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R1_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R1_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R1_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R1_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R1_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R1_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R1_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R1_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R1_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R1_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R1_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R1_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO1>\n" +
                           "<RUBRO2>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R2_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R2_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R2_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R2_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R2_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R2_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R2_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R2_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R2_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R2_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R2_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R2_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R2_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R2_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R2_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R2_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R2_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R2_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R2_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R2_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R2_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R2_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R2_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R2_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R2_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R2_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R2_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R2_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO2>\n" +
                           "<RUBRO3>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R3_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R3_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R3_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R3_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R3_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R3_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R3_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R3_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R3_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R3_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R3_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R3_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R3_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R3_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R3_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R3_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R3_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R3_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R3_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R3_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R3_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R3_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R3_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R3_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R3_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R3_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R3_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R3_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO3>\n" +
                           "<RUBRO4>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R4_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R4_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R4_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R4_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R4_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R4_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R4_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R4_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R4_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R4_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R4_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R4_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R4_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R4_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R4_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R4_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R4_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R4_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R4_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R4_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R4_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R4_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R4_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R4_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R4_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R4_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R4_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R4_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO4>\n" +
                           "<RUBRO5>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R5_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R5_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R5_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R5_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R5_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R5_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R5_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R5_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R5_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R5_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R5_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R5_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R5_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R5_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R5_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R5_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R5_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R5_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R5_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R5_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R5_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R5_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R5_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R5_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R5_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R5_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R5_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R5_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO5>\n" +
                           "<RUBRO6>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R6_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R6_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R6_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R6_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R6_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R6_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R6_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R6_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R6_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R6_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R6_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R6_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R6_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R6_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R6_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R6_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R6_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R6_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R6_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R6_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R6_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R6_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R6_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R6_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R6_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R6_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
                           "<AJUSTE>"+FormateNumeros(R6_AJUSTE)+"</AJUSTE>\n"+
                           "</RUBRO6>\n" +
                           "<RUBRO7>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R7_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R7_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R7_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R7_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R7_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R7_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R7_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R7_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R7_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R7_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R7_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R7_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R7_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R7_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R7_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R7_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R7_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R7_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R7_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R7_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R7_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R7_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R7_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R7_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R7_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R7_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R7_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R7_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO7>\n" +
                           "<RUBRO8>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R8_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R8_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R8_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R8_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R8_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R8_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R8_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R8_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R8_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R8_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R8_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R8_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R8_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R8_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R8_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R8_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R8_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R8_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R8_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R8_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R8_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R8_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R8_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R8_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R8_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R8_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R8_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R8_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO8>\n" +
                           "<RUBRO9>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R9_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R9_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R9_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R9_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R9_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R9_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R9_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R9_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R9_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R9_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R9_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R9_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R9_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R9_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R9_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R9_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R9_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R9_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R9_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R9_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R9_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R9_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R9_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R9_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R9_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R9_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R9_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R9_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO9>\n" +
                           "<RUBRO10>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R10_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R10_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R10_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R10_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R10_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R10_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R10_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R10_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R10_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R10_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R10_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R10_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R10_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R10_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R10_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R10_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R10_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R10_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R10_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R10_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R10_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R10_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R10_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R10_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R10_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R10_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R10_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R10_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO10>\n" +
                           "<RUBRO11>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R11_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R11_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R11_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R11_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R11_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R11_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R11_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R11_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R11_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R11_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R11_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R11_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R11_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R11_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R11_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R11_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R11_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R11_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R11_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R11_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R11_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R11_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R11_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R11_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R11_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R11_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R11_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R11_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO11>\n" +
                           "<RUBRO12>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R12_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R12_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R12_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R12_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R12_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R12_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R12_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                         "<MF_RESULTADOS>"+FormateNumeros(R12_MF_RES)+"</MF_RESULTADOS>\n"+
-                         "<MF_BALANCE>"+FormateNumeros(R12_MF_BALANCE)+"</MF_BALANCE>\n"+
-                         "<COST_BALANCE>"+FormateNumeros(R12_COST_BALANCE)+"</COST_BALANCE>\n"+
-                         "<DPN_BALANCE>"+FormateNumeros(R12_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                         "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R12_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                         "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R12_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                         "<AJUSTE>"+FormateNumeros(R12_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R12_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R12_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R12_COST_ADDITIONS.trim().trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R12_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R12_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R12_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R12_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                         "<MF_RESULTADOS>"+FormateNumeros(R12_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                         "<MF_BALANCE>"+FormateNumeros(R12_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                         "<COST_BALANCE>"+FormateNumeros(R12_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                         "<DPN_BALANCE>"+FormateNumeros(R12_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                         "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R12_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                         "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R12_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                         "<AJUSTE>"+FormateNumeros(R12_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO12>\n" +
                           "<RUBRO13>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R13_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R13_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R13_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R13_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R13_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R13_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R13_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R13_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R13_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R13_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R13_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R13_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R13_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R13_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R13_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R13_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R13_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R13_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R13_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R13_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R13_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R13_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R13_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R13_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R13_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R13_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R13_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R13_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO13>\n" +
                           "<RUBRO14>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R14_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R14_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(R14_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(R14_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(R14_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(R14_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(R14_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(R14_MF_RES)+"</MF_RESULTADOS>\n"+
-                          "<MF_BALANCE>"+FormateNumeros(R14_MF_BALANCE)+"</MF_BALANCE>\n"+
-                          "<COST_BALANCE>"+FormateNumeros(R14_COST_BALANCE)+"</COST_BALANCE>\n"+
-                          "<DPN_BALANCE>"+FormateNumeros(R14_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R14_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R14_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                          "<AJUSTE>"+FormateNumeros(R14_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(R14_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(R14_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(R14_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(R14_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(R14_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(R14_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(R14_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(R14_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                          "<MF_BALANCE>"+FormateNumeros(R14_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                          "<COST_BALANCE>"+FormateNumeros(R14_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                          "<DPN_BALANCE>"+FormateNumeros(R14_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                          "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(R14_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                          "<TOTAL_FINAL_BALANCE>"+FormateNumeros(R14_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                          "<AJUSTE>"+FormateNumeros(R14_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBRO14>\n" +
                         "<TOTAL>\n" +
-                         "<COST_INITIAL_BALANCE>"+FormateNumeros(RT_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                         "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RT_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                         "<COST_ADDITIONS>"+FormateNumeros(RT_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                         "<COST_DISPOSALS>"+FormateNumeros(RT_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                         "<COST_TRX_SALE>"+FormateNumeros(RT_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                         "<DPN_FOR_YEAR>"+FormateNumeros(RT_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                         "<DPN_DISPOSALS>"+FormateNumeros(RT_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                         "<MF_RESULTADOS>"+FormateNumeros(RT_MF_RES)+"</MF_RESULTADOS>\n"+
-                        "<MF_BALANCE>"+FormateNumeros(RT_MF_BALANCE)+"</MF_BALANCE>\n"+
-                        "<COST_BALANCE>"+FormateNumeros(RT_COST_BALANCE)+"</COST_BALANCE>\n"+
-                        "<DPN_BALANCE>"+FormateNumeros(RT_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                        "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(RT_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                        "<TOTAL_FINAL_BALANCE>"+FormateNumeros(RT_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                        "<AJUSTE>"+FormateNumeros(RT_AJUSTE)+"</AJUSTE>\n"+
+                         "<COST_INITIAL_BALANCE>"+FormateNumeros(RT_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                         "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RT_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                         "<COST_ADDITIONS>"+FormateNumeros(RT_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                         "<COST_DISPOSALS>"+FormateNumeros(RT_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                         "<COST_TRX_SALE>"+FormateNumeros(RT_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                         "<DPN_FOR_YEAR>"+FormateNumeros(RT_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                         "<DPN_DISPOSALS>"+FormateNumeros(RT_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                         "<MF_RESULTADOS>"+FormateNumeros(RT_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                        "<MF_BALANCE>"+FormateNumeros(RT_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                        "<COST_BALANCE>"+FormateNumeros(RT_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                        "<DPN_BALANCE>"+FormateNumeros(RT_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                        "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(RT_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                        "<TOTAL_FINAL_BALANCE>"+FormateNumeros(RT_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                        "<AJUSTE>"+FormateNumeros(RT_AJUSTE.trim())+"</AJUSTE>\n"+
                          "</TOTAL>\n" +
                           "<RUBROI1>\n" +
-                          "<COST_INITIAL_BALANCE>"+FormateNumeros(RI1_COST_INITIAL_BALANCE)+"</COST_INITIAL_BALANCE>\n" +
-                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RI1_DPRN_INITIAL_BALANCE)+"</DPRN_INITIAL_BALANCE>\n" +
-                          "<COST_ADDITIONS>"+FormateNumeros(RI1_COST_ADDITIONS)+"</COST_ADDITIONS>\n" +
-                          "<COST_DISPOSALS>"+FormateNumeros(RI1_COST_DISPOSALS)+"</COST_DISPOSALS>\n" +
-                          "<COST_TRX_SALE>"+FormateNumeros(RI1_COST_TRX_SALE)+"</COST_TRX_SALE>\n" +
-                          "<DPN_FOR_YEAR>"+FormateNumeros(RI1_DPN_FOR_YEAR)+"</DPN_FOR_YEAR>\n" +
-                          "<DPN_DISPOSALS>"+FormateNumeros(RI1_DPN_DISPOSALS)+"</DPN_DISPOSALS>\n" +
-                          "<MF_RESULTADOS>"+FormateNumeros(RI1_MF_RES)+"</MF_RESULTADOS>\n"+
-                         "<MF_BALANCE>"+FormateNumeros(RI1_MF_BALANCE)+"</MF_BALANCE>\n"+
-                         "<COST_BALANCE>"+FormateNumeros(RI1_COST_BALANCE)+"</COST_BALANCE>\n"+
-                         "<DPN_BALANCE>"+FormateNumeros(RI1_DPN_INI_BAL)+"</DPN_BALANCE>\n"+
-                         "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(RI1_TOTAL_I_BLN)+"</TOTAL_INITIAL_BALANCE>\n"+
-                         "<TOTAL_FINAL_BALANCE>"+FormateNumeros(RI1_TOTAL_F_BLN)+"</TOTAL_FINAL_BALANCE>\n"+
-                         "<AJUSTE>"+FormateNumeros(RI1_AJUSTE)+"</AJUSTE>\n"+
+                          "<COST_INITIAL_BALANCE>"+FormateNumeros(RI1_COST_INITIAL_BALANCE.trim())+"</COST_INITIAL_BALANCE>\n" +
+                          "<DPRN_INITIAL_BALANCE>"+FormateNumeros(RI1_DPRN_INITIAL_BALANCE.trim())+"</DPRN_INITIAL_BALANCE>\n" +
+                          "<COST_ADDITIONS>"+FormateNumeros(RI1_COST_ADDITIONS.trim())+"</COST_ADDITIONS>\n" +
+                          "<COST_DISPOSALS>"+FormateNumeros(RI1_COST_DISPOSALS.trim())+"</COST_DISPOSALS>\n" +
+                          "<COST_TRX_SALE>"+FormateNumeros(RI1_COST_TRX_SALE.trim())+"</COST_TRX_SALE>\n" +
+                          "<DPN_FOR_YEAR>"+FormateNumeros(RI1_DPN_FOR_YEAR.trim())+"</DPN_FOR_YEAR>\n" +
+                          "<DPN_DISPOSALS>"+FormateNumeros(RI1_DPN_DISPOSALS.trim())+"</DPN_DISPOSALS>\n" +
+                          "<MF_RESULTADOS>"+FormateNumeros(RI1_MF_RES.trim())+"</MF_RESULTADOS>\n"+
+                         "<MF_BALANCE>"+FormateNumeros(RI1_MF_BALANCE.trim())+"</MF_BALANCE>\n"+
+                         "<COST_BALANCE>"+FormateNumeros(RI1_COST_BALANCE.trim())+"</COST_BALANCE>\n"+
+                         "<DPN_BALANCE>"+FormateNumeros(RI1_DPN_INI_BAL.trim())+"</DPN_BALANCE>\n"+
+                         "<TOTAL_INITIAL_BALANCE>"+FormateNumeros(RI1_TOTAL_I_BLN.trim())+"</TOTAL_INITIAL_BALANCE>\n"+
+                         "<TOTAL_FINAL_BALANCE>"+FormateNumeros(RI1_TOTAL_F_BLN.trim())+"</TOTAL_FINAL_BALANCE>\n"+
+                         "<AJUSTE>"+FormateNumeros(RI1_AJUSTE.trim())+"</AJUSTE>\n"+
                           "</RUBROI1>\n" +
                           "</XXGAM_SAF_WS_MASTER_PKG>\n";
            
