@@ -349,6 +349,12 @@ public  class XxGamReadExcel {
     public static String FormateNumeros(String text)
         {
              text = text.replace(",", "").trim();
+            int test = text.indexOf(".");
+            if(test!= -1)
+                    {
+                        text= text.substring(0,test+2);
+                        return text;
+                    }
                return text;
         }
     public static Double FormatForDouble(String ntext)
@@ -1361,6 +1367,10 @@ public  class XxGamReadExcel {
     } 
    
   }
+  
+  
+  
+  
     /** END  public void readExcelInputStream(java.io.InputStream pInputStream) { **/
     
     /**
@@ -1500,7 +1510,7 @@ public  class XxGamReadExcel {
                         cellAuxUP = hoja.getCell(0,1);
                         auxPromptA=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,2);
-                        auxPromptB=cellAuxUP.getContents().trim();
+                        auxPromptB=cellAuxUP.getContents().trim().replace("  ","");
                         cellAuxUP = hoja.getCell(0,3);
                         auxPromptC=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,5);
