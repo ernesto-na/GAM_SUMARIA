@@ -353,9 +353,9 @@ public  class XxGamReadExcel {
             if(test!= -1)
                     {
                         text= text.substring(0,test+2);
-                        return text;
+                        return text.trim();
                     }
-               return text;
+               return text.trim();
         }
     public static Double FormatForDouble(String ntext)
        {
@@ -1510,7 +1510,7 @@ public  class XxGamReadExcel {
                         cellAuxUP = hoja.getCell(0,1);
                         auxPromptA=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,2);
-                        auxPromptB=cellAuxUP.getContents().trim().replace("  ","");
+                        auxPromptB=cellAuxUP.getContents().trim().replace(" ","");
                         cellAuxUP = hoja.getCell(0,3);
                         auxPromptC=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,5);

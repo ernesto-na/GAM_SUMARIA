@@ -159,6 +159,9 @@ public class XxGamSumariaCO extends OAControllerImpl
             System.out.println("Se ejecuta el metodo upLoadFile");
              upLoadFile(auxParam,pageContext,webBean); 
              
+            /*OAException confirmMessage = new OAException("Se actualizo correctamente", OAException.CONFIRMATION);
+            pageContext.putDialogMessage(confirmMessage);*/
+             
             //upLoadFile("N3:MessageFileUpload:0",pageContext,webBean); 
             System.out.println("Se refresca la pagina...");
              /*Se refresca la pag*/
@@ -172,6 +175,7 @@ public class XxGamSumariaCO extends OAControllerImpl
              OAWebBeanConstants.IGNORE_MESSAGES);  
             System.out.println("....pagina refrescada");
         }
+        
         
          
           
