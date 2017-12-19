@@ -34,6 +34,33 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     }
     
     /**
+     * Metodo que borra la tabla SAF_FLUJO_EFECTIVO
+     */
+     public void deleteFlujoEfectivo(String uOper,String p_final) {
+         OADBTransaction oaDBTransaction =  this.getOADBTransaction();
+         Connection connection = oaDBTransaction.getJdbcConnection();
+            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'");
+            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'";
+         PreparedStatement prepStmt;
+         
+         try {
+           prepStmt = connection.prepareStatement(strPrepStmt);
+           prepStmt.execute();
+           System.out.println(strPrepStmt);
+           oaDBTransaction.commit();
+           if(prepStmt!=null){
+               prepStmt.close();
+           }
+             System.out.println("Tabla borrada exitosamente..");
+         } catch (SQLException e) {
+             System.out.println("No se ha podido borrar los registros");
+         }
+         
+     }
+    
+    
+    
+    /**
      * Metodo que actualiza la tabla de la operacion sumaria
      */
     
@@ -68,75 +95,441 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
              }
         }       
     
-     
+     public String formatNumbers(String mNumber){
+         if("".equals(mNumber)){
+             mNumber="0";
+         }
+         return mNumber;
+     }
         
     /**
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
      */
      public void exec_insert(String uOp,String id_r,String rubro,String periodo_inicial,String periodo_final,String COST_SALDO_INICIAL,String DPRN_INITIAL_BALANCE,String COST_ADDITIONS,String COST_BAJAS,String COST_TRANSFERS_SALE,String DPN_DEPRECIACION,String DPN_BAJAS,String DPN_VAR_TIP_CAMBIO,String COST_VAR_TIP_CAMBIO,String COST_SALDO_FINAL,String DPN_SALDO_FINAL ) {
-         
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
              System.out.print("u_op: "+uOp+" \nid_r: "+id_r+" \nrubro: "+rubro+" \nperiodo_inicial: "+periodo_inicial+" \nperiodo_final: "+periodo_final+" \nR1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" \nDPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " \nCOST_ADDITIONS "+COST_ADDITIONS+" \nCOST_BAJAS "+COST_BAJAS+ " \nCOST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" \nDPN_DEPRECIACION "+DPN_DEPRECIACION
              +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
-             
-             
                OADBTransaction oaDBTransaction =  this.getOADBTransaction();
                Connection connection = oaDBTransaction.getJdbcConnection();
                
              String rubroInitBal = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
-                                                                        "RUBRO,PERIODO_INICIAL," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
                                                                         "PERIODO_FINAL," +
                                                                         "TIPO_SALDO," +
                                                                         "MONTO," +
                                                                         "CREATED_BY," +
                                                                         "CREATION_DATE," +
                                                                         "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
                                                                         "PROGRAM_UPDATE_DATE)" +
-                                    "VALUES (XX_INSERT_DEMO_S.NEXTVAL," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "?," +
-                                    "COST_SALDO_INICIAL," +
-                                    "?," +
-                                    "user," +
-                                    "sysdate," +
-                                    "sysdate," +
-                                    "9999," +
-                                    "999," +
-                                    "999)";
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_SALDO_INICIAL',"+
+                                                                        "nvl("+formatNumbers(COST_SALDO_INICIAL)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroDPRN_INITIAL_BALANCE = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'DPN_SALDO_INICIAL',"+
+                                                                        "nvl("+formatNumbers(DPRN_INITIAL_BALANCE)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+                                                                
+             String rubroCOST_ADDITIONS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_ADDITIONS',"+
+                                                                        "nvl("+formatNumbers(COST_ADDITIONS)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroCOST_BAJAS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_BAJAS',"+
+                                                                        "nvl("+formatNumbers(COST_BAJAS)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroCOST_TRANSFERS_SALE = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_TRANSFERS_SALE',"+
+                                                                        "nvl("+formatNumbers(COST_TRANSFERS_SALE)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+                                                                        
+             String rubroDPN_DEPRECIACION = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'DPN_DEPRECIACION',"+
+                                                                        "nvl("+formatNumbers(DPN_DEPRECIACION)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroDPN_BAJAS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'DPN_BAJAS',"+
+                                                                        "nvl("+formatNumbers(DPN_BAJAS)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroDPN_VAR_TIP_CAMBIO = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'DPN_VAR_TIP_CAMBIO',"+
+                                                                        "nvl("+formatNumbers(DPN_VAR_TIP_CAMBIO)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroCOST_VAR_TIP_CAMBIO = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_VAR_TIP_CAMBIO',"+
+                                                                        "nvl("+formatNumbers(COST_VAR_TIP_CAMBIO)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroCOST_SALDO_FINAL = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'COST_SALDO_FINAL',"+
+                                                                        "nvl("+formatNumbers(COST_SALDO_FINAL)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";
+             String rubroDPN_SALDO_FINAL = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
+                                                                        "EMPRESA," +
+                                                                        "ID_RUBRO," +
+                                                                        "RUBRO," +
+                                                                        "PERIODO_INICIAL," +
+                                                                        "PERIODO_FINAL," +
+                                                                        "TIPO_SALDO," +
+                                                                        "MONTO," +
+                                                                        "CREATED_BY," +
+                                                                        "CREATION_DATE," +
+                                                                        "LAST_UPDATED_BY," +
+                                                                        "LAST_UPDATE_DATE," +
+                                                                        "LAST_UPDATE_LOGIN," +
+                                                                        "REQUEST_ID," +
+                                                                        "PROGRAM_APPLICATION_ID," +
+                                                                        "PROGRAM_ID," +
+                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
+                                                                        +"'"+uOp+"',"+
+                                                                        "'"+id_r+"',"+
+                                                                        "'"+rubro+"',"+
+                                                                        "'"+periodo_inicial+"',"+
+                                                                        "'"+periodo_final+"',"+
+                                                                        "'DPN_SALDO_FINAL',"+
+                                                                        "nvl("+formatNumbers(DPN_SALDO_FINAL)+",0),"+
+                                                                        "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
+                                                                        "sysdate," +                                         /* CREATION_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('USER_ID')),-1)," +  /* LAST_UPDATED_BY */
+                                                                        "sysdate," +                                       /* LAST_UPDATE_DATE */ 
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('LOGIN_ID')),-1)," + /* LAST_UPDATE_LOGIN */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
+                                                                        "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
+                                                                        "sysdate)";                                                                        
+                                                                        
+             insert_saf_flujo_efec(rubroInitBal); 
+             insert_saf_flujo_efec(rubroDPRN_INITIAL_BALANCE);
+             insert_saf_flujo_efec(rubroCOST_ADDITIONS);
+             insert_saf_flujo_efec(rubroCOST_BAJAS);
+             insert_saf_flujo_efec(rubroCOST_TRANSFERS_SALE);
              
-             PreparedStatement prepStmt;
-
-            try {
-                 prepStmt = connection.prepareStatement(rubroInitBal);
-                 prepStmt.setString(1, uOp);
-                 prepStmt.setString(2, id_r);
-                 prepStmt.setString(3, rubro);
-                 prepStmt.setString(4, periodo_inicial);
-                 prepStmt.setString(5, periodo_final);
-                 prepStmt.setString(6, COST_SALDO_INICIAL);
-                 //prepStmt.execute();
-                 System.out.println(rubroInitBal);
-                 //oaDBTransaction.commit();
-                 if(prepStmt!=null){
-                     prepStmt.close();
-                 }
-                // throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
-             } catch (SQLException e) {
-                 System.out.println("Falla al insertar: "+ e.getMessage());
-                  //throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
-             }
+             insert_saf_flujo_efec(rubroDPN_DEPRECIACION);
+             insert_saf_flujo_efec(rubroDPN_BAJAS);
+             
+             insert_saf_flujo_efec(rubroDPN_VAR_TIP_CAMBIO);
+             insert_saf_flujo_efec(rubroCOST_VAR_TIP_CAMBIO);
+             insert_saf_flujo_efec(rubroCOST_SALDO_FINAL);
+             
+             insert_saf_flujo_efec(rubroDPN_SALDO_FINAL);
+            
+           
          }
 
-         
+                   public void insert_saf_flujo_efec(String strPrepStmt ) {
+                             /* Java Programming */
+                             /* Obtener el Controlador (Driver) para conectarse a la base de datos */
+                           System.out.println("__"+strPrepStmt);
+                             OADBTransaction oaDBTransaction =  this.getOADBTransaction();
+                             Connection connection = oaDBTransaction.getJdbcConnection();
+                           PreparedStatement prepStmt;
+                          try {
+                               prepStmt = connection.prepareStatement(strPrepStmt);
+                               prepStmt.execute();
+                               //System.out.println(rubroInitBal);
+                               oaDBTransaction.commit();
+                               if(prepStmt!=null){
+                                   prepStmt.close();
+                               }
+                              // throw new OAException("Se inserta exitosamente "+column1+" "+column2+" "+column3,OAException.CONFIRMATION);
+                           } catch (SQLException e) {
+                               System.out.println("Falla al insertar: "+ e.getMessage());
+                                //throw new OAException("No se registra cambio para:"+column1+" "+column2+" "+column3,OAException.ERROR);
+                           }
+                       }
+  
          
          
     /**Container's getter for XxGamSafOmTblVO1
