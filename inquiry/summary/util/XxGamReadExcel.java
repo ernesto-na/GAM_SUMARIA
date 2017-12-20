@@ -349,14 +349,38 @@ public  class XxGamReadExcel {
     public static String FormateNumeros(String text)
         {
              text = text.replace(",", "").trim();
-             text = text.replace("?","").trim();
             int test = text.indexOf(".");
-            if(test!= -1)
+            String cadenaVerificada="";//. --46
+            /*if(test!= -1)
                     {
                         text= text.substring(0,test+2);
                         return text.trim();
                     }
-               return text.trim();
+               return text.trim();*/
+             for(int i=0;i<text.length();i++){
+                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46 ){
+                          cadenaVerificada=cadenaVerificada+text.charAt(i);     
+                        }   
+                    }   
+             return cadenaVerificada;    
+        }
+    public static String FormateLimpCadenas(String text)
+        {
+             text = text.replace(",", "").trim();
+            int test = text.indexOf(".");
+            String cadenaVerificada="";//. --46
+            /*if(test!= -1)
+                    {
+                        text= text.substring(0,test+2);
+                        return text.trim();
+                    }
+               return text.trim();*/
+             for(int i=0;i<text.length();i++){
+                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46||(text.codePointAt(i)>=65 && text.codePointAt(i)<=122) ){
+                          cadenaVerificada=cadenaVerificada+text.charAt(i);     
+                        }   
+                    }   
+             return cadenaVerificada;    
         }
     public static Double FormatForDouble(String ntext)
        {
@@ -1512,6 +1536,7 @@ public  class XxGamReadExcel {
                         auxPromptA=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,2);
                         auxPromptB=cellAuxUP.getContents().trim();
+                        //auxPromptB=FormateLimpCadenas(auxPromptB);
                         cellAuxUP = hoja.getCell(0,3);
                         auxPromptC=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,5);
