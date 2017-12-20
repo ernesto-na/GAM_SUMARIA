@@ -205,7 +205,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "'"+rubro+"',"+
                                                                         "'"+periodo_inicial+"',"+
                                                                         "'"+periodo_final+"',"+
-                                                                        "'COST_ADDITIONS',"+
+                                                                        "'COST_ADQUISICIONES',"+
                                                                         "nvl("+formatNumbers(COST_ADDITIONS)+",0),"+
                                                                         "nvl(TO_NUMBER (FND_PROFILE.VALUE('USER_ID')),-1)," +  /* CREATED_BY */ 
                                                                         "sysdate," +                                         /* CREATION_DATE */ 

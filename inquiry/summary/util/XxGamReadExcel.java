@@ -349,6 +349,7 @@ public  class XxGamReadExcel {
     public static String FormateNumeros(String text)
         {
              text = text.replace(",", "").trim();
+             text = text.replace("?","").trim();
             int test = text.indexOf(".");
             if(test!= -1)
                     {
@@ -1510,7 +1511,7 @@ public  class XxGamReadExcel {
                         cellAuxUP = hoja.getCell(0,1);
                         auxPromptA=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,2);
-                        auxPromptB=cellAuxUP.getContents().trim().replace(" ","");
+                        auxPromptB=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,3);
                         auxPromptC=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,5);
