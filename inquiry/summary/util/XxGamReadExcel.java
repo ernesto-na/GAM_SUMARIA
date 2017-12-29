@@ -358,7 +358,7 @@ public  class XxGamReadExcel {
                     }
                return text.trim();*/
              for(int i=0;i<text.length();i++){
-                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46 ){
+                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57)|| text.codePointAt(i)==45 || text.codePointAt(i)==46 ){
                           cadenaVerificada=cadenaVerificada+text.charAt(i);     
                         }   
                     }   

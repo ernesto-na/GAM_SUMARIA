@@ -89,9 +89,9 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                if(prepStmt!=null){
                    prepStmt.close();
                }
-               throw new OAException("Se actualizo exitosamente ",OAException.INFORMATION);
+               throw new OAException("Se actualizo exitosamente ",OAException.CONFIRMATION);
              } catch (SQLException e) {
-                throw new OAException("No se actualizo el registro:",OAException.ERROR);
+                throw new OAException("No se actualizo el registro:"+e.getMessage(),OAException.ERROR);
              }
         }       
     
