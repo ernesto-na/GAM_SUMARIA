@@ -384,6 +384,20 @@ public  class XxGamReadExcel {
         }
     public static Double FormatForDouble(String ntext)
        {
+       String cadenaVerificada="0";
+       if((ntext == null || "".equals(ntext))){
+           ntext="0";
+       }
+           
+       /*elimina caracteres raros, mantiene solo puntos , signo negativo y numeros del 0 al 9 */
+        for(int i=0;i<ntext.length();i++){
+                   if((ntext.codePointAt(i)>=48 && ntext.codePointAt(i)<=57) || ntext.codePointAt(i)==46||(ntext.codePointAt(i)>=65 && ntext.codePointAt(i)<=122) ){
+                     cadenaVerificada=cadenaVerificada+ntext.charAt(i);     
+                   }   
+               }   
+        ntext=cadenaVerificada;       
+               
+               
         Locale.setDefault(Locale.US);
         ntext = ntext.replace(",", "");
         double value = Double.parseDouble(ntext);
@@ -699,215 +713,338 @@ public  class XxGamReadExcel {
             return auxTemplate;
        }
     public static void SetTotals(){
-        RT_COST_INITIAL_BALANCE=conversion(FormatForDouble(R1_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R2_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R3_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R4_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R5_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R6_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R7_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R8_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R9_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R10_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R11_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R12_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R13_COST_INITIAL_BALANCE)
-                                        +FormatForDouble(R14_COST_INITIAL_BALANCE));
+        try
+        {
+            RT_COST_INITIAL_BALANCE=conversion(FormatForDouble(R1_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R2_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R3_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R4_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R5_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R6_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R7_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R8_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R9_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R10_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R11_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R12_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R13_COST_INITIAL_BALANCE)
+                                            +FormatForDouble(R14_COST_INITIAL_BALANCE));
+        }
+        catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        try
+        {
+            RT_DPRN_INITIAL_BALANCE     =  conversion(FormatForDouble(R1_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R2_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R3_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R4_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R5_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R6_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R7_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R8_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R9_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R10_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R11_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R12_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R13_DPRN_INITIAL_BALANCE)
+                                           +FormatForDouble(R14_DPRN_INITIAL_BALANCE));
+        }
+        catch(Exception ex) {
+            System.out.println("RT_DPRN_INITIAL_BALANCE "+ex.getMessage());
+        }
+       
       
         
-         RT_DPRN_INITIAL_BALANCE     =  conversion(FormatForDouble(R1_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R2_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R3_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R4_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R5_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R6_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R7_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R8_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R9_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R10_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R11_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R12_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R13_DPRN_INITIAL_BALANCE)
-                                        +FormatForDouble(R14_DPRN_INITIAL_BALANCE));
+         
                                         
-        RT_COST_ADDITIONS =           conversion(FormatForDouble(R1_COST_ADDITIONS)
-                                        +FormatForDouble(R2_COST_ADDITIONS)
-                                        +FormatForDouble(R3_COST_ADDITIONS)
-                                        +FormatForDouble(R4_COST_ADDITIONS)
-                                        +FormatForDouble(R5_COST_ADDITIONS)
-                                        +FormatForDouble(R6_COST_ADDITIONS)
-                                        +FormatForDouble(R7_COST_ADDITIONS)
-                                        +FormatForDouble(R8_COST_ADDITIONS)
-                                        +FormatForDouble(R9_COST_ADDITIONS)
-                                        +FormatForDouble(R10_COST_ADDITIONS)
-                                        +FormatForDouble(R11_COST_ADDITIONS)
-                                        +FormatForDouble(R12_COST_ADDITIONS)
-                                        +FormatForDouble(R13_COST_ADDITIONS)
-                                        +FormatForDouble(R14_COST_ADDITIONS));    
+        try
+        {
+            RT_COST_ADDITIONS =           conversion(FormatForDouble(R1_COST_ADDITIONS)
+                                            +FormatForDouble(R2_COST_ADDITIONS)
+                                            +FormatForDouble(R3_COST_ADDITIONS)
+                                            +FormatForDouble(R4_COST_ADDITIONS)
+                                            +FormatForDouble(R5_COST_ADDITIONS)
+                                            +FormatForDouble(R6_COST_ADDITIONS)
+                                            +FormatForDouble(R7_COST_ADDITIONS)
+                                            +FormatForDouble(R8_COST_ADDITIONS)
+                                            +FormatForDouble(R9_COST_ADDITIONS)
+                                            +FormatForDouble(R10_COST_ADDITIONS)
+                                            +FormatForDouble(R11_COST_ADDITIONS)
+                                            +FormatForDouble(R12_COST_ADDITIONS)
+                                            +FormatForDouble(R13_COST_ADDITIONS)
+                                            +FormatForDouble(R14_COST_ADDITIONS));   
+        }
+        catch(Exception ex) {
+            System.out.println("RT_COST_ADDITIONS"+ex.getMessage());
+        }                                        
                                         
-        RT_COST_DISPOSALS      =   conversion(FormatForDouble(R1_COST_DISPOSALS)
-                                        +FormatForDouble(R2_COST_DISPOSALS)
-                                        +FormatForDouble(R3_COST_DISPOSALS)
-                                        +FormatForDouble(R4_COST_DISPOSALS)
-                                        +FormatForDouble(R5_COST_DISPOSALS)
-                                        +FormatForDouble(R6_COST_DISPOSALS)
-                                        +FormatForDouble(R7_COST_DISPOSALS)
-                                        +FormatForDouble(R8_COST_DISPOSALS)
-                                        +FormatForDouble(R9_COST_DISPOSALS)
-                                        +FormatForDouble(R10_COST_DISPOSALS)
-                                        +FormatForDouble(R11_COST_DISPOSALS)
-                                        +FormatForDouble(R12_COST_DISPOSALS)
-                                        +FormatForDouble(R13_COST_DISPOSALS)
-                                        +FormatForDouble(R14_COST_DISPOSALS));
-         
-         RT_COST_TRX_SALE   =  conversion(FormatForDouble(R1_COST_TRX_SALE)
-                                        +FormatForDouble(R2_COST_TRX_SALE)
-                                        +FormatForDouble(R3_COST_TRX_SALE)
-                                        +FormatForDouble(R4_COST_TRX_SALE)
-                                        +FormatForDouble(R5_COST_TRX_SALE)
-                                        +FormatForDouble(R6_COST_TRX_SALE)
-                                        +FormatForDouble(R7_COST_TRX_SALE)
-                                        +FormatForDouble(R8_COST_TRX_SALE)
-                                        +FormatForDouble(R9_COST_TRX_SALE)
-                                        +FormatForDouble(R10_COST_TRX_SALE)
-                                        +FormatForDouble(R11_COST_TRX_SALE)
-                                        +FormatForDouble(R12_COST_TRX_SALE)
-                                        +FormatForDouble(R13_COST_TRX_SALE)
-                                        +FormatForDouble(R14_COST_TRX_SALE)); 
-         
-         
-         
-         
-         RT_DPN_FOR_YEAR        = conversion(FormatForDouble(R1_DPN_FOR_YEAR)
-                                        +FormatForDouble(R2_DPN_FOR_YEAR)
-                                        +FormatForDouble(R3_DPN_FOR_YEAR)
-                                        +FormatForDouble(R4_DPN_FOR_YEAR)
-                                        +FormatForDouble(R5_DPN_FOR_YEAR)
-                                        +FormatForDouble(R6_DPN_FOR_YEAR)
-                                        +FormatForDouble(R7_DPN_FOR_YEAR)
-                                        +FormatForDouble(R8_DPN_FOR_YEAR)
-                                        +FormatForDouble(R9_DPN_FOR_YEAR)
-                                        +FormatForDouble(R10_DPN_FOR_YEAR)
-                                        +FormatForDouble(R11_DPN_FOR_YEAR)
-                                        +FormatForDouble(R12_DPN_FOR_YEAR)
-                                        +FormatForDouble(R13_DPN_FOR_YEAR)
-                                        +FormatForDouble(R14_DPN_FOR_YEAR));
+        
+        try
+        {
+            RT_COST_DISPOSALS      =   conversion(FormatForDouble(R1_COST_DISPOSALS)
+                                            +FormatForDouble(R2_COST_DISPOSALS)
+                                            +FormatForDouble(R3_COST_DISPOSALS)
+                                            +FormatForDouble(R4_COST_DISPOSALS)
+                                            +FormatForDouble(R5_COST_DISPOSALS)
+                                            +FormatForDouble(R6_COST_DISPOSALS)
+                                            +FormatForDouble(R7_COST_DISPOSALS)
+                                            +FormatForDouble(R8_COST_DISPOSALS)
+                                            +FormatForDouble(R9_COST_DISPOSALS)
+                                            +FormatForDouble(R10_COST_DISPOSALS)
+                                            +FormatForDouble(R11_COST_DISPOSALS)
+                                            +FormatForDouble(R12_COST_DISPOSALS)
+                                            +FormatForDouble(R13_COST_DISPOSALS)
+                                            +FormatForDouble(R14_COST_DISPOSALS));
+        }
+        catch(Exception ex) {
+            System.out.println("RT_COST_DISPOSALS "+ex.getMessage());
+        }
                                         
-         RT_DPN_DISPOSALS  =     conversion(FormatForDouble(R1_DPN_DISPOSALS)
-                                        +FormatForDouble(R2_DPN_DISPOSALS)
-                                        +FormatForDouble(R3_DPN_DISPOSALS)
-                                        +FormatForDouble(R4_DPN_DISPOSALS)
-                                        +FormatForDouble(R5_DPN_DISPOSALS)
-                                        +FormatForDouble(R6_DPN_DISPOSALS)
-                                        +FormatForDouble(R7_DPN_DISPOSALS)
-                                        +FormatForDouble(R8_DPN_DISPOSALS)
-                                        +FormatForDouble(R9_DPN_DISPOSALS)
-                                        +FormatForDouble(R10_DPN_DISPOSALS)
-                                        +FormatForDouble(R11_DPN_DISPOSALS)
-                                        +FormatForDouble(R12_DPN_DISPOSALS)
-                                        +FormatForDouble(R13_DPN_DISPOSALS)
-                                        +FormatForDouble(R14_DPN_DISPOSALS)); 
+       
+        try
+        {
+            RT_COST_TRX_SALE   =  conversion(FormatForDouble(R1_COST_TRX_SALE)
+                                           +FormatForDouble(R2_COST_TRX_SALE)
+                                           +FormatForDouble(R3_COST_TRX_SALE)
+                                           +FormatForDouble(R4_COST_TRX_SALE)
+                                           +FormatForDouble(R5_COST_TRX_SALE)
+                                           +FormatForDouble(R6_COST_TRX_SALE)
+                                           +FormatForDouble(R7_COST_TRX_SALE)
+                                           +FormatForDouble(R8_COST_TRX_SALE)
+                                           +FormatForDouble(R9_COST_TRX_SALE)
+                                           +FormatForDouble(R10_COST_TRX_SALE)
+                                           +FormatForDouble(R11_COST_TRX_SALE)
+                                           +FormatForDouble(R12_COST_TRX_SALE)
+                                           +FormatForDouble(R13_COST_TRX_SALE)
+                                           +FormatForDouble(R14_COST_TRX_SALE)); 
+            
+        }
+        catch(Exception ex) {
+            System.out.println("RT_COST_TRX_SALE: "+ex.getMessage());
+        }
+        
+         
+        try
+        {
+            RT_DPN_FOR_YEAR        = conversion(FormatForDouble(R1_DPN_FOR_YEAR)
+                                           +FormatForDouble(R2_DPN_FOR_YEAR)
+                                           +FormatForDouble(R3_DPN_FOR_YEAR)
+                                           +FormatForDouble(R4_DPN_FOR_YEAR)
+                                           +FormatForDouble(R5_DPN_FOR_YEAR)
+                                           +FormatForDouble(R6_DPN_FOR_YEAR)
+                                           +FormatForDouble(R7_DPN_FOR_YEAR)
+                                           +FormatForDouble(R8_DPN_FOR_YEAR)
+                                           +FormatForDouble(R9_DPN_FOR_YEAR)
+                                           +FormatForDouble(R10_DPN_FOR_YEAR)
+                                           +FormatForDouble(R11_DPN_FOR_YEAR)
+                                           +FormatForDouble(R12_DPN_FOR_YEAR)
+                                           +FormatForDouble(R13_DPN_FOR_YEAR)
+                                           +FormatForDouble(R14_DPN_FOR_YEAR));
+        }
+        catch(Exception ex) {
+            System.out.println(" RT_DPN_FOR_YEAR"+ex.getMessage());
+        }
+         
+         
+         
+        try
+        {
+            RT_DPN_DISPOSALS  =     conversion(FormatForDouble(R1_DPN_DISPOSALS)
+                                           +FormatForDouble(R2_DPN_DISPOSALS)
+                                           +FormatForDouble(R3_DPN_DISPOSALS)
+                                           +FormatForDouble(R4_DPN_DISPOSALS)
+                                           +FormatForDouble(R5_DPN_DISPOSALS)
+                                           +FormatForDouble(R6_DPN_DISPOSALS)
+                                           +FormatForDouble(R7_DPN_DISPOSALS)
+                                           +FormatForDouble(R8_DPN_DISPOSALS)
+                                           +FormatForDouble(R9_DPN_DISPOSALS)
+                                           +FormatForDouble(R10_DPN_DISPOSALS)
+                                           +FormatForDouble(R11_DPN_DISPOSALS)
+                                           +FormatForDouble(R12_DPN_DISPOSALS)
+                                           +FormatForDouble(R13_DPN_DISPOSALS)
+                                           +FormatForDouble(R14_DPN_DISPOSALS));    
+        }
+        catch(Exception ex) {
+            System.out.println("RT_DPN_DISPOSALS "+ex.getMessage());
+        }                                        
                                         
-         RT_MF_BALANCE = conversion(FormatForDouble(R1_MF_BALANCE)
-                                        +FormatForDouble(R2_MF_BALANCE)
-                                        +FormatForDouble(R3_MF_BALANCE)
-                                        +FormatForDouble(R4_MF_BALANCE)
-                                        +FormatForDouble(R5_MF_BALANCE)
-                                        +FormatForDouble(R6_MF_BALANCE)
-                                        +FormatForDouble(R7_MF_BALANCE)
-                                        +FormatForDouble(R8_MF_BALANCE)
-                                        +FormatForDouble(R9_MF_BALANCE)
-                                        +FormatForDouble(R10_MF_BALANCE)
-                                        +FormatForDouble(R11_MF_BALANCE)
-                                        +FormatForDouble(R12_MF_BALANCE)
-                                        +FormatForDouble(R13_MF_BALANCE)
-                                        +FormatForDouble(R14_MF_BALANCE)); 
+         
+        try
+        {
+            RT_MF_BALANCE = conversion(FormatForDouble(R1_MF_BALANCE)
+                                           +FormatForDouble(R2_MF_BALANCE)
+                                           +FormatForDouble(R3_MF_BALANCE)
+                                           +FormatForDouble(R4_MF_BALANCE)
+                                           +FormatForDouble(R5_MF_BALANCE)
+                                           +FormatForDouble(R6_MF_BALANCE)
+                                           +FormatForDouble(R7_MF_BALANCE)
+                                           +FormatForDouble(R8_MF_BALANCE)
+                                           +FormatForDouble(R9_MF_BALANCE)
+                                           +FormatForDouble(R10_MF_BALANCE)
+                                           +FormatForDouble(R11_MF_BALANCE)
+                                           +FormatForDouble(R12_MF_BALANCE)
+                                           +FormatForDouble(R13_MF_BALANCE)
+                                           +FormatForDouble(R14_MF_BALANCE)); 
+        }
+        catch(Exception ex) {
+            System.out.println("RT_MF_BALANCE: "+ex.getMessage());
+        }
+                                        
+         
+        try
+        {
+            RT_MF_RES =  conversion(FormatForDouble(R1_MF_RES)
+                                            +FormatForDouble(R2_MF_RES)
+                                            +FormatForDouble(R3_MF_RES)
+                                            +FormatForDouble(R4_MF_RES)
+                                            +FormatForDouble(R5_MF_RES)
+                                            +FormatForDouble(R6_MF_RES)
+                                            +FormatForDouble(R7_MF_RES)
+                                            +FormatForDouble(R8_MF_RES)
+                                            +FormatForDouble(R9_MF_RES)
+                                            +FormatForDouble(R10_MF_RES)
+                                            +FormatForDouble(R11_MF_RES)
+                                            +FormatForDouble(R12_MF_RES)
+                                            +FormatForDouble(R13_MF_RES)
+                                            +FormatForDouble(R14_MF_RES));   
+        }
+        catch(Exception ex) {
+            System.out.println("RT_MF_RES"+ex.getMessage());
+        }
     
-        RT_MF_RES =  conversion(FormatForDouble(R1_MF_RES)
-                                        +FormatForDouble(R2_MF_RES)
-                                        +FormatForDouble(R3_MF_RES)
-                                        +FormatForDouble(R4_MF_RES)
-                                        +FormatForDouble(R5_MF_RES)
-                                        +FormatForDouble(R6_MF_RES)
-                                        +FormatForDouble(R7_MF_RES)
-                                        +FormatForDouble(R8_MF_RES)
-                                        +FormatForDouble(R9_MF_RES)
-                                        +FormatForDouble(R10_MF_RES)
-                                        +FormatForDouble(R11_MF_RES)
-                                        +FormatForDouble(R12_MF_RES)
-                                        +FormatForDouble(R13_MF_RES)
-                                        +FormatForDouble(R14_MF_RES)); 
+        
+        try
+        {
+            RT_COST_BALANCE =  conversion(FormatForDouble(R1_COST_BALANCE)
+                                           +FormatForDouble(R2_COST_BALANCE)
+                                           +FormatForDouble(R3_COST_BALANCE)
+                                           +FormatForDouble(R4_COST_BALANCE)
+                                           +FormatForDouble(R5_COST_BALANCE)
+                                           +FormatForDouble(R6_COST_BALANCE)
+                                           +FormatForDouble(R7_COST_BALANCE)
+                                           +FormatForDouble(R8_COST_BALANCE)
+                                           +FormatForDouble(R9_COST_BALANCE)
+                                           +FormatForDouble(R10_COST_BALANCE)
+                                           +FormatForDouble(R11_COST_BALANCE)
+                                           +FormatForDouble(R12_COST_BALANCE)
+                                           +FormatForDouble(R13_COST_BALANCE)
+                                           +FormatForDouble(R14_COST_BALANCE)); 
+        }
+        catch(Exception ex) {
+            System.out.println("RT_COST_BALANCE: "+ex.getMessage());
+        }
          
-         RT_COST_BALANCE =  conversion(FormatForDouble(R1_COST_BALANCE)
-                                        +FormatForDouble(R2_COST_BALANCE)
-                                        +FormatForDouble(R3_COST_BALANCE)
-                                        +FormatForDouble(R4_COST_BALANCE)
-                                        +FormatForDouble(R5_COST_BALANCE)
-                                        +FormatForDouble(R6_COST_BALANCE)
-                                        +FormatForDouble(R7_COST_BALANCE)
-                                        +FormatForDouble(R8_COST_BALANCE)
-                                        +FormatForDouble(R9_COST_BALANCE)
-                                        +FormatForDouble(R10_COST_BALANCE)
-                                        +FormatForDouble(R11_COST_BALANCE)
-                                        +FormatForDouble(R12_COST_BALANCE)
-                                        +FormatForDouble(R13_COST_BALANCE)
-                                        +FormatForDouble(R14_COST_BALANCE)); 
-         RT_DPN_INI_BAL = conversion(FormatForDouble(R1_DPN_INI_BAL)
-                                        +FormatForDouble(R2_DPN_INI_BAL)
-                                        +FormatForDouble(R3_DPN_INI_BAL)
-                                        +FormatForDouble(R4_DPN_INI_BAL)
-                                        +FormatForDouble(R5_DPN_INI_BAL)
-                                        +FormatForDouble(R6_DPN_INI_BAL)
-                                        +FormatForDouble(R7_DPN_INI_BAL)
-                                        +FormatForDouble(R8_DPN_INI_BAL)
-                                        +FormatForDouble(R9_DPN_INI_BAL)
-                                        +FormatForDouble(R10_DPN_INI_BAL)
-                                        +FormatForDouble(R11_DPN_INI_BAL)
-                                        +FormatForDouble(R12_DPN_INI_BAL)
-                                        +FormatForDouble(R13_DPN_INI_BAL)
-                                        +FormatForDouble(R14_DPN_INI_BAL)); 
-         RT_TOTAL_I_BLN =  conversion(FormatForDouble(R1_TOTAL_I_BLN)
-                                        +FormatForDouble(R2_TOTAL_I_BLN)
-                                        +FormatForDouble(R3_TOTAL_I_BLN)
-                                        +FormatForDouble(R4_TOTAL_I_BLN)
-                                        +FormatForDouble(R5_TOTAL_I_BLN)
-                                        +FormatForDouble(R6_TOTAL_I_BLN)
-                                        +FormatForDouble(R7_TOTAL_I_BLN)
-                                        +FormatForDouble(R8_TOTAL_I_BLN)
-                                        +FormatForDouble(R9_TOTAL_I_BLN)
-                                        +FormatForDouble(R10_TOTAL_I_BLN)
-                                        +FormatForDouble(R11_TOTAL_I_BLN)
-                                        +FormatForDouble(R12_TOTAL_I_BLN)
-                                        +FormatForDouble(R13_TOTAL_I_BLN)
-                                        +FormatForDouble(R14_TOTAL_I_BLN)); 
-         RT_TOTAL_F_BLN =   conversion(FormatForDouble(R1_TOTAL_F_BLN)
-                                        +FormatForDouble(R2_TOTAL_F_BLN)
-                                        +FormatForDouble(R3_TOTAL_F_BLN)
-                                        +FormatForDouble(R4_TOTAL_F_BLN)
-                                        +FormatForDouble(R5_TOTAL_F_BLN)
-                                        +FormatForDouble(R6_TOTAL_F_BLN)
-                                        +FormatForDouble(R7_TOTAL_F_BLN)
-                                        +FormatForDouble(R8_TOTAL_F_BLN)
-                                        +FormatForDouble(R9_TOTAL_F_BLN)
-                                        +FormatForDouble(R10_TOTAL_F_BLN)
-                                        +FormatForDouble(R11_TOTAL_F_BLN)
-                                        +FormatForDouble(R12_TOTAL_F_BLN)
-                                        +FormatForDouble(R13_TOTAL_F_BLN)
-                                        +FormatForDouble(R14_TOTAL_F_BLN)); 
-         RT_AJUSTE  =  conversion(FormatForDouble(R1_AJUSTE)
-                                        +FormatForDouble(R2_AJUSTE)
-                                        +FormatForDouble(R3_AJUSTE)
-                                        +FormatForDouble(R4_AJUSTE)
-                                        +FormatForDouble(R5_AJUSTE)
-                                        +FormatForDouble(R6_AJUSTE)
-                                        +FormatForDouble(R7_AJUSTE)
-                                        +FormatForDouble(R8_AJUSTE)
-                                        +FormatForDouble(R9_AJUSTE)
-                                        +FormatForDouble(R10_AJUSTE)
-                                        +FormatForDouble(R11_AJUSTE)
-                                        +FormatForDouble(R12_AJUSTE)
-                                        +FormatForDouble(R13_AJUSTE)
-                                        +FormatForDouble(R14_AJUSTE));                             
+         
+        try
+        {
+            RT_DPN_INI_BAL = conversion(FormatForDouble(R1_DPN_INI_BAL)
+                                           +FormatForDouble(R2_DPN_INI_BAL)
+                                           +FormatForDouble(R3_DPN_INI_BAL)
+                                           +FormatForDouble(R4_DPN_INI_BAL)
+                                           +FormatForDouble(R5_DPN_INI_BAL)
+                                           +FormatForDouble(R6_DPN_INI_BAL)
+                                           +FormatForDouble(R7_DPN_INI_BAL)
+                                           +FormatForDouble(R8_DPN_INI_BAL)
+                                           +FormatForDouble(R9_DPN_INI_BAL)
+                                           +FormatForDouble(R10_DPN_INI_BAL)
+                                           +FormatForDouble(R11_DPN_INI_BAL)
+                                           +FormatForDouble(R12_DPN_INI_BAL)
+                                           +FormatForDouble(R13_DPN_INI_BAL)
+                                           +FormatForDouble(R14_DPN_INI_BAL)); 
+        }
+        catch(Exception ex) {
+            System.out.println(" RT_DPN_INI_BAL "+ex.getMessage());
+        }
+         
+                                        
+        try
+        {
+            RT_TOTAL_I_BLN =  conversion(FormatForDouble(R1_TOTAL_I_BLN)
+                                           +FormatForDouble(R2_TOTAL_I_BLN)
+                                           +FormatForDouble(R3_TOTAL_I_BLN)
+                                           +FormatForDouble(R4_TOTAL_I_BLN)
+                                           +FormatForDouble(R5_TOTAL_I_BLN)
+                                           +FormatForDouble(R6_TOTAL_I_BLN)
+                                           +FormatForDouble(R7_TOTAL_I_BLN)
+                                           +FormatForDouble(R8_TOTAL_I_BLN)
+                                           +FormatForDouble(R9_TOTAL_I_BLN)
+                                           +FormatForDouble(R10_TOTAL_I_BLN)
+                                           +FormatForDouble(R11_TOTAL_I_BLN)
+                                           +FormatForDouble(R12_TOTAL_I_BLN)
+                                           +FormatForDouble(R13_TOTAL_I_BLN)
+                                           +FormatForDouble(R14_TOTAL_I_BLN));  
+        }
+        catch(Exception ex) {
+            System.out.println("RT_TOTAL_I_BLN: "+ex.getMessage());
+        }
+         
+        try
+        {
+            RT_TOTAL_F_BLN =   conversion(FormatForDouble(R1_TOTAL_F_BLN)
+                                           +FormatForDouble(R2_TOTAL_F_BLN)
+                                           +FormatForDouble(R3_TOTAL_F_BLN)
+                                           +FormatForDouble(R4_TOTAL_F_BLN)
+                                           +FormatForDouble(R5_TOTAL_F_BLN)
+                                           +FormatForDouble(R6_TOTAL_F_BLN)
+                                           +FormatForDouble(R7_TOTAL_F_BLN)
+                                           +FormatForDouble(R8_TOTAL_F_BLN)
+                                           +FormatForDouble(R9_TOTAL_F_BLN)
+                                           +FormatForDouble(R10_TOTAL_F_BLN)
+                                           +FormatForDouble(R11_TOTAL_F_BLN)
+                                           +FormatForDouble(R12_TOTAL_F_BLN)
+                                           +FormatForDouble(R13_TOTAL_F_BLN)
+                                           +FormatForDouble(R14_TOTAL_F_BLN)); 
+        }
+        catch(Exception ex) {
+            System.out.println("RT_TOTAL_F_BLN: "+ex.getMessage());
+        }
+        
+         
+        try
+        {
+        
+            System.out.println("RT_AJUSTE: "+RT_AJUSTE);                                           
+                System.out.println(R1_AJUSTE);
+                System.out.println(R2_AJUSTE);
+                System.out.println(R3_AJUSTE);
+                System.out.println(R4_AJUSTE);
+                System.out.println(R5_AJUSTE);
+                System.out.println(R6_AJUSTE);
+                System.out.println(R7_AJUSTE);
+                System.out.println(R8_AJUSTE);
+                System.out.println(R9_AJUSTE);
+                System.out.println(R10_AJUSTE);
+                System.out.println(R11_AJUSTE);
+                System.out.println(R12_AJUSTE);
+                System.out.println(R13_AJUSTE);
+                
+                
+        
+        
+            RT_AJUSTE  =  conversion(FormatForDouble(R1_AJUSTE)
+                                           +FormatForDouble(R2_AJUSTE)
+                                           +FormatForDouble(R3_AJUSTE)
+                                           +FormatForDouble(R4_AJUSTE)
+                                           +FormatForDouble(R5_AJUSTE)
+                                           +FormatForDouble(R6_AJUSTE)
+                                           +FormatForDouble(R7_AJUSTE)
+                                           +FormatForDouble(R8_AJUSTE)
+                                           +FormatForDouble(R9_AJUSTE)
+                                           +FormatForDouble(R10_AJUSTE)
+                                           +FormatForDouble(R11_AJUSTE)
+                                           +FormatForDouble(R12_AJUSTE)
+                                           +FormatForDouble(R13_AJUSTE)
+                                           +FormatForDouble(R14_AJUSTE));  
+                                           
+        
+            
+                                           
+        }
+        catch(Exception ex) {
+            System.out.println("RT_AJUSTE: " + ex.getMessage());
+        }
+                              
                                         
                                         
         
@@ -1545,7 +1682,7 @@ public  class XxGamReadExcel {
                         PROMPT_INI_BAL=cellAuxUP.getContents().trim();
                         yearAux = PROMPT_INI_BAL.substring(PROMPT_INI_BAL.length()-2,PROMPT_INI_BAL.length());
                 
-        for (int columna = 0; columna < numColumnas; columna++) 
+        for (int columna = 0; columna <=1 /*numColumnas*/; columna++) 
         { 
                 for(int fila = 0; fila < numFilas; fila++)  
                 { 
