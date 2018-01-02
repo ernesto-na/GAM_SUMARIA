@@ -1551,909 +1551,845 @@ public  class XxGamReadExcel {
                 { 
                     data = hoja.getCell(columna, fila).getContents(); 
                    // System.out.print(data + " "); 
-                    if(columna==0&&fila==6)
+                   
+                   
+                   try{
+                       if(columna==0&&fila==6)
+                           {
+                               Integer auxI=0,auxJ=0;
+                               auxI=fila;
+                               auxJ=columna;
+                               auxJ=++auxJ;
+                               
+                               Cell cellAux = hoja.getCell(auxJ, auxI);
+                               R1_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R2_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R3_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R4_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R5_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R6_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R7_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R8_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R9_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R10_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R11_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R12_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R13_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               R14_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               auxJ=++auxJ;
+                               auxJ=++auxJ;
+                               cellAux = hoja.getCell(auxJ, auxI);
+                               RI1_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                               System.out.print(" j:"+auxJ +" i: "+ auxI);
+                               System.out.print("-->:"+cellAux.getContents().trim()+" ");   
+                           }
+                   }catch(Exception e){
+                       System.out.println("Balance inicial"+e.getMessage());
+                   }
+                   
+                    try{
+                        if(columna==0&& fila==8)/*Additions*/
                         {
                             Integer auxI=0,auxJ=0;
                             auxI=fila;
                             auxJ=columna;
                             auxJ=++auxJ;
-                            
                             Cell cellAux = hoja.getCell(auxJ, auxI);
-                            R1_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R1_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R2_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R2_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R3_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R3_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R4_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R4_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R5_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R5_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R6_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R6_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R7_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R7_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R8_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R8_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R9_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R9_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R10_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R10_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R11_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R11_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R12_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R12_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R13_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R13_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            R14_COST_INITIAL_BALANCE=cellAux.getContents().trim();
+                            R14_COST_ADDITIONS=cellAux.getContents().trim();
                             auxJ=++auxJ;
                             auxJ=++auxJ;
                             cellAux = hoja.getCell(auxJ, auxI);
-                            RI1_COST_INITIAL_BALANCE=cellAux.getContents().trim();
-                            System.out.print(" j:"+auxJ +" i: "+ auxI);
-                            System.out.print("-->:"+cellAux.getContents().trim()+" "); 
+                            RI1_COST_ADDITIONS=cellAux.getContents().trim();
+                            /*System.out.print(" j:"+auxJ +" i: "+ auxI);*/
+                            /*System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             
                         }
-                    if(columna==0&& fila==8)/*Additions*/
-                    {
-                        Integer auxI=0,auxJ=0;
-                        auxI=fila;
-                        auxJ=columna;
-                        auxJ=++auxJ;
-                        Cell cellAux = hoja.getCell(auxJ, auxI);
-                        R1_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R2_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R3_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R4_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R5_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R6_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R7_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R8_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R9_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R10_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R11_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R12_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R13_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        R14_COST_ADDITIONS=cellAux.getContents().trim();
-                        auxJ=++auxJ;
-                        auxJ=++auxJ;
-                        cellAux = hoja.getCell(auxJ, auxI);
-                        RI1_COST_ADDITIONS=cellAux.getContents().trim();
-                        /*System.out.print(" j:"+auxJ +" i: "+ auxI);*/
-                        /*System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                    }catch(Exception e){
+                        System.out.println("Adiciones"+e.getMessage());
+                    }  
                         
+                    try{
+                        if(columna==0 && fila==9)/*Dispossals*/
+                            {
+                                Integer auxI=0,auxJ=0;
+                                auxI=fila;
+                                auxJ=columna;
+                                auxJ=++auxJ;
+                                Cell cellAux = hoja.getCell(auxJ, auxI);
+                                R1_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R2_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R3_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R4_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R5_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R6_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R7_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R8_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R9_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R10_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R11_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R12_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R13_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                R14_COST_DISPOSALS=cellAux.getContents().trim();
+                                auxJ=++auxJ;
+                                auxJ=++auxJ;
+                                cellAux = hoja.getCell(auxJ, auxI);
+                                RI1_COST_DISPOSALS=cellAux.getContents().trim();
+                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                            }
+                    }catch(Exception e){
+                        System.out.println("Disposals "+e.getMessage());
                     }
-                    /*if("Additions".equals(hoja.getCell(columna, fila).getContents().trim())&& (fila==8))
-                                            {
-                                                Integer auxI=0,auxJ=0;
-                                                auxI=fila;
-                                                auxJ=columna;
-                                                auxJ=++auxJ;
-                                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                                R1_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R2_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R3_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R4_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R5_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R6_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R7_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R8_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R9_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R10_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R11_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R12_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R13_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R14_COST_ADDITIONS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                RI1_COST_ADDITIONS=cellAux.getContents().trim();
-                                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
-                                                
-                                            }*/
-                   /* if("Disposals".equals(hoja.getCell(columna, fila).getContents().trim()) && (fila==9))
-                                            {
-                                                Integer auxI=0,auxJ=0;
-                                                auxI=fila;
-                                                auxJ=columna;
-                                                auxJ=++auxJ;
-                                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                                R1_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R2_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R3_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R4_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R5_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R6_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R7_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R8_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R9_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R10_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R11_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R12_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R13_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                R14_COST_DISPOSALS=cellAux.getContents().trim();
-                                                auxJ=++auxJ;
-                                                auxJ=++auxJ;
-                                                cellAux = hoja.getCell(auxJ, auxI);
-                                                RI1_COST_DISPOSALS=cellAux.getContents().trim();
-                                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
-                                            }*/
-                    if(columna==0 && fila==9)/*Dispossals*/
-                        {
-                            Integer auxI=0,auxJ=0;
-                            auxI=fila;
-                            auxJ=columna;
-                            auxJ=++auxJ;
-                            Cell cellAux = hoja.getCell(auxJ, auxI);
-                            R1_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R2_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R3_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R4_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R5_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R6_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R7_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R8_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R9_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R10_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R11_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R12_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R13_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            R14_COST_DISPOSALS=cellAux.getContents().trim();
-                            auxJ=++auxJ;
-                            auxJ=++auxJ;
-                            cellAux = hoja.getCell(auxJ, auxI);
-                            RI1_COST_DISPOSALS=cellAux.getContents().trim();
-                            /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                            System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                        }
+                    
+                    try{
+                        if(columna==0&&fila==10)
+                                {   /*COST_TRX_SALE*/
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                     R1_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_COST_TRX_SALE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_COST_TRX_SALE=cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }
+                    }catch(Exception e){
+                        System.out.println("Cost trsx sale "+e.getMessage());
+                    }
                         
                         
-                    if(columna==0&&fila==10)
-                            {   /*COST_TRX_SALE*/
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                 R1_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_COST_TRX_SALE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_COST_TRX_SALE=cellAux.getContents().trim();
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            }
+                    try{
+                        if(columna==0 && fila==11)   /*Effect of movements in exchange rates*/
+                                                  {
+                                                      Integer auxI=0,auxJ=0;
+                                                      auxI=fila;
+                                                      auxJ=columna;
+                                                      // TODO agregar vars cuando se hallan mapeado
+                                                      auxJ=++auxJ;
+                                                      Cell cellAux = hoja.getCell(auxJ, auxI);
+                                                       R1_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R2_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R3_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R4_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R5_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R6_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R7_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R8_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R9_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R10_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R11_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R12_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R13_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      R14_MF_BALANCE=cellAux.getContents().trim();
+                                                      auxJ=++auxJ;
+                                                      auxJ=++auxJ;
+                                                      cellAux = hoja.getCell(auxJ, auxI);
+                                                      RI1_MF_BALANCE=cellAux.getContents().trim();
+                                                       
+                                                      /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                                      System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                                  }   
+                    }catch(Exception e){
+                        System.out.println("MF Balance"+e.getMessage());
+                    }
                         
                         
+                    try{
+                        if(columna==0&&fila==12)/*Ajustes*/
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_AJUSTE=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_AJUSTE=cellAux.getContents().trim();
+                                    
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }    
+                                
+                    }catch(Exception e){
+                        System.out.println("Ajustes "+e.getMessage());
+                    } 
+                    
                         
-                    if(columna==0 && fila==11)   /*Effect of movements in exchange rates*/
-                                              {
-                                                  Integer auxI=0,auxJ=0;
-                                                  auxI=fila;
-                                                  auxJ=columna;
-                                                  // TODO agregar vars cuando se hallan mapeado
-                                                  auxJ=++auxJ;
-                                                  Cell cellAux = hoja.getCell(auxJ, auxI);
-                                                   R1_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R2_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R3_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R4_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R5_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R6_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R7_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R8_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R9_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R10_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R11_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R12_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R13_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  R14_MF_BALANCE=cellAux.getContents().trim();
-                                                  auxJ=++auxJ;
-                                                  auxJ=++auxJ;
-                                                  cellAux = hoja.getCell(auxJ, auxI);
-                                                  RI1_MF_BALANCE=cellAux.getContents().trim();
-                                                   
-                                                  /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                                  System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                                              }   
-                        
-                        
+                    try{
+                        if(columna==0 && fila ==14)/*Balance*/
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_COST_BALANCE= cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_COST_BALANCE= cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                } 
+                    }catch(Exception e){
+                        System.out.println("Cost Balance"+e.getMessage());
+                    }
                                             
-                    /*Deprecated*/
-                   /* if("Effect of movements in exchange rates".equals(hoja.getCell(columna, fila).getContents().trim())&& fila==11)
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                Cell cellAux = hoja.getCell(auxJ+1, auxI);
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
-                            }/*/
-                    if(columna==0&&fila==12)/*Ajustes*/
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_AJUSTE=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_AJUSTE=cellAux.getContents().trim();
-                                
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            }    
-                            
-                            
-                    if(columna==0 && fila ==14)/*Balance*/
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_COST_BALANCE= cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_COST_BALANCE= cellAux.getContents().trim();
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            } 
-                   /* if("Balance December 31, 2016".equals(hoja.getCell(columna, fila).getContents().trim()))
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                Cell cellAux = hoja.getCell(auxJ+1, auxI);
-                                System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); 
-                            }*/
-                            
-          if (columna ==0 &&fila==19)/*Balance inicial dprn*/
-              {
-                  Integer auxI=0,auxJ=0;
-                  auxI=fila;
-                  auxJ=columna;
-                  auxJ=++auxJ;
-                  Cell cellAux = hoja.getCell(auxJ, auxI);
-                  R1_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R2_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R3_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R4_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R5_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R6_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R7_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R8_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R9_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R10_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R11_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R12_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R13_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  R14_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
-                  auxJ=++auxJ;
-                  auxJ=++auxJ;
-                  cellAux = hoja.getCell(auxJ, auxI);
-                  RI1_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                   
-              }
-                            
-        if("Depreciation for the year".equals(hoja.getCell(columna, fila).getContents().trim()))
-                {
-                    Integer auxI=0,auxJ=0;
-                    auxI=fila;
-                    auxJ=columna;
-                    auxJ=++auxJ;
-                    Cell cellAux = hoja.getCell(auxJ, auxI);
-                    R1_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R2_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R3_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R4_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R5_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R6_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R7_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R8_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R9_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R10_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R11_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R12_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R13_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    R14_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    auxJ=++auxJ;
-                    auxJ=++auxJ;
-                    cellAux = hoja.getCell(auxJ, auxI);
-                    RI1_DPN_FOR_YEAR=cellAux.getContents().trim();
-                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                }         
-                    if("Disposals".equals(hoja.getCell(columna, fila).getContents().trim())&& fila ==22)
+                    try{
+                        if (columna ==0 &&fila==19)/*Balance inicial dprn*/
                             {
                                 Integer auxI=0,auxJ=0;
                                 auxI=fila;
                                 auxJ=columna;
                                 auxJ=++auxJ;
                                 Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R1_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R2_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R2_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R3_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R3_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R4_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R4_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R5_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R5_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R6_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R6_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R7_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R7_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R8_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R8_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R9_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R9_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R10_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R10_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R11_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R11_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R12_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R12_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R13_DPN_DISPOSALS=cellAux.getContents().trim();
+                                R13_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                R14_DPN_DISPOSALS=cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_DPN_DISPOSALS=cellAux.getContents().trim();
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            }
-                    if("Effect of movements in exchange rates".equals(hoja.getCell(columna, fila).getContents().trim())&& fila==23)
-                            {
-                            // TODO p01
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_MF_RES = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_MF_RES = cellAux.getContents().trim();
+                                R14_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 auxJ=++auxJ;
                                 auxJ=++auxJ;
                                 cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_MF_RES = cellAux.getContents().trim();
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            }
-                    if(columna==0&&fila==25)/*Balance at dprn init bal*/
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_DPN_INI_BAL = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_DPN_INI_BAL = cellAux.getContents().trim();
+                                RI1_DPRN_INITIAL_BALANCE=cellAux.getContents().trim();
                                 
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
                             }
-                    if(columna==0&&fila ==29 )
-                            {
-                                // TODO p02
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_TOTAL_I_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_TOTAL_I_BLN = cellAux.getContents().trim();
-                                /*System.out.print(" j:"+auxJ +" i: "+ auxI);
-                                System.out.print("-->:"+cellAux.getContents().trim()+" "); */
-                            }
-                    if(columna==0&&fila ==30 )
-                            {
-                                Integer auxI=0,auxJ=0;
-                                auxI=fila;
-                                auxJ=columna;
-                                auxJ=++auxJ;
-                                Cell cellAux = hoja.getCell(auxJ, auxI);
-                                R1_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R2_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R3_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R4_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R5_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R6_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R7_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R8_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R9_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R10_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R11_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R12_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R13_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                R14_TOTAL_F_BLN = cellAux.getContents().trim();
-                                auxJ=++auxJ;
-                                auxJ=++auxJ;
-                                cellAux = hoja.getCell(auxJ, auxI);
-                                RI1_TOTAL_F_BLN = cellAux.getContents().trim();
+                        
+                    }catch(Exception e){
+                        System.out.println("Dprn Inicial"+e.getMessage());
+                    }    
                             
-                            }
+                    try{
+                        if("Depreciation for the year".equals(hoja.getCell(columna, fila).getContents().trim()))
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_DPN_FOR_YEAR=cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }         
+                    }catch(Exception e){
+                        System.out.println("Depreciation for the year"+e.getMessage());
+                    }
+            
+                    try{
+                        if("Disposals".equals(hoja.getCell(columna, fila).getContents().trim())&& fila ==22)
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_DPN_DISPOSALS=cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }
+                    }catch(Exception e){
+                        System.out.println("Disposals"+e.getMessage());
+                    }        
+          
+                    try{
+                        if("Effect of movements in exchange rates".equals(hoja.getCell(columna, fila).getContents().trim())&& fila==23)
+                                {
+                                // TODO p01
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_MF_RES = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_MF_RES = cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }
+                    }catch(Exception e){
+                        System.out.println("Effect of movements in exchange rates"+e.getMessage());
+                    } 
+        
+                    try{
+                        if(columna==0&&fila==25)/*Balance at dprn init bal*/
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_DPN_INI_BAL = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_DPN_INI_BAL = cellAux.getContents().trim();
+                                    
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }
+                    }catch(Exception e){
+                        System.out.println("DPN_INI_BAL"+e.getMessage());
+                    }  
+                    try{
+                        if(columna==0&&fila ==29 )
+                                {
+                                    // TODO p02
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_TOTAL_I_BLN = cellAux.getContents().trim();
+                                    /*System.out.print(" j:"+auxJ +" i: "+ auxI);
+                                    System.out.print("-->:"+cellAux.getContents().trim()+" "); */
+                                }
+                    }catch(Exception e){
+                        System.out.println("TOTAL_I_BLN"+e.getMessage());
+                    }
+                    
+                    try{
+                        if(columna==0&&fila ==30 )
+                                {
+                                    Integer auxI=0,auxJ=0;
+                                    auxI=fila;
+                                    auxJ=columna;
+                                    auxJ=++auxJ;
+                                    Cell cellAux = hoja.getCell(auxJ, auxI);
+                                    R1_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R2_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R3_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R4_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R5_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R6_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R7_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R8_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R9_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R10_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R11_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R12_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R13_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    R14_TOTAL_F_BLN = cellAux.getContents().trim();
+                                    auxJ=++auxJ;
+                                    auxJ=++auxJ;
+                                    cellAux = hoja.getCell(auxJ, auxI);
+                                    RI1_TOTAL_F_BLN = cellAux.getContents().trim();
+                                }
+                    }catch(Exception e){
+                        System.out.println("TOTAL_F_BLN"+e.getMessage());
+                    }
+                   
+                   
                             
                 } 
         //System.out.println("\n"); 
