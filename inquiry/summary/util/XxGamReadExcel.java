@@ -358,7 +358,7 @@ public  class XxGamReadExcel {
                     }
                return text.trim();*/
              for(int i=0;i<text.length();i++){
-                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46 ){
+                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46 || text.codePointAt(i)==45){
                           cadenaVerificada=cadenaVerificada+text.charAt(i);     
                         }   
                     }   
@@ -376,7 +376,7 @@ public  class XxGamReadExcel {
                     }
                return text.trim();*/
              for(int i=0;i<text.length();i++){
-                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46||(text.codePointAt(i)>=65 && text.codePointAt(i)<=122) ){
+                        if((text.codePointAt(i)>=48 && text.codePointAt(i)<=57) || text.codePointAt(i)==46|| text.codePointAt(i)==45||(text.codePointAt(i)>=65 && text.codePointAt(i)<=122) ){
                           cadenaVerificada=cadenaVerificada+text.charAt(i);     
                         }   
                     }   
@@ -391,7 +391,7 @@ public  class XxGamReadExcel {
            
        /*elimina caracteres raros, mantiene solo puntos , signo negativo y numeros del 0 al 9 */
         for(int i=0;i<ntext.length();i++){
-                   if((ntext.codePointAt(i)>=48 && ntext.codePointAt(i)<=57) || ntext.codePointAt(i)==46||(ntext.codePointAt(i)>=65 && ntext.codePointAt(i)<=122) ){
+                   if((ntext.codePointAt(i)>=48 && ntext.codePointAt(i)<=57) || ntext.codePointAt(i)==45 || ntext.codePointAt(i)==46||(ntext.codePointAt(i)>=65 && ntext.codePointAt(i)<=122) ){
                      cadenaVerificada=cadenaVerificada+ntext.charAt(i);     
                    }   
                }   
