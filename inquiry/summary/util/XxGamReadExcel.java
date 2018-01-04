@@ -1680,7 +1680,10 @@ public  class XxGamReadExcel {
                         auxPromptD=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,6);
                         PROMPT_INI_BAL=cellAuxUP.getContents().trim();
-                        yearAux = PROMPT_INI_BAL.substring(PROMPT_INI_BAL.length()-2,PROMPT_INI_BAL.length());
+                        /*yearAux = PROMPT_INI_BAL.substring(PROMPT_INI_BAL.length()-2,PROMPT_INI_BAL.length());*/
+                       /*String yearAux2;*/
+                       yearAux = auxPromptB.substring(auxPromptB.length()-2,auxPromptB.length());
+                       System.out.println(yearAux);
                 
         for (int columna = 0; columna <=1 /*numColumnas*/; columna++) 
         { 
