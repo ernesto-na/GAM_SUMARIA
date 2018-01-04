@@ -1,0 +1,67 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxgam.oracle.apps.fa.sumaria.inquiry.server.InquiryAM" windowTitle="Operacion Mensual Excel" title="Operacion Mensual Excel" controllerClass="xxgam.oracle.apps.fa.sumaria.inquiry.ptd.webui.OperacionMensualExcelCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:pageButtonBar id="PageButtonBarRN">
+               <ui:contents>
+                  <oa:submitButton id="DespliegaBtn" text="Despliega" prompt="Despliega" rendered="false"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+            <oa:messageLovInput id="unidadoperativalov" prompt="UNIDAD OPERATIVA:" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/inquiry/lov/webui/XxGamUnidadOperativaRN" rendered="false">
+               <lovMappings>
+                  <lovMap id="lovMap1" lovItem="Id" resultTo="unidadoperativalov" criteriaFrom="unidadoperativalov"/>
+               </lovMappings>
+            </oa:messageLovInput>
+            <oa:messageLovInput id="periodolov" prompt="PERIODO:" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/inquiry/lov/webui/XxGamPeriodoRN" rendered="false">
+               <lovMappings>
+                  <lovMap id="lovMap2" lovItem="PeriodName" resultTo="periodolov" criteriaFrom="periodolov"/>
+               </lovMappings>
+            </oa:messageLovInput>
+            <oa:messageLovInput id="divisalov" prompt="DIVISA:" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/inquiry/lov/webui/XxGamDivisaRN" rendered="false">
+               <lovMappings>
+                  <lovMap id="lovMap3" lovItem="Divisa" resultTo="divisalov" criteriaFrom="divisalov"/>
+               </lovMappings>
+            </oa:messageLovInput>
+            <oa:table id="XxGamSafOmTblVO1">
+               <ui:contents>
+                  <oa:messageStyledText id="SafOmId" dataType="NUMBER" prompt="SafOmId" viewName="XxGamSafOmTblVO1" viewAttr="SafOmId" rendered="false"/>
+                  <oa:messageStyledText id="OperatingUnit" dataType="VARCHAR2" prompt="Unidad Operativa" viewName="XxGamSafOmTblVO1" viewAttr="OperatingUnit" maximumLength="100" styleClass="OraFieldText"/>
+                  <oa:messageStyledText id="Period" dataType="VARCHAR2" prompt="Periodo" viewName="XxGamSafOmTblVO1" viewAttr="Period" maximumLength="100" styleClass="OraFieldText"/>
+                  <oa:messageStyledText id="StartPeriod" dataType="DATE" prompt="StartPeriod" viewName="XxGamSafOmTblVO1" viewAttr="StartPeriod" rendered="false"/>
+                  <oa:messageStyledText id="EndPeriod" dataType="DATE" prompt="EndPeriod" viewName="XxGamSafOmTblVO1" viewAttr="EndPeriod" rendered="false"/>
+                  <oa:messageStyledText id="CurrencyCode" dataType="VARCHAR2" prompt="Divisa" viewName="XxGamSafOmTblVO1" viewAttr="CurrencyCode" maximumLength="10" styleClass="OraFieldText"/>
+                  <oa:messageStyledText id="XmlString" dataType="CLOB" prompt="XmlString" viewName="XxGamSafOmTblVO1" viewAttr="XmlString" rendered="false"/>
+                  <oa:messageStyledText id="LastUpdateDate" dataType="DATE" prompt="LastUpdateDate" viewName="XxGamSafOmTblVO1" viewAttr="LastUpdateDate" rendered="false"/>
+                  <oa:messageStyledText id="LastUpdatedBy" dataType="NUMBER" prompt="LastUpdatedBy" viewName="XxGamSafOmTblVO1" viewAttr="LastUpdatedBy" rendered="false"/>
+                  <oa:messageStyledText id="LastUpdateLogin" dataType="NUMBER" prompt="LastUpdateLogin" viewName="XxGamSafOmTblVO1" viewAttr="LastUpdateLogin" rendered="false"/>
+                  <oa:messageStyledText id="CreatedBy" dataType="NUMBER" prompt="CreatedBy" viewName="XxGamSafOmTblVO1" viewAttr="CreatedBy" rendered="false"/>
+                  <oa:messageStyledText id="CreationDate" dataType="DATE" prompt="CreationDate" viewName="XxGamSafOmTblVO1" viewAttr="CreationDate" rendered="false"/>
+                  <oa:messageStyledText id="RequestId" dataType="NUMBER" prompt="RequestId" viewName="XxGamSafOmTblVO1" viewAttr="RequestId" rendered="false"/>
+                  <oa:messageStyledText id="ProgramApplicationId" dataType="NUMBER" prompt="ProgramApplicationId" viewName="XxGamSafOmTblVO1" viewAttr="ProgramApplicationId" rendered="false"/>
+                  <oa:messageStyledText id="ProgramId" dataType="NUMBER" prompt="ProgramId" viewName="XxGamSafOmTblVO1" viewAttr="ProgramId" rendered="false"/>
+                  <oa:messageStyledText id="ProgramUpdateDate" dataType="DATE" prompt="ProgramUpdateDate" viewName="XxGamSafOmTblVO1" viewAttr="ProgramUpdateDate" rendered="false"/>
+                  <oa:messageStyledText id="AttributeCategory" dataType="VARCHAR2" prompt="AttributeCategory" viewName="XxGamSafOmTblVO1" viewAttr="AttributeCategory" maximumLength="30" rendered="false"/>
+                  <oa:messageStyledText id="Attribute1" dataType="VARCHAR2" prompt="Attribute1" viewName="XxGamSafOmTblVO1" viewAttr="Attribute1" maximumLength="150" rendered="false"/>
+                  <oa:messageStyledText id="Attribute2" dataType="VARCHAR2" prompt="Attribute2" viewName="XxGamSafOmTblVO1" viewAttr="Attribute2" maximumLength="150" rendered="false"/>
+                  <oa:messageStyledText id="Attribute3" dataType="VARCHAR2" prompt="Attribute3" viewName="XxGamSafOmTblVO1" viewAttr="Attribute3" maximumLength="150" rendered="false"/>
+                  <oa:messageStyledText id="Attribute4" dataType="VARCHAR2" prompt="Attribute4" viewName="XxGamSafOmTblVO1" viewAttr="Attribute4" maximumLength="150" rendered="false"/>
+                  <oa:messageStyledText id="Attribute5" dataType="VARCHAR2" prompt="Attribute5" viewName="XxGamSafOmTblVO1" viewAttr="Attribute5" maximumLength="150" rendered="false"/>
+                  <oa:image id="ArchivoExcel" source="file_xls.gif" prompt="Descargar Archivo" viewName="XxGamSafOmTblVO1">
+                     <ui:primaryClientAction>
+                        <ui:fireAction event="ArchivoExcelEvt">
+                           <ui:parameters>
+                              <ui:parameter key="pCurrentId" value="${oa.XxGamSafOmTblVO1.SafOmId}"/>
+                           </ui:parameters>
+                        </ui:fireAction>
+                     </ui:primaryClientAction>
+                  </oa:image>
+               </ui:contents>
+            </oa:table>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>
