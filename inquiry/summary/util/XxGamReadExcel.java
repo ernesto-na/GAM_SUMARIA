@@ -384,7 +384,7 @@ public  class XxGamReadExcel {
         }
     public static Double FormatForDouble(String ntext)
        {
-       String cadenaVerificada="0";
+       String cadenaVerificada="";
        if((ntext == null || "".equals(ntext))){
            ntext="0";
        }
