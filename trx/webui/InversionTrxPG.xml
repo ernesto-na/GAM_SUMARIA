@@ -1,0 +1,275 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<page xmlns:jrad="http://xmlns.oracle.com/jrad" xmlns:oa="http://xmlns.oracle.com/oa" xmlns:ui="http://xmlns.oracle.com/uix/ui" version="10.1.3_1312" xml:lang="en-US" xmlns:user="http://xmlns.oracle.com/jrad/user" xmlns="http://xmlns.oracle.com/jrad" file-version="$Header$">
+   <content>
+      <oa:pageLayout id="PageLayoutRN" amDefName="xxgam.oracle.apps.fa.sumaria.trx.server.InversionTrxAM" windowTitle="Transferencias Inversion" title="Transferencias Inversion" controllerClass="xxgam.oracle.apps.fa.sumaria.trx.webui.InversionTrxCO">
+         <ui:corporateBranding>
+            <oa:image id="corporateBrandingImage" source="/OA_MEDIA/FNDSSCORP.gif"/>
+         </ui:corporateBranding>
+         <ui:contents>
+            <oa:defaultSingleColumn id="regionOpciones">
+               <ui:contents>
+                  <oa:messageChoice id="UniOper" pickListViewDef="xxgam.oracle.apps.fa.sumaria.trx.server.UniOperVO" pickListDispAttr="UniOper" pickListValAttr="NumOper" prompt="Unidad Operativa" required="yes"/>
+                  <oa:messageLovInput id="Periodo" externalListOfValues="/xxgam/oracle/apps/fa/sumaria/trx/lov/webui/PeriodoLOVRN" prompt="Periodo" required="yes">
+                     <lovMappings>
+                        <lovMap id="PeriodNameMap" lovItem="PeriodName" resultTo="Periodo" criteriaFrom="Periodo"/>
+                     </lovMappings>
+                  </oa:messageLovInput>
+                  <oa:messageChoice id="IdRubro" pickListViewDef="xxgam.oracle.apps.fa.sumaria.trx.server.RubroVO" pickListDispAttr="IdRubro" pickListValAttr="IdRubro" prompt="Rubros" required="yes"/>
+                  <oa:messageChoice id="IdRubro2" pickListDispAttr="IdRubro" pickListViewDef="xxgam.oracle.apps.fa.sumaria.trx.server.RubroVO" pickListValAttr="IdRubro"/>
+                  <oa:messageChoice id="Divisa" pickListViewDef="xxgam.oracle.apps.fa.sumaria.trx.server.DivisaVO" pickListDispAttr="Name" pickListValAttr="LedgerId" prompt="Divisa" required="yes"/>
+                  <oa:submitButton id="BuscarBtn" text="Buscar" prompt="Buscar"/>
+               </ui:contents>
+            </oa:defaultSingleColumn>
+            <oa:table id="InversionTrxVO" rendered="false">
+               <ui:contents>
+                  <oa:messageStyledText id="Cuenta1" dataType="VARCHAR2" prompt="Cuenta" viewName="InversionTrxVO1" viewAttr="Cuenta"/>
+                  <oa:messageStyledText id="SubCuenta1" dataType="VARCHAR2" prompt="SubCuenta" viewName="InversionTrxVO1" viewAttr="SubCuenta"/>
+                  <oa:messageTextInput id="SaldoInicial1" dataType="NUMBER" prompt="SaldoInicial" viewName="InversionTrxVO1" viewAttr="SaldoInicial"/>
+                  <oa:messageTextInput id="Adiciones1" dataType="NUMBER" prompt="Adiciones" viewName="InversionTrxVO1" viewAttr="Adiciones"/>
+                  <oa:messageTextInput id="Disminuciones1" dataType="NUMBER" prompt="Disminuciones" viewName="InversionTrxVO1" viewAttr="Disminuciones"/>
+                  <oa:messageTextInput id="Transacciones1" dataType="VARCHAR2" prompt="Transacciones" viewName="InversionTrxVO1" viewAttr="Transacciones"/>
+                  <oa:messageTextInput id="Bajas_Venta1" dataType="NUMBER" prompt="Bajas_Venta" viewName="InversionTrxVO1" viewAttr="Bajas_Venta"/>
+                  <oa:messageTextInput id="Bajas_scrap1" dataType="NUMBER" prompt="Bajas_scrap" viewName="InversionTrxVO1" viewAttr="Bajas_scrap"/>
+                  <oa:messageTextInput id="Deprn_Venta1" dataType="NUMBER" prompt="Deprn_Venta" viewName="InversionTrxVO1" viewAttr="Deprn_Venta"/>
+                  <oa:messageTextInput id="Deprn_scrap1" dataType="NUMBER" prompt="Deprn_scrap" viewName="InversionTrxVO1" viewAttr="Deprn_scrap"/>
+                  <oa:messageTextInput id="Saldo_final" dataType="NUMBER" prompt="Saldo_final" viewName="InversionTrxVO1" viewAttr="Saldo_final"/>
+               </ui:contents>
+            </oa:table>
+            <oa:pageButtonBar id="AppCan">
+               <ui:contents>
+                  <oa:submitButton id="AplicarBtn" text="Aplicar" prompt="Aplicar"/>
+                  <oa:submitButton id="CancelBtn" text="Cancelar" prompt="Cancelar"/>
+               </ui:contents>
+            </oa:pageButtonBar>
+            <oa:advancedTable id="TransfManTableRN" viewName="TransfManVO1" detailViewAttr="DetailFlag" text="Movimientos Manuales" shortDesc="Movimientos Manuales" width="100%" tableBanding="rowBanding">
+               <ui:contents>
+                  <oa:column id="RubroCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="RubroHdr" prompt="Rubro"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageStyledText id="Rubro" viewAttr="NumRubro" prompt="Rubro" styleClass="OraFieldNumber"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="CuentaCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="CuentaHdr" prompt="Cuenta"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageStyledText id="Cuenta" viewAttr="Cuenta" prompt="Cuenta" styleClass="OraFieldNumber"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="SubcuentaCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="SubcuentaHdr" prompt="Subcuenta"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageStyledText id="Subcuenta" viewAttr="Subcuenta" prompt="Subcuenta" styleClass="OraFieldNumber"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="SaldoInicialManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="SaldoInicialManHdr" prompt="Saldo Inicial"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="SaldoInicialMan" viewAttr="SaldoIniMan" prompt="Saldo Inicial" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="AdicionManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="AdicionManHdr" prompt="Adiciones"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="AdicionMan" viewAttr="AdicionesMan" prompt="Adiciones" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="DisminucionManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="DisminucionManHdr" prompt="Disminuciones"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="DisminucionMan" viewAttr="DisminucionesMan" styleClass="OraFieldNumber" prompt="Disminuciones" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="TransaccionesManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="TransaccionManHdr" prompt="Transferencias"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="TransaccionesMan" viewAttr="TransfMan" prompt="Transferencias" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Bajas_VentaManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Bajas_VentaManHdr" prompt="Bajas_Venta"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="Bajas_VentaMan" viewAttr="BajaXVentaMan" prompt="Bajas_Venta" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Bajas_scrapManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Bajas_scrapManHdr" prompt="Bajas_scrap"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="Bajas_scrapMan" viewAttr="BajaSIngresoMan" prompt="Bajas_scrap" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Dprn_VentaManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Dprn_VentaManHdr" prompt="Dprn_Venta"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="Dprn_VentaMan" viewAttr="DprnXVentaMan" prompt="Dprn_Venta" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Dprn_scrapManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Dprn_scrapManHdr" prompt="Dprn_scrap"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="Dprn_scrapMan" viewAttr="DprnSIngresoMan" prompt="Dprn_scrap" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Dprn_ejerManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Dprn_ejerManHdr" prompt="Dprn_ejer"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageTextInput id="Dprn_ejerMan" viewAttr="DprnEjercicioMan" prompt="Dprn_ejer" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="SumaManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="SumaManHdr" prompt="Suma"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageStyledText id="SumaMan" viewAttr="Suma" prompt="Suma" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+                  <oa:column id="Saldo_finalManCol" columnDataFormat="numberFormat">
+                     <ui:columnHeader>
+                        <oa:sortableHeader id="Saldo_FinalManHdr" prompt="Saldo Final"/>
+                     </ui:columnHeader>
+                     <ui:contents>
+                        <oa:messageStyledText id="Saldo_finalMan" viewAttr="SaldoFinal" prompt="Saldo Final" styleClass="OraFieldNumber" dataType="NUMBER"/>
+                     </ui:contents>
+                  </oa:column>
+               </ui:contents>
+               <ui:detail>
+                  <oa:tableLayout id="DetailRN" hAlign="center" width="100%" styleClass="OraTableDetail">
+                     <ui:contents>
+                        <oa:rowLayout id="HeaderDetailRow" styleClass="OraTableColumnHeader" hAlign="right">
+                           <ui:contents>
+                              <oa:cellFormat id="SaldoInicialHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="SaldoInicialHdr" text="Saldo Inicial"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="AdicionesHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="AdicionesHdr" text="Adiciones"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="DisminucionesHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="DisminucionesHdr" text="Disminuciones"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="TransaccionesHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="TransaccionesHdr" text="Transferencias"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Bajas_ventaHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="Bajas_VentaHdr" text="Bajas_venta"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Bajas_scrapHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="Bajas_scrapHdr" text="Bajas_scrap"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Deprn_VentaHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="Deprn_VentaHdr" text="Deprn_Venta"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Deprn_scrapHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="Deprn_scrapHdr" text="Deprn_scrap"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Dprn_ejerHdrCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:formattedText id="Dprn_ejerHdr" text="Dprn_ejer"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                        <oa:rowLayout id="DetailRow">
+                           <ui:contents>
+                              <oa:cellFormat id="SaldoInicialCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="SaldoInicial" viewName="TransfManVO1" viewAttr="SaldoIni" prompt="" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="AdicionesCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Adiciones" viewName="TransfManVO1" viewAttr="Adiciones" prompt="" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="DisminucionesCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Disminuciones" viewName="TransfManVO1" viewAttr="Disminuciones" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="TransaccionesCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Transacciones" viewName="TransfManVO1" viewAttr="Transf" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Bajas_VentaCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Bajas_Venta" viewName="TransfManVO1" viewAttr="BajaXVenta" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Bajas_scrapCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Bajas_scrap" viewName="TransfManVO1" viewAttr="BajaSIngreso" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Dprn_VentaCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Dprn_Venta" viewName="TransfManVO1" viewAttr="DprnXVenta" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Dprn_scrapCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Dprn_scrap" viewName="TransfManVO1" viewAttr="DprnSIngreso" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                              <oa:cellFormat id="Dprn_ejerCell" hAlign="right">
+                                 <ui:contents>
+                                    <oa:messageStyledText id="Dprn_ejer" viewName="TransfManVO1" viewAttr="DprnEjercicio" styleClass="OraTableCellText" dataType="NUMBER"/>
+                                 </ui:contents>
+                              </oa:cellFormat>
+                           </ui:contents>
+                        </oa:rowLayout>
+                     </ui:contents>
+                  </oa:tableLayout>
+               </ui:detail>
+               <ui:footer>
+                  <oa:tableFooter id="tableFooter1">
+                     <ui:contents>
+                        <oa:submitButton id="GenerarBtn" text="Generar" prompt="Generar"/>
+                        <oa:submitButton id="EliminarBtn" text="Eliminar" prompt="Eliminar" rendered="true" disabled="false"/>
+                     </ui:contents>
+                  </oa:tableFooter>
+               </ui:footer>
+            </oa:advancedTable>
+         </ui:contents>
+      </oa:pageLayout>
+   </content>
+</page>

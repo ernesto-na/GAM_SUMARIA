@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="InversionTrxAMLocal">
+         <AppModuleJndiName>xxgam.oracle.apps.fa.sumaria.trx.server.InversionTrxAM</AppModuleJndiName>
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>TAEMXI</JDBCName>
+         <ApplicationName>xxgam.oracle.apps.fa.sumaria.trx.server.InversionTrxAM</ApplicationName>
+         <jbo.project>OAProject1</jbo.project>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="TAEMXI">
+      <ENTRY name="JDBC_PORT" value="10510"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="vmohsaemx001.oracleoutsourcing.com"/>
+      <ENTRY name="user" value="APPS"/>
+      <ENTRY name="ConnectionName" value="TAEMXI"/>
+      <ENTRY name="SID" value="TAEMXI"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}05105931BCFF2867755C2A99A8454F8D533D35245854CB294C]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

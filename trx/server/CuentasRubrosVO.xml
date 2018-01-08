@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="CuentasRubrosVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxgam.oracle.apps.fa.sumaria.trx.server.CuentasRubrosVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.trx.server.CuentasRubrosVOImpl"
+   DefClass="xxgam.oracle.apps.fa.sumaria.trx.server.CuentasRubrosVODefImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select  cuenta
+          ,descripcion_cuenta
+          ,subcuenta
+          ,descripcion_subcuenta
+	 ,operating_unit
+          ,id_rubro 
+   from  XXGAM_SAF_SETUP
+ where  1 = 1
+     AND agrupado = 'INVERSION'
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Def|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Cuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="CUENTA"
+      Expression="CUENTA"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DescripcionCuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="200"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="DESCRIPCION_CUENTA"
+      Expression="DESCRIPCION_CUENTA"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="200" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subcuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="100"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SUBCUENTA"
+      Expression="SUBCUENTA"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="100" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DescripcionSubcuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="200"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="DESCRIPCION_SUBCUENTA"
+      Expression="DESCRIPCION_SUBCUENTA"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="200" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OperatingUnit"
+      IsPersistent="false"
+      Precision="150"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="OPERATING_UNIT"
+      Expression="OPERATING_UNIT"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="150" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="IdRubro"
+      IsPersistent="false"
+      Precision="200"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ID_RUBRO"
+      Expression="ID_RUBRO"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="200" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

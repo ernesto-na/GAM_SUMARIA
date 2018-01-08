@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig>
+   <AppModuleConfigBag>
+      <AppModuleConfig name="TrxLovAMLocal">
+         <DeployPlatform>LOCAL</DeployPlatform>
+         <JDBCName>DAEMXI</JDBCName>
+         <jbo.project>Sumaria</jbo.project>
+         <AppModuleJndiName>xxgam.oracle.apps.fa.sumaria.trx.lov.server.TrxLOVAM</AppModuleJndiName>
+         <java.naming.factory.initial>oracle.jbo.common.JboInitialContextFactory</java.naming.factory.initial>
+         <ApplicationName>xxgam.oracle.apps.fa.sumaria.trx.lov.server.TrxLOVAM</ApplicationName>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <ConnectionDefinition name="DAEMXI">
+      <ENTRY name="JDBC_PORT" value="10710"/>
+      <ENTRY name="ConnectionType" value="JDBC"/>
+      <ENTRY name="HOSTNAME" value="vmohsaemx001.oracleoutsourcing.com"/>
+      <ENTRY name="user" value="APPS"/>
+      <ENTRY name="ConnectionName" value="DAEMXI"/>
+      <ENTRY name="SID" value="DAEMXI"/>
+      <ENTRY name="JdbcDriver" value="oracle.jdbc.OracleDriver"/>
+      <ENTRY name="password">
+         <![CDATA[{904}056D14960E1AF9A9C8B2BA125942610875C75975B2F5A6056A]]>
+      </ENTRY>
+      <ENTRY name="ORACLE_JDBC_TYPE" value="thin"/>
+      <ENTRY name="DeployPassword" value="true"/>
+   </ConnectionDefinition>
+</BC4JConfig>

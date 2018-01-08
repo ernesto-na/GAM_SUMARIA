@@ -1,0 +1,338 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="TransfManVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxgam.oracle.apps.fa.sumaria.trx.server.TransfManVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.trx.server.TransfManVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT TransfManEO.ADICIONES, 
+       TransfManEO.ADICIONES_MAN, 
+       TransfManEO.ATTRIBUTE1, 
+       TransfManEO.ATTRIBUTE10, 
+       TransfManEO.ATTRIBUTE2, 
+       TransfManEO.ATTRIBUTE3, 
+       TransfManEO.ATTRIBUTE4, 
+       TransfManEO.ATTRIBUTE5, 
+       TransfManEO.ATTRIBUTE6, 
+       TransfManEO.ATTRIBUTE7, 
+       TransfManEO.ATTRIBUTE9, 
+       TransfManEO.ATTRIBUTE_CATEGORY, 
+       TransfManEO.BAJA_S_INGRESO, 
+       TransfManEO.BAJA_S_INGRESO_MAN, 
+       TransfManEO.BAJA_X_VENTA, 
+       TransfManEO.BAJA_X_VENTA_MAN, 
+       TransfManEO.CREATED_BY, 
+       TransfManEO.CREATION_DATE, 
+       TransfManEO.CUENTA, 
+       TransfManEO.CURRENCY_CODE, 
+       TransfManEO.DISMINUCIONES, 
+       TransfManEO.DISMINUCIONES_MAN, 
+       TransfManEO.DPRN_EJERCICIO, 
+       TransfManEO.DPRN_EJERCICIO_MAN, 
+       TransfManEO.DPRN_S_INGRESO, 
+       TransfManEO.DPRN_S_INGRESO_MAN, 
+       TransfManEO.DPRN_X_VENTA, 
+       TransfManEO.DPRN_X_VENTA_MAN, 
+       TransfManEO.LAST_UPDATED_BY, 
+       TransfManEO.LAST_UPDATE_DATE, 
+       TransfManEO.LAST_UPDATE_LOGIN, 
+       TransfManEO.NUM_RUBRO, 
+       TransfManEO.OPERATING_UNIT, 
+       TransfManEO.PERIODO, 
+       TransfManEO.RUBRO, 
+       TransfManEO.SALDO_FINAL, 
+       TransfManEO.SALDO_INI, 
+       TransfManEO.SALDO_INI_MAN, 
+       TransfManEO.SUBCUENTA, 
+       TransfManEO.SUMA, 
+       TransfManEO.TRANSF, 
+       TransfManEO.TRANSF_MAN, 
+       TransfManEO.XST_ID
+FROM XXGAM_SAF_INV_MOV_MAN_TBL TransfManEO
+ORDER BY TO_NUMBER(TransfManEO.NUM_RUBRO), TO_NUMBER(TransfManEO.CUENTA), TO_NUMBER(TransfManEO.SUBCUENTA)
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <EntityUsage
+      Name="TransfManEO"
+      Entity="xxgam.oracle.apps.fa.sumaria.trx.server.TransfManEO" >
+      <DesignTime>
+         <Attr Name="_queryClause" Value="false" />
+      </DesignTime>
+   </EntityUsage>
+   <ViewAttribute
+      Name="Adiciones"
+      EntityAttrName="Adiciones"
+      EntityUsage="TransfManEO"
+      AliasName="ADICIONES" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AdicionesMan"
+      EntityAttrName="AdicionesMan"
+      EntityUsage="TransfManEO"
+      AliasName="ADICIONES_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute1"
+      EntityAttrName="Attribute1"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE1" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute10"
+      EntityAttrName="Attribute10"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE10" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute2"
+      EntityAttrName="Attribute2"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE2" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute3"
+      EntityAttrName="Attribute3"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE3" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute4"
+      EntityAttrName="Attribute4"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE4" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute5"
+      EntityAttrName="Attribute5"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE5" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute6"
+      EntityAttrName="Attribute6"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE6" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute7"
+      EntityAttrName="Attribute7"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE7" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Attribute9"
+      EntityAttrName="Attribute9"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE9" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AttributeCategory"
+      EntityAttrName="AttributeCategory"
+      EntityUsage="TransfManEO"
+      AliasName="ATTRIBUTE_CATEGORY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BajaSIngreso"
+      EntityAttrName="BajaSIngreso"
+      EntityUsage="TransfManEO"
+      AliasName="BAJA_S_INGRESO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BajaSIngresoMan"
+      EntityAttrName="BajaSIngresoMan"
+      EntityUsage="TransfManEO"
+      AliasName="BAJA_S_INGRESO_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BajaXVenta"
+      EntityAttrName="BajaXVenta"
+      EntityUsage="TransfManEO"
+      AliasName="BAJA_X_VENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="BajaXVentaMan"
+      EntityAttrName="BajaXVentaMan"
+      EntityUsage="TransfManEO"
+      AliasName="BAJA_X_VENTA_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreatedBy"
+      EntityAttrName="CreatedBy"
+      EntityUsage="TransfManEO"
+      AliasName="CREATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CreationDate"
+      EntityAttrName="CreationDate"
+      EntityUsage="TransfManEO"
+      AliasName="CREATION_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Cuenta"
+      EntityAttrName="Cuenta"
+      EntityUsage="TransfManEO"
+      AliasName="CUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CurrencyCode"
+      EntityAttrName="CurrencyCode"
+      EntityUsage="TransfManEO"
+      AliasName="CURRENCY_CODE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Disminuciones"
+      EntityAttrName="Disminuciones"
+      EntityUsage="TransfManEO"
+      AliasName="DISMINUCIONES" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DisminucionesMan"
+      EntityAttrName="DisminucionesMan"
+      EntityUsage="TransfManEO"
+      AliasName="DISMINUCIONES_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnEjercicio"
+      EntityAttrName="DprnEjercicio"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_EJERCICIO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnEjercicioMan"
+      EntityAttrName="DprnEjercicioMan"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_EJERCICIO_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnSIngreso"
+      EntityAttrName="DprnSIngreso"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_S_INGRESO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnSIngresoMan"
+      EntityAttrName="DprnSIngresoMan"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_S_INGRESO_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnXVenta"
+      EntityAttrName="DprnXVenta"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_X_VENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DprnXVentaMan"
+      EntityAttrName="DprnXVentaMan"
+      EntityUsage="TransfManEO"
+      AliasName="DPRN_X_VENTA_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdatedBy"
+      EntityAttrName="LastUpdatedBy"
+      EntityUsage="TransfManEO"
+      AliasName="LAST_UPDATED_BY" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateDate"
+      EntityAttrName="LastUpdateDate"
+      EntityUsage="TransfManEO"
+      AliasName="LAST_UPDATE_DATE" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LastUpdateLogin"
+      EntityAttrName="LastUpdateLogin"
+      EntityUsage="TransfManEO"
+      AliasName="LAST_UPDATE_LOGIN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NumRubro"
+      EntityAttrName="NumRubro"
+      EntityUsage="TransfManEO"
+      AliasName="NUM_RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="OperatingUnit"
+      EntityAttrName="OperatingUnit"
+      EntityUsage="TransfManEO"
+      AliasName="OPERATING_UNIT" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Periodo"
+      EntityAttrName="Periodo"
+      EntityUsage="TransfManEO"
+      AliasName="PERIODO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Rubro"
+      EntityAttrName="Rubro"
+      EntityUsage="TransfManEO"
+      AliasName="RUBRO" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SaldoFinal"
+      EntityAttrName="SaldoFinal"
+      EntityUsage="TransfManEO"
+      AliasName="SALDO_FINAL" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SaldoIni"
+      EntityAttrName="SaldoIni"
+      EntityUsage="TransfManEO"
+      AliasName="SALDO_INI" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="SaldoIniMan"
+      EntityAttrName="SaldoIniMan"
+      EntityUsage="TransfManEO"
+      AliasName="SALDO_INI_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Subcuenta"
+      EntityAttrName="Subcuenta"
+      EntityUsage="TransfManEO"
+      AliasName="SUBCUENTA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Suma"
+      EntityAttrName="Suma"
+      EntityUsage="TransfManEO"
+      AliasName="SUMA" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Transf"
+      EntityAttrName="Transf"
+      EntityUsage="TransfManEO"
+      AliasName="TRANSF" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="TransfMan"
+      EntityAttrName="TransfMan"
+      EntityUsage="TransfManEO"
+      AliasName="TRANSF_MAN" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="XstId"
+      EntityAttrName="XstId"
+      EntityUsage="TransfManEO"
+      AliasName="XST_ID" >
+   </ViewAttribute>
+   <ViewAttribute
+      Name="DetailFlag"
+      IsSelected="false"
+      IsPersistent="false"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="VIEW_ATTR"
+      SQLType="VARCHAR" >
+   </ViewAttribute>
+</ViewObject>

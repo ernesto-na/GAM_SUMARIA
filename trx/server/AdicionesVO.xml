@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="AdicionesVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxgam.oracle.apps.fa.sumaria.trx.server.AdicionesVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.trx.server.AdicionesVOImpl"
+   FetchMode="FETCH_AS_NEEDED"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT          TO_CHAR (b.je_batch_id) JE_BATCH_ID,
+                     NVL(lines.accounted_dr, 0) ACCOUNTED_DEBIT,
+                     NVL(lines.accounted_cr, 0) ACCOUNTED_CREDIT,
+                     h.ledger_id,
+                      lines.period_name,
+                       lines.code_combination_id 
+              FROM   gl_je_batches b,
+                     gl_je_headers h,
+                     gl_je_lines lines,
+                     gl_je_sources src,
+                     gl_je_categories cat,
+                     fnd_document_sequences fds,
+                     gl_je_lines_recon lr,
+                     fun_seq_versions fsv1,
+                     fun_seq_versions fsv2
+             WHERE       b.average_journal_flag = 'N'
+                     AND b.status || '' = 'P'
+                     AND b.actual_flag = 'A'
+                     AND h.je_batch_id = b.je_batch_id
+                     AND src.je_source_name = h.je_source
+                     AND cat.je_category_name = h.je_category
+                     AND lines.je_header_id = h.je_header_id
+                     AND lr.je_header_id(+) = lines.je_header_id
+                     AND lr.je_line_num(+) = lines.je_line_num
+                     AND lr.ledger_id(+) = lines.ledger_id
+                     AND fds.doc_sequence_id(+) = h.doc_sequence_id
+                     AND fsv1.seq_version_id(+) = h.posting_acct_seq_version_id
+                     AND fsv2.seq_version_id(+) = h.close_acct_seq_version_id
+                     and upper(cat.je_category_name) not in upper('Retirement')
+                     and upper(cat.je_category_name) not in upper('Transfer')
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="JeBatchId"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="40"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="JE_BATCH_ID"
+      Expression="JE_BATCH_ID"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AccountedDebit"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="ACCOUNTED_DEBIT"
+      Expression="ACCOUNTED_DEBIT"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="AccountedCredit"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="ACCOUNTED_CREDIT"
+      Expression="ACCOUNTED_CREDIT"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="LedgerId"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="LEDGER_ID"
+      Expression="LEDGER_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CodeCombinationId"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="CODE_COMBINATION_ID"
+      Expression="CODE_COMBINATION_ID"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PeriodName"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PERIOD_NAME"
+      Expression="PERIOD_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="15" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

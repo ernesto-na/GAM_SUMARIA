@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="SaldoInicialVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="xxgam.oracle.apps.fa.sumaria.trx.server.SaldoInicialVORowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.trx.server.SaldoInicialVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+SELECT LG.NAME LEDGER,
+            SEGMENT1 || '-' ||
+            SEGMENT2 || '-' ||
+            SEGMENT3 || '-' ||
+            SEGMENT4 || '-' ||
+            SEGMENT5 || '-' ||
+            SEGMENT6 || '-' ||
+            SEGMENT7 || '-' ||
+            SEGMENT8 ACCOUNT,
+            LT.PERIOD_NAME PERIOD,
+            LG.CURRENCY_CODE CURRENCY,
+            DECODE (
+                'A',
+                'E', DECODE (
+                        BA.currency_code,
+                        LG.currency_code, DECODE (
+                                              BA.actual_flag,
+                                              'A', (NVL (
+                                                       BA.period_net_dr_beq,
+                                                       0)
+                                                    - NVL (
+                                                         BA.period_net_cr_beq,
+                                                         0)),
+                                              (NVL (BA.period_net_dr, 0)
+                                               - NVL (BA.period_net_cr, 0))),
+                        (NVL (BA.period_net_dr, 0)
+                         - NVL (BA.period_net_cr, 0))),
+                (NVL (BA.period_net_dr, 0) - NVL (BA.period_net_cr, 0))) PTD,
+            DECODE (
+                 BA.currency_code,
+                 LG.currency_code, NULL,
+                 'STAT', NULL,
+                 DECODE (
+                    LR.relationship_type_code,
+                    'BALANCE', NULL,
+                    DECODE (
+                       BA.translated_flag,
+                       'R', DECODE (
+                               BA.actual_flag,
+                               'A', (NVL (BA.period_net_dr_beq, 0)
+                                     - NVL (BA.period_net_cr_beq, 0)),
+                               NULL),
+                       NULL))) PTD_CONVERTED,
+            DECODE (
+                'A',
+                'E', DECODE (
+                        BA.currency_code,
+                        LG.currency_code, DECODE (
+                                              BA.actual_flag,
+                                              'A', ( (NVL (
+                                                         BA.
+                                                          begin_balance_dr_beq,
+                                                         0)
+                                                      - NVL (
+                                                           BA.
+                                                            begin_balance_cr_beq,
+                                                           0))
+                                                    + (NVL (
+                                                          BA.
+                                                           period_net_dr_beq,
+                                                          0)
+                                                       - NVL (
+                                                            BA.
+                                                             period_net_cr_beq,
+                                                            0))),
+                                              ( (NVL (BA.begin_balance_dr, 0)
+                                                 - NVL (BA.begin_balance_cr,
+                                                        0))
+                                               + (NVL (BA.period_net_dr, 0)
+                                                  - NVL (BA.period_net_cr, 0)))),
+                        ( (NVL (BA.begin_balance_dr, 0)
+                           - NVL (BA.begin_balance_cr, 0))
+                         + (NVL (BA.period_net_dr, 0)
+                            - NVL (BA.period_net_cr, 0)))),
+                ( (NVL (BA.begin_balance_dr, 0)
+                   - NVL (BA.begin_balance_cr, 0))
+                 + (NVL (BA.period_net_dr, 0) - NVL (BA.period_net_cr, 0)))) YTD,
+          DECODE (
+                 BA.currency_code,
+                 LG.currency_code, NULL,
+                 'STAT', NULL,
+                 DECODE (
+                    LR.relationship_type_code,
+                    'BALANCE', NULL,
+                    DECODE (
+                       BA.translated_flag,
+                       'R', DECODE (
+                               BA.actual_flag,
+                               'A', ( (NVL (BA.begin_balance_dr_beq, 0)
+                                       - NVL (BA.begin_balance_cr_beq, 0))
+                                     + (NVL (BA.period_net_dr_beq, 0)
+                                        - NVL (BA.period_net_cr_beq, 0))),
+                               NULL),
+                       NULL))) YTD_CONVERTED,
+                       CC.code_combination_id code_cuenta,
+                      SEGMENT1,
+		      SEGMENT5,
+		      SEGMENT6,
+		LT.PERIOD_NAME,
+		LG.NAME
+FROM GL_LEDGERS LG,
+          GL_CODE_COMBINATIONS CC,
+          GL_PERIODS LT,
+          GL_BALANCES BA,
+          GL_LEDGER_RELATIONSHIPS LR
+WHERE 1=1
+            AND LG.CHART_OF_ACCOUNTS_ID = CC.CHART_OF_ACCOUNTS_ID
+            AND LG.PERIOD_SET_NAME=LT.PERIOD_SET_NAME
+            AND BA.CODE_COMBINATION_ID=CC.CODE_COMBINATION_ID
+            AND BA.PERIOD_NAME=LT.PERIOD_NAME
+            AND BA.CURRENCY_CODE=LG.CURRENCY_CODE
+            AND BA.LEDGER_ID=LG.LEDGER_ID
+            AND LR.SOURCE_LEDGER_ID=LR.TARGET_LEDGER_ID
+            AND LG.LEDGER_ID=LR.TARGET_LEDGER_ID
+            AND LR.TARGET_CURRENCY_CODE=LG.CURRENCY_CODE
+            AND SEGMENT2='00'
+            AND SEGMENT3='000000'
+            AND SEGMENT4='0000'
+            AND SEGMENT7='0000'
+            AND SEGMENT8='00'
+            AND BA.ACTUAL_FLAG='A'
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isCodegen" Value="true" />
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="Ledger"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="LEDGER"
+      Expression="LEDGER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Account"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="207"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="ACCOUNT"
+      Expression="ACCOUNT"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="207" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Period"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PERIOD"
+      Expression="PERIOD"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="15" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Currency"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="CURRENCY"
+      Expression="CURRENCY"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="15" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ptd"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="PTD"
+      Expression="PTD"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PtdConverted"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="40"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PTD_CONVERTED"
+      Expression="PTD_CONVERTED"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Ytd"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="YTD"
+      Expression="YTD"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="YtdConverted"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="40"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="YTD_CONVERTED"
+      Expression="YTD_CONVERTED"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="40" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="CodeCuenta"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Scale="0"
+      Type="oracle.jbo.domain.Number"
+      ColumnType="NUMBER"
+      AliasName="CODE_CUENTA"
+      Expression="CODE_CUENTA"
+      SQLType="NUMERIC" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="22" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Segment1"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SEGMENT1"
+      Expression="SEGMENT1"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Segment5"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SEGMENT5"
+      Expression="SEGMENT5"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Segment6"
+      IsPersistent="false"
+      Precision="25"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="SEGMENT6"
+      Expression="SEGMENT6"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="25" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="PeriodName"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="15"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="PERIOD_NAME"
+      Expression="PERIOD_NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="15" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="Name"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="30"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="NAME"
+      Expression="NAME"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="30" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>

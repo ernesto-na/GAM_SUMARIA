@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboPackage SYSTEM "jbo_03_01.dtd">
+
+<JboPackage
+   Name="server"
+   SeparateXMLFiles="true"
+   PackageName="xxgam.oracle.apps.fa.sumaria.trx.server" >
+   <DesignTime>
+      <Attr Name="_ejbPackage" Value="false" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+   </DesignTime>
+   <Containee
+      Name="AdicionesVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.AdicionesVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="CodeCuentaVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.CodeCuentaVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="CuentasRubrosVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.CuentasRubrosVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="DivisaVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.DivisaVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="InversionTrxAM"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.InversionTrxAM"
+      ObjectType="AppModule" >
+   </Containee>
+   <Containee
+      Name="InversionTrxVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.InversionTrxVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="PeriodoAnteriorVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.PeriodoAnteriorVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="PeriodoVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.PeriodoVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="RubroVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.RubroVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="SaldoInicialVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.SaldoInicialVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="TransfManEO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.TransfManEO"
+      ObjectType="Entity" >
+   </Containee>
+   <Containee
+      Name="TransfManVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.TransfManVO"
+      ObjectType="ViewObject" >
+   </Containee>
+   <Containee
+      Name="UniOperVO"
+      FullName="xxgam.oracle.apps.fa.sumaria.trx.server.UniOperVO"
+      ObjectType="ViewObject" >
+   </Containee>
+</JboPackage>

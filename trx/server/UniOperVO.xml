@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+
+<ViewObject
+   Name="UniOperVO"
+   BindingStyle="OracleName"
+   CustomQuery="true"
+   RowClass="oracle.apps.fnd.framework.server.OAViewRowImpl"
+   ComponentClass="xxgam.oracle.apps.fa.sumaria.trx.server.UniOperVOImpl"
+   UseGlueCode="false" >
+   <SQLQuery><![CDATA[
+select   org.name uni_oper,
+substr(org.NAME,0,2) num_oper
+  from   hr_all_organization_units org, hr_organization_information_v hoi
+ where   org.organization_id = hoi.organization_id
+   and   hoi.org_information1 = 'OPERATING_UNIT'
+   and (trunc(sysdate) between nvl(org.date_from,hr_general.start_of_time) and nvl(org.date_to,hr_general.end_of_time))
+   order by to_number(substr(org.NAME,0,2))
+   ]]></SQLQuery>
+   <DesignTime>
+      <Attr Name="_isExpertMode" Value="true" />
+      <Attr Name="_version" Value="10.1.3.41.57" />
+      <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess" />
+   </DesignTime>
+   <ViewAttribute
+      Name="UniOper"
+      IsUpdateable="false"
+      IsPersistent="false"
+      IsNotNull="true"
+      Precision="240"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="UNI_OPER"
+      Expression="UNI_OPER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="240" />
+      </DesignTime>
+   </ViewAttribute>
+   <ViewAttribute
+      Name="NumOper"
+      IsUpdateable="false"
+      IsPersistent="false"
+      Precision="2"
+      Type="java.lang.String"
+      ColumnType="VARCHAR2"
+      AliasName="NUM_OPER"
+      Expression="NUM_OPER"
+      SQLType="VARCHAR" >
+      <DesignTime>
+         <Attr Name="_DisplaySize" Value="2" />
+      </DesignTime>
+   </ViewAttribute>
+</ViewObject>
