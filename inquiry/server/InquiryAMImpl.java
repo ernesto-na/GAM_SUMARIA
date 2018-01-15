@@ -39,6 +39,7 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
      public void deleteFlujoEfectivo(String uOper,String p_final) {
          OADBTransaction oaDBTransaction =  this.getOADBTransaction();
          Connection connection = oaDBTransaction.getJdbcConnection();
+         /* TODO 01p agregar el campo moneda para borrar*/
             System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'");
             String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'";
          PreparedStatement prepStmt;

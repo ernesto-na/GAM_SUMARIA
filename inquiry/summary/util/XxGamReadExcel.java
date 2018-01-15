@@ -1675,6 +1675,7 @@ public  class XxGamReadExcel {
                         auxPromptB=cellAuxUP.getContents().trim();
                         //auxPromptB=FormateLimpCadenas(auxPromptB);
                         cellAuxUP = hoja.getCell(0,3);
+                        /*Prompt C = Moneda*/
                         auxPromptC=cellAuxUP.getContents().trim();
                         cellAuxUP = hoja.getCell(0,5);
                         auxPromptD=cellAuxUP.getContents().trim();
