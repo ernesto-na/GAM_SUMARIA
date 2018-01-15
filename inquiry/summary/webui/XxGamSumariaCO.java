@@ -441,15 +441,16 @@ public class XxGamSumariaCO extends OAControllerImpl
                 System.out.println(e.getMessage());
             }
             try{
+            /*se agrega moneda*/
                 OAApplicationModule am = pageContext.getApplicationModule(webBean);
-                Serializable[] param2 = {testRubro.getUnOper(),testRubro.getId_rubro(),testRubro.getRubro(),testRubro.getP_inicial(),testRubro.getP_final(),testRubro.getCOST_SALDO_INICIAL(),testRubro.getDPRN_INITIAL_BALANCE(),testRubro.getCOST_ADDITIONS(),testRubro.getCOST_BAJAS(),testRubro.getCOST_TRANSFERS_SALE(),testRubro.getDPN_DEPRECIACION(),testRubro.getDPN_BAJAS(),testRubro.getDPN_VAR_TIP_CAMBIO(),testRubro.getCOST_VAR_TIP_CAMBIO(),testRubro.getCOST_SALDO_FINAL(),testRubro.getDPN_SALDO_FINAL()};
+                Serializable[] param2 = {testRubro.getUnOper(),testRubro.getId_rubro(),testRubro.getRubro(),testRubro.getP_inicial(),testRubro.getP_final(),testRubro.getCOST_SALDO_INICIAL(),testRubro.getDPRN_INITIAL_BALANCE(),testRubro.getCOST_ADDITIONS(),testRubro.getCOST_BAJAS(),testRubro.getCOST_TRANSFERS_SALE(),testRubro.getDPN_DEPRECIACION(),testRubro.getDPN_BAJAS(),testRubro.getDPN_VAR_TIP_CAMBIO(),testRubro.getCOST_VAR_TIP_CAMBIO(),testRubro.getCOST_SALDO_FINAL(),testRubro.getDPN_SALDO_FINAL(),testRubro.getMoneda()};
                 System.out.println("Entrando en exec_insert...");
                 am.invokeMethod("exec_insert",param2);
                 System.out.println("Saliendo de.. exec_insert...");
             }catch(Exception e){
                 System.out.println(e.getMessage()); 
             }
-           try{
+          /* try{
                OAApplicationModule am = pageContext.getApplicationModule(webBean);
                Serializable[] param2 = {rubro2.getUnOper(),rubro2.getId_rubro(),rubro2.getRubro(),rubro2.getP_inicial(),rubro2.getP_final(),rubro2.getCOST_SALDO_INICIAL(),rubro2.getDPRN_INITIAL_BALANCE(),rubro2.getCOST_ADDITIONS(),rubro2.getCOST_BAJAS(),rubro2.getCOST_TRANSFERS_SALE(),rubro2.getDPN_DEPRECIACION(),rubro2.getDPN_BAJAS(),rubro2.getDPN_VAR_TIP_CAMBIO(),rubro2.getCOST_VAR_TIP_CAMBIO(),rubro2.getCOST_SALDO_FINAL(),rubro2.getDPN_SALDO_FINAL()};
                System.out.println("Entrando en exec_insert...");
@@ -574,7 +575,7 @@ public class XxGamSumariaCO extends OAControllerImpl
           System.out.println("Saliendo de.. exec_insert...");
        }catch(Exception e){
           System.out.println(e.getMessage()); 
-       }
+       }*/
        }
       }
       catch(NullPointerException npe){

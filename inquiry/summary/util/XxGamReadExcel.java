@@ -2557,6 +2557,7 @@ public  class XxGamReadExcel {
         String arreglo[] = {operating_unit,id_r,rubro,tipo_saldo,periodo_inicial,periodo_final,FormateNumeros(R1_COST_INITIAL_BALANCE)};
      return  arreglo;  
     }*/
+    /* TODO p03 agregar el atributo moneda a todos los rubros*/
     public static Rubro prepareR1DprnInitBal(){
         String id_r="1",rubro="Eq.Vlo.en Arrendamiento Financiero";
         Rubro rubro1= new Rubro(operating_unit,
@@ -2574,7 +2575,8 @@ public  class XxGamReadExcel {
                                 FormateNumeros(R1_MF_RES),
                                 FormateNumeros(R1_MF_BALANCE),
                                 FormateNumeros(R1_COST_BALANCE),
-                                FormateNumeros(R1_DPN_INI_BAL));
+                                FormateNumeros(R1_DPN_INI_BAL),
+                                auxPromptC);
      return  rubro1;  
     }
     /**
