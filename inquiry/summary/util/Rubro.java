@@ -17,6 +17,8 @@ public class Rubro {
       String COST_VAR_TIP_CAMBIO;
       String COST_SALDO_FINAL;
       String DPN_SALDO_FINAL;
+      String Moneda;
+      /* TODO p02 Borrar este constructor despues de terminar de modificar el nuevo*/
     public Rubro(String unOper, String id_rubro, String rubro, String p_inicial, String p_final, String COST_SALDO_INICIAL, String DPRN_INITIAL_BALANCE, String COST_ADDITIONS, String COST_BAJAS, String COST_TRANSFERS_SALE, String DPN_DEPRECIACION, String DPN_BAJAS, String DPN_VAR_TIP_CAMBIO, String COST_VAR_TIP_CAMBIO, String COST_SALDO_FINAL, String DPN_SALDO_FINAL) {
             this.unOper = unOper;
             this.id_rubro = id_rubro;
@@ -34,6 +36,34 @@ public class Rubro {
             this.COST_VAR_TIP_CAMBIO = COST_VAR_TIP_CAMBIO;
             this.COST_SALDO_FINAL = COST_SALDO_FINAL;
             this.DPN_SALDO_FINAL = DPN_SALDO_FINAL;
+        }
+        /*Nuevo constructor incluye parametro moneda*/
+         public Rubro(String unOper, String id_rubro, String rubro, String p_inicial, String p_final, String COST_SALDO_INICIAL, String DPRN_INITIAL_BALANCE, String COST_ADDITIONS, String COST_BAJAS, String COST_TRANSFERS_SALE, String DPN_DEPRECIACION, String DPN_BAJAS, String DPN_VAR_TIP_CAMBIO, String COST_VAR_TIP_CAMBIO, String COST_SALDO_FINAL, String DPN_SALDO_FINAL, String Moneda) {
+                 this.unOper = unOper;
+                 this.id_rubro = id_rubro;
+                 this.rubro = rubro;
+                 this.p_inicial = p_inicial;
+                 this.p_final = p_final;
+                 this.COST_SALDO_INICIAL = COST_SALDO_INICIAL;
+                 this.DPRN_INITIAL_BALANCE = DPRN_INITIAL_BALANCE;
+                 this.COST_ADDITIONS = COST_ADDITIONS;
+                 this.COST_BAJAS = COST_BAJAS;
+                 this.COST_TRANSFERS_SALE = COST_TRANSFERS_SALE;
+                 this.DPN_DEPRECIACION = DPN_DEPRECIACION;
+                 this.DPN_BAJAS = DPN_BAJAS;
+                 this.DPN_VAR_TIP_CAMBIO = DPN_VAR_TIP_CAMBIO;
+                 this.COST_VAR_TIP_CAMBIO = COST_VAR_TIP_CAMBIO;
+                 this.COST_SALDO_FINAL = COST_SALDO_FINAL;
+                 this.DPN_SALDO_FINAL = DPN_SALDO_FINAL;
+                 this.Moneda = Moneda;
+             }
+        
+    public void setMoneda(String Moneda) {
+            this.Moneda = Moneda;
+        }
+
+        public String getMoneda() {
+            return Moneda;
         }
     
     public String getP_inicial() {
