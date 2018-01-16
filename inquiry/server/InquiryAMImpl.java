@@ -36,11 +36,14 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     /**
      * Metodo que borra la tabla SAF_FLUJO_EFECTIVO
      */
-     public void deleteFlujoEfectivo(String uOper,String p_final) {
+     public void deleteFlujoEfectivo(String uOper,String p_final,String Moneda) {
+     Moneda = determinaDivisa(Moneda);
          OADBTransaction oaDBTransaction =  this.getOADBTransaction();
          Connection connection = oaDBTransaction.getJdbcConnection();
-            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'");
-            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'";
+         /* TODO 01p agregar el campo moneda para borrar*/
+            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"' and MONEDA='"+Moneda+"'");
+            
+            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"' and MONEDA='"+Moneda+"'";
          PreparedStatement prepStmt;
          
          try {
@@ -101,15 +104,34 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
          }
          return mNumber;
      }
+       
+       
+       public String determinaDivisa(String moneda){
+       String auxMoneda="--";
+           if(moneda.toUpperCase().trim().equals("(MEXICAN PESOS)"))
+           {
+               
+               auxMoneda="GAM_MXN";   
+           }
+           if(moneda.toUpperCase().trim().equals("(DOLLAR USD)"))
+           {
+               
+               auxMoneda="GAM_USD";   
+           }
+           
+           return auxMoneda;
+       }
+       
         
     /**
      * Inserta en la tabla XXGAM_SAF_FLUJO_EFECTIVO
      */
-     public void exec_insert(String uOp,String id_r,String rubro,String periodo_inicial,String periodo_final,String COST_SALDO_INICIAL,String DPRN_INITIAL_BALANCE,String COST_ADDITIONS,String COST_BAJAS,String COST_TRANSFERS_SALE,String DPN_DEPRECIACION,String DPN_BAJAS,String DPN_VAR_TIP_CAMBIO,String COST_VAR_TIP_CAMBIO,String COST_SALDO_FINAL,String DPN_SALDO_FINAL ) {
+     public void exec_insert(String uOp,String id_r,String rubro,String periodo_inicial,String periodo_final,String COST_SALDO_INICIAL,String DPRN_INITIAL_BALANCE,String COST_ADDITIONS,String COST_BAJAS,String COST_TRANSFERS_SALE,String DPN_DEPRECIACION,String DPN_BAJAS,String DPN_VAR_TIP_CAMBIO,String COST_VAR_TIP_CAMBIO,String COST_SALDO_FINAL,String DPN_SALDO_FINAL , String Moneda) {
                /* Java Programming */
                /* Obtener el Controlador (Driver) para conectarse a la base de datos */
+               Moneda=determinaDivisa(Moneda);
              System.out.print("u_op: "+uOp+" \nid_r: "+id_r+" \nrubro: "+rubro+" \nperiodo_inicial: "+periodo_inicial+" \nperiodo_final: "+periodo_final+" \nR1_COST_INITIAL_BALANCE: "+COST_SALDO_INICIAL+" \nDPRN_INITIAL_BALANCE "+DPRN_INITIAL_BALANCE+ " \nCOST_ADDITIONS "+COST_ADDITIONS+" \nCOST_BAJAS "+COST_BAJAS+ " \nCOST_TRANSFERS_SALE "+ COST_TRANSFERS_SALE+" \nDPN_DEPRECIACION "+DPN_DEPRECIACION
-             +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL );  
+             +"  \nDPN_BAJAS"+DPN_BAJAS+" \nDPN_VAR_TIP_CAMBIO "+DPN_VAR_TIP_CAMBIO+" \nCOST_VAR_TIP_CAMBIO "+COST_VAR_TIP_CAMBIO+" \nCOST_SALDO_FINAL "+COST_SALDO_FINAL+" \nDPN_SALDO_FINAL "+DPN_SALDO_FINAL+ "\n Moneda: "+Moneda );  
                OADBTransaction oaDBTransaction =  this.getOADBTransaction();
                Connection connection = oaDBTransaction.getJdbcConnection();
                
@@ -129,7 +151,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE,"+
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -146,7 +169,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroDPRN_INITIAL_BALANCE = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -163,7 +187,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -180,7 +205,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
                                                                 
              String rubroCOST_ADDITIONS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
@@ -198,7 +224,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -215,7 +242,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroCOST_BAJAS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -232,7 +260,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -249,7 +278,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate," +
+                                                                        "'"+ Moneda+"')";
              String rubroCOST_TRANSFERS_SALE = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -266,7 +296,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -283,8 +314,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
-                                                                        
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroDPN_DEPRECIACION = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -301,7 +332,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -318,7 +350,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroDPN_BAJAS = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -335,7 +368,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -352,7 +386,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroDPN_VAR_TIP_CAMBIO = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -369,7 +404,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -386,7 +422,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroCOST_VAR_TIP_CAMBIO = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -403,7 +440,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -420,7 +458,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroCOST_SALDO_FINAL = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -437,7 +476,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -454,7 +494,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
              String rubroDPN_SALDO_FINAL = " INSERT INTO xxgam_saf_flujo_efectivo(ID," +
                                                                         "EMPRESA," +
                                                                         "ID_RUBRO," +
@@ -471,7 +512,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "REQUEST_ID," +
                                                                         "PROGRAM_APPLICATION_ID," +
                                                                         "PROGRAM_ID," +
-                                                                        "PROGRAM_UPDATE_DATE)" +
+                                                                        "PROGRAM_UPDATE_DATE," +
+                                                                        "MONEDA)" +
                                                                         "VALUES (XXGAM_SAF_FLUJO_EFECTIVO_S.NEXTVAL," 
                                                                         +"'"+uOp+"',"+
                                                                         "'"+id_r+"',"+
@@ -488,7 +530,8 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_REQUEST_ID')),-1)," +  /* REQUEST_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_APPLICATION_ID')),-1),"+  /* PROGRAM_APPLICATION_ID */
                                                                         "nvl(TO_NUMBER(FND_PROFILE.VALUE('CONC_PROGRAM_ID')),-1)," +   /* PROGRAM_ID */  
-                                                                        "sysdate)";                                                                        
+                                                                        "sysdate,"+
+                                                                        "'"+ Moneda+"')";
                                                                         
              insert_saf_flujo_efec(rubroInitBal); 
              insert_saf_flujo_efec(rubroDPRN_INITIAL_BALANCE);
