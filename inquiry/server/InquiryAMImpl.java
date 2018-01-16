@@ -36,12 +36,14 @@ public class InquiryAMImpl extends OAApplicationModuleImpl {
     /**
      * Metodo que borra la tabla SAF_FLUJO_EFECTIVO
      */
-     public void deleteFlujoEfectivo(String uOper,String p_final) {
+     public void deleteFlujoEfectivo(String uOper,String p_final,String Moneda) {
+     Moneda = determinaDivisa(Moneda);
          OADBTransaction oaDBTransaction =  this.getOADBTransaction();
          Connection connection = oaDBTransaction.getJdbcConnection();
          /* TODO 01p agregar el campo moneda para borrar*/
-            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'");
-            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"'";
+            System.out.println("delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"' and MONEDA='"+Moneda+"'");
+            
+            String strPrepStmt ="delete from xxgam_saf_flujo_efectivo where 1= 1 and periodo_final ='"+p_final +"' and empresa ='"+uOper+"' and MONEDA='"+Moneda+"'";
          PreparedStatement prepStmt;
          
          try {

@@ -2600,7 +2600,8 @@ public  class XxGamReadExcel {
                                 FormateNumeros(R2_MF_RES),
                                 FormateNumeros(R2_MF_BALANCE),
                                 FormateNumeros(R2_COST_BALANCE),
-                                FormateNumeros(R2_DPN_INI_BAL));
+                                FormateNumeros(R2_DPN_INI_BAL),
+                                auxPromptC);
      return  rubro2;  
     }
 /**
@@ -2624,7 +2625,8 @@ public  class XxGamReadExcel {
                                    FormateNumeros(R3_MF_RES),
                                    FormateNumeros(R3_MF_BALANCE),
                                    FormateNumeros(R3_COST_BALANCE),
-                                   FormateNumeros(R3_DPN_INI_BAL));
+                                   FormateNumeros(R3_DPN_INI_BAL),
+                                   auxPromptC);
         return  rubro3;  
        }
     /**
@@ -2648,7 +2650,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R4_MF_RES),
                                        FormateNumeros(R4_MF_BALANCE),
                                        FormateNumeros(R4_COST_BALANCE),
-                                       FormateNumeros(R4_DPN_INI_BAL));
+                                       FormateNumeros(R4_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro4;  
            }
     /**
@@ -2672,7 +2675,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R5_MF_RES),
                                        FormateNumeros(R5_MF_BALANCE),
                                        FormateNumeros(R5_COST_BALANCE),
-                                       FormateNumeros(R5_DPN_INI_BAL));
+                                       FormateNumeros(R5_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro5;  
            }
            
@@ -2697,7 +2701,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R6_MF_RES),
                                        FormateNumeros(R6_MF_BALANCE),
                                        FormateNumeros(R6_COST_BALANCE),
-                                       FormateNumeros(R6_DPN_INI_BAL));
+                                       FormateNumeros(R6_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro6;  
            }
            
@@ -2722,7 +2727,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R7_MF_RES),
                                        FormateNumeros(R7_MF_BALANCE),
                                        FormateNumeros(R7_COST_BALANCE),
-                                       FormateNumeros(R7_DPN_INI_BAL));
+                                       FormateNumeros(R7_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro7;  
            }
     /**
@@ -2746,7 +2752,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R8_MF_RES),
                                        FormateNumeros(R8_MF_BALANCE),
                                        FormateNumeros(R8_COST_BALANCE),
-                                       FormateNumeros(R8_DPN_INI_BAL));
+                                       FormateNumeros(R8_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro8;  
            }
            
@@ -2771,7 +2778,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R9_MF_RES),
                                        FormateNumeros(R9_MF_BALANCE),
                                        FormateNumeros(R9_COST_BALANCE),
-                                       FormateNumeros(R9_DPN_INI_BAL));
+                                       FormateNumeros(R9_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro9;  
            }
            
@@ -2796,7 +2804,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R10_MF_RES),
                                        FormateNumeros(R10_MF_BALANCE),
                                        FormateNumeros(R10_COST_BALANCE),
-                                       FormateNumeros(R10_DPN_INI_BAL));
+                                       FormateNumeros(R10_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro10;  
            }
            
@@ -2821,7 +2830,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R11_MF_RES),
                                        FormateNumeros(R11_MF_BALANCE),
                                        FormateNumeros(R11_COST_BALANCE),
-                                       FormateNumeros(R11_DPN_INI_BAL));
+                                       FormateNumeros(R11_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro11;  
            }
            
@@ -2846,7 +2856,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R12_MF_RES),
                                        FormateNumeros(R12_MF_BALANCE),
                                        FormateNumeros(R12_COST_BALANCE),
-                                       FormateNumeros(R12_DPN_INI_BAL));
+                                       FormateNumeros(R12_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro12;  
            }
            
@@ -2871,7 +2882,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R13_MF_RES),
                                        FormateNumeros(R13_MF_BALANCE),
                                        FormateNumeros(R13_COST_BALANCE),
-                                       FormateNumeros(R13_DPN_INI_BAL));
+                                       FormateNumeros(R13_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro13;  
            }
            
@@ -2896,7 +2908,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(R14_MF_RES),
                                        FormateNumeros(R14_MF_BALANCE),
                                        FormateNumeros(R14_COST_BALANCE),
-                                       FormateNumeros(R14_DPN_INI_BAL));
+                                       FormateNumeros(R14_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubro14;  
            }
            
@@ -2921,7 +2934,8 @@ public  class XxGamReadExcel {
                                        FormateNumeros(RI1_MF_RES),
                                        FormateNumeros(RI1_MF_BALANCE),
                                        FormateNumeros(RI1_COST_BALANCE),
-                                       FormateNumeros(RI1_DPN_INI_BAL));
+                                       FormateNumeros(RI1_DPN_INI_BAL),
+                                       auxPromptC);
             return  rubroI1;  
            }
            
